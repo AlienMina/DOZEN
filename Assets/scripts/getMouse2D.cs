@@ -16,17 +16,17 @@ public class getMouse2D : MonoBehaviour {
 
     void Update()
     {
-        screenPosition = Camera.main.WorldToScreenPoint(transform.position);
-        mousePositionOnScreen = Input.mousePosition;
-        mousePositionOnScreen.z = screenPosition.z;
-        mousePositionInWorld = Camera.main.ScreenToWorldPoint(mousePositionOnScreen);
+        //screenPosition = Camera.main.WorldToScreenPoint(transform.position);
+        //mousePositionOnScreen = Input.mousePosition;
+        //mousePositionOnScreen.z = screenPosition.z;
+        //mousePositionInWorld = Camera.main.ScreenToWorldPoint(mousePositionOnScreen);
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            Debug.Log(mousePositionInWorld);
-            //Instantiate(Soldier, mousePositionInWorld, Quaternion.identity);
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    Debug.Log(mousePositionInWorld);
+        //    //Instantiate(Soldier, mousePositionInWorld, Quaternion.identity);
 
-        }
+        //}
 
     }
 
@@ -39,7 +39,8 @@ public class getMouse2D : MonoBehaviour {
 
         mouseXY.x = mousePositionInWorld.x;
         mouseXY.y = mousePositionInWorld.y;
-        fsm.FsmVariables.GetFsmFloat("mouseX").Value = mouseXY.x;
-        fsm.FsmVariables.GetFsmFloat("mouseY").Value = mouseXY.y;
+        //fsm.FsmVariables.GetFsmFloat("mouseX").Value = mouseXY.x;
+        //fsm.FsmVariables.GetFsmFloat("mouseY").Value = mouseXY.y;
+        fsm.FsmVariables.GetFsmVector3("touchPosition").Value = mousePositionInWorld;
     }
 }
