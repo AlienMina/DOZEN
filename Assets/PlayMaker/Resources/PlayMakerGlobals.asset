@@ -22,11 +22,23 @@ MonoBehaviour:
       networkSync: 0
       value: 0
     - useVariable: 1
+      name: haveKey
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
       name: isGround
       tooltip: 
       showInInspector: 0
       networkSync: 0
       value: 1
+    - useVariable: 1
+      name: killTestEnemy
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
     - useVariable: 1
       name: setPosition
       tooltip: 
@@ -77,7 +89,7 @@ MonoBehaviour:
     enumVariables: []
     categories:
     - 
-    variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
+    variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   events:
   - EASYTOUCH / SCENE / NONE
   - EASYTOUCH / OWNER / NONE
