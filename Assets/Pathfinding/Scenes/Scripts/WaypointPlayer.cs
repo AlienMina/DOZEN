@@ -30,7 +30,8 @@ public class WaypointPlayer : Pathfinding {
             //Call minimap
             Ray ray = Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
             RaycastHit hit;
-
+            Debug.Log("weeeee");
+            Debug.Log(ray);
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
                 FindPath(transform.position, hit.point);
