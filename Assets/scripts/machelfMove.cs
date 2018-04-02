@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.AI;
 
-public class playerMove : MonoBehaviour {
+public class machelfMove : MonoBehaviour {
 
     Vector3 screenPosition;
     Vector3 mousePositionOnScreen;
@@ -41,9 +41,9 @@ public class playerMove : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 1000))
+            if (Physics.Raycast(ray, out hit, 1000) )
             {
-                if (GameContent.isDOZEN)
+                if (GameContent.isDOZEN == false)
                 {
                     Debug.Log(hit.point);
                     test.x = hit.point.x;
@@ -51,7 +51,7 @@ public class playerMove : MonoBehaviour {
                     test.z = zAxis;
                     agent.destination = test;
                 }
-
+                
             }
         }
     }
