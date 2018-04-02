@@ -1,12 +1,15 @@
 fileFormatVersion: 2
-guid: 1e6aedeab6b144f46ae5d5ccc3a0645c
-timeCreated: 1522040752
+guid: 15d144a58db60f647b67bdd2e29b51d3
+timeCreated: 1522667084
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: "\u602A\u7269\u79FB\u52A8(\u52A8\u753B\uFF09_0"
-    21300002: "\u602A\u7269\u79FB\u52A8(\u52A8\u753B\uFF09_1"
-    21300004: "\u602A\u7269\u79FB\u52A8(\u52A8\u753B\uFF09_2"
+    21300000: "\u602A\u7269\u653B\u51FB\uFF08\u591A\u5E27\uFF09_0"
+    21300002: "\u602A\u7269\u653B\u51FB\uFF08\u591A\u5E27\uFF09_1"
+    21300004: "\u602A\u7269\u653B\u51FB\uFF08\u591A\u5E27\uFF09_2"
+    21300006: "\u602A\u7269\u653B\u51FB\uFF08\u591A\u5E27\uFF09_3"
+    21300008: "\u602A\u7269\u653B\u51FB\uFF08\u591A\u5E27\uFF09_4"
+    21300010: "\u602A\u7269\u653B\u51FB\uFF08\u591A\u5E27\uFF09_5"
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -103,43 +106,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u602A\u7269\u79FB\u52A8(\u52A8\u753B\uFF09_0"
+      name: "\u602A\u7269\u653B\u51FB\uFF08\u591A\u5E27\uFF09_0"
       rect:
         serializedVersion: 2
-        x: 19
-        y: 54
-        width: 504
-        height: 382
+        x: 98
+        y: 50
+        width: 1139
+        height: 743
       alignment: 9
-      pivot: {x: 0.22565839, y: 0.56946677}
+      pivot: {x: 0.25794703, y: 0.5265045}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: "\u602A\u7269\u79FB\u52A8(\u52A8\u753B\uFF09_1"
+      name: "\u602A\u7269\u653B\u51FB\uFF08\u591A\u5E27\uFF09_1"
       rect:
         serializedVersion: 2
-        x: 605
-        y: 88
-        width: 498
-        height: 353
+        x: 1309
+        y: 56
+        width: 1140
+        height: 747
       alignment: 9
-      pivot: {x: 0.2363758, y: 0.5276956}
+      pivot: {x: 0.2538407, y: 0.5329532}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: "\u602A\u7269\u79FB\u52A8(\u52A8\u753B\uFF09_2"
+      name: "\u602A\u7269\u653B\u51FB\uFF08\u591A\u5E27\uFF09_2"
       rect:
         serializedVersion: 2
-        x: 1180
-        y: 36
-        width: 492
-        height: 417
+        x: 2524
+        y: 24
+        width: 1206
+        height: 783
       alignment: 9
-      pivot: {x: 0.24451552, y: 0.6004783}
+      pivot: {x: 0.2550652, y: 0.5691637}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "\u602A\u7269\u653B\u51FB\uFF08\u591A\u5E27\uFF09_3"
+      rect:
+        serializedVersion: 2
+        x: 3834
+        y: 312
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "\u602A\u7269\u653B\u51FB\uFF08\u591A\u5E27\uFF09_4"
+      rect:
+        serializedVersion: 2
+        x: 3850
+        y: 23
+        width: 1177
+        height: 788
+      alignment: 9
+      pivot: {x: 0.21975063, y: 0.58746773}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "\u602A\u7269\u653B\u51FB\uFF08\u591A\u5E27\uFF09_5"
+      rect:
+        serializedVersion: 2
+        x: 5185
+        y: 0
+        width: 1112
+        height: 807
+      alignment: 9
+      pivot: {x: 0.23878798, y: 0.6098108}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

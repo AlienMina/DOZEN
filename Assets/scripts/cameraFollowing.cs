@@ -21,6 +21,7 @@ public class cameraFollowing : MonoBehaviour {
 	　　  void Update () {  
 		　　      Vector2 newPos2D = Vector2.zero;
         //Mathf.SmoothDamp平滑阻尼，这个函数用于描述随着时间的推移逐渐改变一个值到期望值，这里用于随着时间的推移（0.5秒）让摄像机跟着角色的移动而移动  
+
         //角色判断
         if (GameContent.isDOZEN)
         {
