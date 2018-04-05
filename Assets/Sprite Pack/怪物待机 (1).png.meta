@@ -1,13 +1,14 @@
 fileFormatVersion: 2
-guid: 8770833e4b24194408a8323826adc565
-timeCreated: 1522667091
+guid: e30fa5dbd75bb8a448689783f6f5131c
+timeCreated: 1522747421
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: "\u7CBE\u7075\u98DE\uFF08\u591A\u5E27\uFF09_0"
-    21300002: "\u7CBE\u7075\u98DE\uFF08\u591A\u5E27\uFF09_1"
-    21300004: "\u7CBE\u7075\u98DE\uFF08\u591A\u5E27\uFF09_2"
-    21300006: "\u7CBE\u7075\u98DE\uFF08\u591A\u5E27\uFF09_3"
+    21300000: "\u602A\u7269\u5F85\u673A (1)_0"
+    21300002: "\u602A\u7269\u5F85\u673A (1)_1"
+    21300004: "\u602A\u7269\u5F85\u673A (1)_2"
+    21300006: "\u602A\u7269\u5F85\u673A (1)_3"
+    21300008: "\u602A\u7269\u5F85\u673A (1)_4"
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -104,57 +105,71 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u7CBE\u7075\u98DE\uFF08\u591A\u5E27\uFF09_0"
+      name: "\u602A\u7269\u5F85\u673A (1)_0"
       rect:
         serializedVersion: 2
-        x: 349
-        y: 236
-        width: 355
-        height: 743
+        x: 14
+        y: 822
+        width: 939
+        height: 697
       alignment: 9
-      pivot: {x: 0.6573686, y: 0.4749369}
+      pivot: {x: 0.30581456, y: 0.4332069}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: "\u7CBE\u7075\u98DE\uFF08\u591A\u5E27\uFF09_1"
+      name: "\u602A\u7269\u5F85\u673A (1)_1"
       rect:
         serializedVersion: 2
-        x: 1230
-        y: 201
-        width: 326
-        height: 754
+        x: 978
+        y: 870
+        width: 993
+        height: 657
       alignment: 9
-      pivot: {x: 0.7094498, y: 0.45472115}
+      pivot: {x: 0.292933, y: 0.39371037}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: "\u7CBE\u7075\u98DE\uFF08\u591A\u5E27\uFF09_2"
+      name: "\u602A\u7269\u5F85\u673A (1)_2"
       rect:
         serializedVersion: 2
-        x: 2230
-        y: 170
-        width: 308
-        height: 748
+        x: 2003
+        y: 866
+        width: 986
+        height: 668
       alignment: 9
-      pivot: {x: 0.7317671, y: 0.45850718}
+      pivot: {x: 0.30326673, y: 0.40126833}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: "\u7CBE\u7075\u98DE\uFF08\u591A\u5E27\uFF09_3"
+      name: "\u602A\u7269\u5F85\u673A (1)_3"
       rect:
         serializedVersion: 2
-        x: 3127
-        y: 170
-        width: 339
-        height: 701
+        x: 3041
+        y: 921
+        width: 976
+        height: 613
       alignment: 9
-      pivot: {x: 0.67395127, y: 0.49557266}
+      pivot: {x: 0.30125126, y: 0.32279274}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "\u602A\u7269\u5F85\u673A (1)_4"
+      rect:
+        serializedVersion: 2
+        x: 4069
+        y: 928
+        width: 931
+        height: 621
+      alignment: 9
+      pivot: {x: 0.31248006, y: 0.3188282}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
