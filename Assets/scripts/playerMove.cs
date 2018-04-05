@@ -14,7 +14,7 @@ public class playerMove : MonoBehaviour {
 
     private NavMeshAgent agent;
     private Vector3 test;
-    public float zAxis=0;
+    //public float zAxis=0;
 
     void Awake()
     {
@@ -48,7 +48,7 @@ public class playerMove : MonoBehaviour {
                     Debug.Log(hit.point);
                     test.x = hit.point.x;
                     test.y = hit.point.y;
-                    test.z = zAxis;
+                    test.z = this.transform.position.z;
                     agent.destination = test;
                 }
 
