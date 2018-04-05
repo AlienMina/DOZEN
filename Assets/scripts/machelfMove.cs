@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 public class machelfMove : MonoBehaviour {
 
@@ -49,7 +50,14 @@ public class machelfMove : MonoBehaviour {
                     test.x = hit.point.x;
                     test.y = hit.point.y;
                     test.z = zAxis;
-                    agent.destination = test;
+                    if (EventSystem.current.IsPointerOverGameObject())
+                    {
+                        Debug.Log("point on UI");
+                    }
+                    else
+                    {
+                        agent.destination = test;
+                    }
                 }
                 
             }
