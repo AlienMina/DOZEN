@@ -56,6 +56,11 @@ public class playerMove : MonoBehaviour {
                     }
                     else
                     {
+                        Debug.Log(test);
+                        if (GameContent.isHidden)
+                        {
+                            GameContent.isHidden = false;//当主角移动的时候，解除隐藏
+                        }
                         agent.destination = test;
                     }
                     
@@ -63,5 +68,16 @@ public class playerMove : MonoBehaviour {
 
             }
         }
+    }
+
+    public void hideMove(Vector3 hideHere)
+    {
+        Vector3 i;
+        i.x = hideHere.x;
+        i.y = hideHere.y;
+        i.z = this.transform.position.z;
+        agent.destination = i;
+        Debug.Log("hide place " + i);
+        Debug.Log("reday to hide.");
     }
 }
