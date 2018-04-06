@@ -133,7 +133,7 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 0101010101
+        actionEnabled: 0101000101
         actionIsOpen: 0101010101
         actionStartIndex: 00000000030000000a0000001200000015000000
         actionHashCodes: 786b39025552ad05f6e5be0327fbe10388611604

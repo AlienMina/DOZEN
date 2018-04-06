@@ -49,7 +49,8 @@ public class playerMove : MonoBehaviour {
                     Debug.Log(hit.point);
                     test.x = hit.point.x;
                     test.y = hit.point.y;
-                    test.z = this.transform.position.z;
+                    test.z = hit.point.z;//测试
+                    //test.z = this.transform.position.z;
                     if (EventSystem.current.IsPointerOverGameObject())
                     {
                         Debug.Log("point on UI");
@@ -70,7 +71,7 @@ public class playerMove : MonoBehaviour {
         }
     }
 
-    public void hideMove(Vector3 hideHere)
+    public void hideMove(Vector3 hideHere)//走到隐藏点
     {
         Vector3 i;
         i.x = hideHere.x;
@@ -78,6 +79,11 @@ public class playerMove : MonoBehaviour {
         i.z = this.transform.position.z;
         agent.destination = i;
         Debug.Log("hide place " + i);
-        Debug.Log("reday to hide.");
+        Debug.Log("hide.");
+    }
+
+    public void stopImmiediately()
+    {
+        agent.destination = this.transform.position;
     }
 }
