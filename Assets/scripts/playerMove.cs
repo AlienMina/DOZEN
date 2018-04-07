@@ -62,6 +62,8 @@ public class playerMove : MonoBehaviour {
                         {
                             GameContent.isHidden = false;//当主角移动的时候，解除隐藏
                         }
+                        //agent.Resume();
+                        agent.enabled = true;
                         agent.destination = test;
                     }
                     
@@ -77,6 +79,8 @@ public class playerMove : MonoBehaviour {
         i.x = hideHere.x;
         i.y = hideHere.y;
         i.z = this.transform.position.z;
+        //agent.Resume();
+        agent.enabled = true;
         agent.destination = i;
         Debug.Log("hide place " + i);
         Debug.Log("hide.");
@@ -84,6 +88,8 @@ public class playerMove : MonoBehaviour {
 
     public void stopImmiediately()
     {
-        agent.destination = this.transform.position;
+        //agent.destination = this.transform.position;
+        //agent.Stop();
+        agent.enabled = false;
     }
 }

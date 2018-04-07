@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23250068306253570}
   - component: {fileID: 114922540607741140}
   - component: {fileID: 61562540137310332}
+  - component: {fileID: 114095235836800266}
   m_Layer: 0
   m_Name: Enemy2bKilled
   m_TagString: Enemy
@@ -186,6 +187,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.1896086, y: 4.57253}
   m_EdgeRadius: 0
+--- !u!114 &114095235836800266
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1255068852527416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -501658088, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetFSMs:
+  - {fileID: 114922540607741140}
 --- !u!114 &114900862220614932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -661,7 +675,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -694,7 +708,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!114 &114922540607741140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1068,7 +1082,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!212 &212288209086664874
 SpriteRenderer:
   m_ObjectHideFlags: 1
