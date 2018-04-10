@@ -51,12 +51,12 @@ public class playerMove : MonoBehaviour {
                     test.y = hit.point.y;
                     test.z = hit.point.z;//测试
                     //test.z = this.transform.position.z;
-                    if (EventSystem.current.IsPointerOverGameObject())
-                    {
-                        Debug.Log("point on UI");
-                    }
-                    else
-                    {
+                    //if (EventSystem.current.IsPointerOverGameObject())
+//{
+                      //  Debug.Log("point on UI");
+                    //}
+                    //else
+                    //{
                         Debug.Log(test);
                         if (GameContent.isHidden)
                         {
@@ -65,7 +65,7 @@ public class playerMove : MonoBehaviour {
                         //agent.Resume();
                         agent.enabled = true;
                         agent.destination = test;
-                    }
+                    //}
                     
                 }
 
