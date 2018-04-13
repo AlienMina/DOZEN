@@ -6,6 +6,7 @@ public class playerHiddenState : MonoBehaviour {
 
     public GameCon GameContent;
     SpriteRenderer r;
+    
     // Use this for initialization
     void Start () {
         r = gameObject.GetComponent<SpriteRenderer>();
@@ -16,10 +17,12 @@ public class playerHiddenState : MonoBehaviour {
         if (GameContent.isHidden)
         {
             r.color = new Color(1f, 1f, 1f, 0.5f);
+            
         }
         else
         {
             r.color = new Color(1f, 1f, 1f, 1f);
+           
         }
 	}
 }

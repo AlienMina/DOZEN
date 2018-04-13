@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
 
+
 public class playerMove : MonoBehaviour {
+
+    public static playerMove Instance = new playerMove();
 
     Vector3 screenPosition;
     Vector3 mousePositionOnScreen;
@@ -49,14 +53,18 @@ public class playerMove : MonoBehaviour {
                     Debug.Log(hit.point);
                     test.x = hit.point.x;
                     test.y = hit.point.y;
-                    test.z = hit.point.z;//测试
-                    //test.z = this.transform.position.z;
-                    //if (EventSystem.current.IsPointerOverGameObject())
-//{
-                      //  Debug.Log("point on UI");
-                    //}
-                    //else
+                    //test.z = hit.point.z;//测试
+                    test.z = this.transform.position.z;
+                    if (EventSystem.current.IsPointerOverGameObject())
+                   {
+                    Debug.Log("point on UI");
+                    }
+                   // if (playerMove.Instance.IsPointerOverUIObject(Input.GetTouch(0).position))
                     //{
+                       // Debug.Log("方法二： 点击在UI 上");
+                    //}
+                    else
+                    {
                         Debug.Log(test);
                         if (GameContent.isHidden)
                         {
@@ -65,7 +73,7 @@ public class playerMove : MonoBehaviour {
                         //agent.Resume();
                         agent.enabled = true;
                         agent.destination = test;
-                    //}
+                    }
                     
                 }
 
@@ -91,5 +99,19 @@ public class playerMove : MonoBehaviour {
         //agent.destination = this.transform.position;
         //agent.Stop();
         agent.enabled = false;
+    }
+
+    public bool IsPointerOverUIObject(Vector2 screenPosition)
+    {
+        //实例化点击事件
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        //将点击位置的屏幕坐标赋值给点击事件
+        eventDataCurrentPosition.position = new Vector2(screenPosition.x, screenPosition.y);
+
+        List<RaycastResult> results = new List<RaycastResult>();
+        //向点击处发射射线
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+
+        return results.Count > 0;
     }
 }
