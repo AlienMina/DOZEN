@@ -10,6 +10,8 @@ TagManager:
   - item
   - door
   - mark
+  - Enemy
+  - houseTag
   layers:
   - Default
   - TransparentFX

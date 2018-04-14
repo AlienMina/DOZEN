@@ -29,6 +29,6 @@ public class GameCon : MonoBehaviour {
     public void RestartLevel()
     {
         string restartScene= SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(restartScene);
+        SceneManager.LoadScene(restartScene, LoadSceneMode.Single);
     }
 }

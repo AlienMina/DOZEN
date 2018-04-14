@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
 
 public class machelfMove : MonoBehaviour {
+
+    public static machelfMove Instance = new machelfMove();
 
     Vector3 screenPosition;
     Vector3 mousePositionOnScreen;
@@ -50,9 +53,13 @@ public class machelfMove : MonoBehaviour {
                     test.x = hit.point.x;
                     test.y = hit.point.y;
                     test.z = zAxis;
-                    if (EventSystem.current.IsPointerOverGameObject())
+                    //if (EventSystem.current.IsPointerOverGameObject())
+                    //{
+                    //    Debug.Log("point on UI");
+                    //}
+                    if (machelfMove.Instance.IsPointerOverUIObject(Input.GetTouch(0).position))
                     {
-                        Debug.Log("point on UI");
+                        Debug.Log("方法二： 点击在UI 上");
                     }
                     else
                     {
@@ -62,5 +69,20 @@ public class machelfMove : MonoBehaviour {
                 
             }
         }
+    }
+
+
+    public bool IsPointerOverUIObject(Vector2 screenPosition)
+    {
+        //实例化点击事件
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        //将点击位置的屏幕坐标赋值给点击事件
+        eventDataCurrentPosition.position = new Vector2(screenPosition.x, screenPosition.y);
+
+        List<RaycastResult> results = new List<RaycastResult>();
+        //向点击处发射射线
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+
+        return results.Count > 0;
     }
 }
