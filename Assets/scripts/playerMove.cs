@@ -50,7 +50,7 @@ public class playerMove : MonoBehaviour {
             {
                 if (GameContent.isDOZEN)
                 {
-                    Debug.Log(hit.point);
+                    //Debug.Log(hit.point);
                     test.x = hit.point.x;
                     test.y = hit.point.y;
                     //test.z = hit.point.z;//测试
@@ -66,7 +66,7 @@ public class playerMove : MonoBehaviour {
                     //}
                     else
                     {
-                        Debug.Log(test);
+                        //Debug.Log(test);
                         if (GameContent.isHidden)
                         {
                             GameContent.isHidden = false;//当主角移动的时候，解除隐藏

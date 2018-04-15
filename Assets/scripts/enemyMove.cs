@@ -19,11 +19,14 @@ public class enemyMove : MonoBehaviour {
 
 
     bool chasingVoice = false;//追声音
-    bool chasingPlayer = false;//追主角
+    public bool chasingPlayer = false;//追主角
+    public bool isChasing = false;//正在追……用于chasingPlayer内部的判断
+
 
     private NavMeshAgent agent;//寻路用的
 
     Vector3 voicePlace;
+    Vector3 playerPlace;
     bool setVoicePlace = false;//追声音的时候，用于判定是否定位，如果已经做了定位，打开它，当走到声源位置或者中间就撞到了主角，关闭它
 
 
@@ -87,6 +90,30 @@ public class enemyMove : MonoBehaviour {
     //追逐玩家
     void ChasingPlayer()
     {
+        if (!GameContent.isHidden)//在主角没有藏起来的状态下
+        {
+            //停止追声音的行为
+            chasingVoice = false;
+            setVoicePlace = false;
+
+            playerPlace = gameplayer.GetComponent<Transform>().position;
+            //检测主角的位置
+            if (!isChasing)//主角已经不在视野范围内了
+            {
+                string enemyHouseName = houseTag.name;
+                string playerHouseName = gameplayer.GetComponentInChildren<playerHouseTag>().playerHouseName;
+                Debug.Log("enemyHouseName " + enemyHouseName + " playerHouseName " + playerHouseName);
+                if (enemyHouseName != playerHouseName)//敌人和主角不在同一房间
+                {
+                    chasingPlayer = false;
+                    agent.destination = place1;//返回初始地点
+                }
+            }
+            else
+            {
+                agent.destination = playerPlace;
+            }
+        }
 
     }
 

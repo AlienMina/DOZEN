@@ -25,6 +25,7 @@ public class houseController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //这里需要加东西
         if (collision.tag == "Player")
         {
             if (houseBetweens.Length > 0)
