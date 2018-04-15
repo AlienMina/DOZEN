@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class enemyView : MonoBehaviour {
 
+    public GameCon GameContent;
     bool chasingPlayer;
     bool isChasing;
 	// Use this for initialization
@@ -19,13 +20,15 @@ public class enemyView : MonoBehaviour {
     {
         if (collision.tag == "Player")
         {
-            chasingPlayer = true;
-            isChasing = true;
-            this.GetComponentInParent<enemyMove>().chasingPlayer=chasingPlayer;
-            this.GetComponentInParent<enemyMove>().isChasing= isChasing;
-            Debug.Log(this.GetComponentInParent<enemyMove>().chasingPlayer);
-            //Time.timeScale = 0;
-            
+            if (!GameContent.isHidden)
+            {
+                chasingPlayer = true;
+                isChasing = true;
+                this.GetComponentInParent<enemyMove>().chasingPlayer = chasingPlayer;
+                this.GetComponentInParent<enemyMove>().isChasing = isChasing;
+                Debug.Log(this.GetComponentInParent<enemyMove>().chasingPlayer);
+                //Time.timeScale = 0;
+            }
         }
     }
 

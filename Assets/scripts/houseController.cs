@@ -6,7 +6,7 @@ using UnityEngine;
 /// </summary>
 public class houseController : MonoBehaviour
 {
-
+    public GameCon GameContent;
     public GameObject[] houseBetweens;
     public bool hearPlayer = false;//这个房间内是否听到了主角，默认都是没有的
 
@@ -20,20 +20,33 @@ public class houseController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //这里需要加东西
-        if (collision.tag == "Player")
+        if (GameContent.isHidden)
         {
             if (houseBetweens.Length > 0)
             {
                 for (int i = 0; i < houseBetweens.Length; i++)
                 {
-                    houseBetweens[i].GetComponent<houseController>().hearPlayer = true;
-                    Debug.Log("I hear you!"+houseBetweens[i].name);
+                    houseBetweens[i].GetComponent<houseController>().hearPlayer = false;
+                    //Debug.Log("I don't hear you any more!" + houseBetweens[i].name);
+                }
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        //这里需要加东西
+        if (!GameContent.isHidden)
+        {
+            if (collision.tag == "Player")
+            {
+                if (houseBetweens.Length > 0)
+                {
+                    for (int i = 0; i < houseBetweens.Length; i++)
+                    {
+                        houseBetweens[i].GetComponent<houseController>().hearPlayer = true;
+                        //Debug.Log("I hear you!" + houseBetweens[i].name);
+                    }
                 }
             }
         }
@@ -48,7 +61,7 @@ public class houseController : MonoBehaviour
                 for(int i = 0; i < houseBetweens.Length; i++)
                 {
                     houseBetweens[i].GetComponent<houseController>().hearPlayer = false;
-                    Debug.Log("I don't hear you any more!" + houseBetweens[i].name);
+                    //Debug.Log("I don't hear you any more!" + houseBetweens[i].name);
                 }
             }
         }

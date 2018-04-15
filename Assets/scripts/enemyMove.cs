@@ -8,6 +8,8 @@ public class enemyMove : MonoBehaviour {
     public GameCon GameContent;
     GameObject houseTag;//这个是敌人检测到的自己所在的地块
 
+    public AudioSource audios;
+
     public GameObject enemyAnima;
     public GameObject gameplayer;
 
@@ -49,6 +51,7 @@ public class enemyMove : MonoBehaviour {
         //优先进行判断，追主角优先度>追声音>巡逻，当没有追玩家也没有追声音的时候，进行检测【同时由playmaker进行巡逻】
         if (chasingPlayer)
         {
+            audios.Play();
             ChasingPlayer();
         }
         else if(chasingVoice){
@@ -105,6 +108,7 @@ public class enemyMove : MonoBehaviour {
                 Debug.Log("enemyHouseName " + enemyHouseName + " playerHouseName " + playerHouseName);
                 if (enemyHouseName != playerHouseName)//敌人和主角不在同一房间
                 {
+                    audios.Stop();
                     chasingPlayer = false;
                     agent.destination = place1;//返回初始地点
                 }
@@ -113,6 +117,14 @@ public class enemyMove : MonoBehaviour {
             {
                 agent.destination = playerPlace;
             }
+        }
+        else
+        {
+            audios.Stop();
+            chasingPlayer = false;
+            chasingVoice = false;
+            setVoicePlace = false;
+            agent.destination = place1;
         }
 
     }

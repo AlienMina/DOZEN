@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class changeCharacter : MonoBehaviour {
     public GameCon GameContent;
+    public AudioSource audios;
 	// Use this for initialization
 	void Start () {
 		
@@ -21,11 +22,13 @@ public class changeCharacter : MonoBehaviour {
         {
             GameContent.isDOZEN = false;
             Debug.Log("isDozen " + GameContent.isDOZEN);
+            audios.Play();
         }
         else
         {
             GameContent.isDOZEN = true;
             Debug.Log("isDozen " + GameContent.isDOZEN);
+            audios.Play();
         }
     }
 }

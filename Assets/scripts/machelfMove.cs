@@ -53,14 +53,18 @@ public class machelfMove : MonoBehaviour {
                     test.x = hit.point.x;
                     test.y = hit.point.y;
                     test.z = zAxis;
-                    //if (EventSystem.current.IsPointerOverGameObject())
-                    //{
-                    //    Debug.Log("point on UI");
-                    //}
+                    /*
+                     * if (EventSystem.current.IsPointerOverGameObject())
+                    {
+                        Debug.Log("point on UI");
+                    }
+
+                    */
                     if (machelfMove.Instance.IsPointerOverUIObject(Input.GetTouch(0).position))
                     {
                         Debug.Log("方法二： 点击在UI 上");
                     }
+                    
                     else
                     {
                         agent.destination = test;

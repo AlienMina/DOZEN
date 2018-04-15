@@ -12,6 +12,7 @@ TagManager:
   - mark
   - Enemy
   - houseTag
+  - machElf
   layers:
   - Default
   - TransparentFX
