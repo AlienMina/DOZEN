@@ -17,20 +17,24 @@ public class enemyMove : MonoBehaviour {
     public GameObject place2;//巡逻的终点，请拖一个Object
     //Vector3 enemyPlace;
 
-    public float between = 0.05f;
+    public float between = 0.1f;
 
 
     bool chasingVoice = false;//追声音
     public bool chasingPlayer = false;//追主角
     public bool isChasing = false;//正在追……用于chasingPlayer内部的判断
+    public bool isAttracted = false;//追小精灵
+    
 
 
     private NavMeshAgent agent;//寻路用的
 
     Vector3 voicePlace;
     Vector3 playerPlace;
-    bool setVoicePlace = false;//追声音的时候，用于判定是否定位，如果已经做了定位，打开它，当走到声源位置或者中间就撞到了主角，关闭它
+    public Vector3 attractedPlace;//追逐小精灵时候的定位点
 
+    bool setVoicePlace = false;//追声音的时候，用于判定是否定位，如果已经做了定位，打开它，当走到声源位置或者中间就撞到了主角，关闭它
+   public  bool attractedSet = false;//用于小精灵吸引内部的判断
 
     // Use this for initialization
     void Start () {
@@ -45,14 +49,21 @@ public class enemyMove : MonoBehaviour {
         //if (!chasingPlayer && !chasingVoice)
         //StartCoroutine(patrol());
         //enemyAnima.GetComponent<houseController>().hearPlayer
-        houseTag = enemyAnima.GetComponent<getHouseTag>().houseBetween;
+        if (enemyAnima != null)
+        {
+            houseTag = enemyAnima.GetComponent<getHouseTag>().houseBetween;
+        }
         //Debug.Log(houseTag);
 
-        //优先进行判断，追主角优先度>追声音>巡逻，当没有追玩家也没有追声音的时候，进行检测【同时由playmaker进行巡逻】
+        //优先进行判断，追主角优先度>小精灵声音>追主角声音>巡逻，当没有追玩家也没有追声音的时候，进行检测【同时由playmaker进行巡逻】
         if (chasingPlayer)
         {
             audios.Play();
             ChasingPlayer();
+        }
+        else if (isAttracted)//小精灵的声音优先级大于主角的声音
+        {
+            StartCoroutine(attractedByMachelf());
         }
         else if(chasingVoice){
             StartCoroutine(ChasingVoice());
@@ -154,6 +165,50 @@ public class enemyMove : MonoBehaviour {
                 Debug.Log("chasing finished.");
             }
         }
+    }
+
+    //被小精灵吸引
+    public IEnumerator attractedByMachelf()
+    {
+        agent.destination = attractedPlace;
+        yield return new WaitForSeconds(1);
+        if(Mathf.Abs(agent.remainingDistance) < between)
+        {
+            yield return new WaitForSeconds(1);
+            //Debug.Log(this.GetComponent<Transform>().position);
+            isAttracted = false;
+            agent.destination = place1;
+        }
+        /*
+        if (!attractedSet)
+        {
+            //如果还没有设置小精灵的位置
+            attractedPlace = GameObject.Find("MachElfT-10").GetComponent<Transform>().position;
+            agent.destination = attractedPlace;
+            attractedSet = true;
+            Debug.Log("attracted Place: " + attractedPlace+this.name);
+        }
+        else//如果已经设置了声源点
+        {
+            //截取一段时间内的敌人的位置
+            Vector3 enemPlace = this.GetComponent<Transform>().position;
+            yield return new WaitForSeconds(2);
+            Vector3 enemplace2 = this.GetComponent<Transform>().position;
+
+            //如果已经到了声源点
+            if (enemPlace.x-enemplace2.x<=between&&enemPlace.y-enemplace2.y<=between)
+                /*aattractedPlace.x - this.GetComponent<Transform>().position.x <= 5 && attractedPlace.y - this.GetComponent<Transform>().position.y <= 5
+            {
+                
+                Debug.Log("this.place " + this.GetComponent<Transform>().position);
+                attractedSet = false;
+                isAttracted = false;
+                yield return new WaitForSeconds(1);
+                agent.destination = place1;                
+                Debug.Log("finish being attracted");
+                //停顿1s后，结束吸引状态，返回原处
+            }
+        } */
     }
 
     //IEnumerator patrol() {       

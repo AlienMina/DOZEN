@@ -30,6 +30,7 @@ public class enemyView : MonoBehaviour {
                 //Time.timeScale = 0;
             }
         }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -39,6 +40,18 @@ public class enemyView : MonoBehaviour {
             isChasing = false;
             this.GetComponentInParent<enemyMove>().isChasing = isChasing;
             Debug.Log(this.GetComponentInParent<enemyMove>().isChasing + " is not chasing?");
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "machElf")
+        {
+            Debug.Log("seen machElf.");
+            this.GetComponentInParent<enemyMove>().isAttracted = false;
+            this.GetComponentInParent<enemyMove>().StopCoroutine(this.GetComponentInParent<enemyMove>().attractedByMachelf());
+            this.GetComponentInParent<enemyMove>().patrol2place1();
+
         }
     }
 }
