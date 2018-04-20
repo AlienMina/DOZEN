@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scene/level1.unity
     guid: c7279ced844e62446825d9f10eb13a8c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/test1.unity
     guid: 45a8253b5d01b40408c4019801aa3a73
+  - enabled: 1
+    path: Assets/Scene/txtTest.unity
+    guid: 3b5c31036c1752545baa78b4c3b36b2a

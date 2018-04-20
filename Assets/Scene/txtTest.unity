@@ -492,10 +492,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e35ae50ec7d74e4ca61f328e052535b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  savemode: 1
+  dialogNumInAndroid: 999
   textShown: {fileID: 1931937718}
   diaNum: 1
   dialogText: {fileID: 0}
-  dialogPath: dialog
+  dialogPath: dialog/
   dialogName: testWords.txt
 --- !u!1 &1661735046
 GameObject:
