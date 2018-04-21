@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class buttonMonitor : MonoBehaviour {
     public GameCon GameContent;
-    public GameObject elfAttentionButton;
+    public GameObject[] elfAttentionButton;
+
+    bool isSet = false;
 	// Use this for initialization
 	void Start () {
 		
@@ -14,11 +16,24 @@ public class buttonMonitor : MonoBehaviour {
 	void Update () {
 		if (GameContent.isDOZEN)
         {
-            elfAttentionButton.SetActive(false);
+            for(int i = 0; i < elfAttentionButton.Length; i++)
+            {
+                elfAttentionButton[i].SetActive(false);
+                
+            }
+            isSet = false;
+            
         }
         else
         {
-            elfAttentionButton.SetActive(true);
+            if (!isSet)
+            {
+                for (int i = 0; i < elfAttentionButton.Length; i++)
+                {
+                    elfAttentionButton[i].SetActive(true);
+                }
+                isSet = true;
+            }
         }
 	}
 }

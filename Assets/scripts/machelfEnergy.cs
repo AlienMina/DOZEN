@@ -7,6 +7,11 @@ public class machelfEnergy : MonoBehaviour {
     public int energy = 5;
     public GameObject attr;
 
+    public int whenHide;
+    public bool isEnergyPoint;
+
+    public machelfEnergy whoseEnergy;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -14,7 +19,10 @@ public class machelfEnergy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (isEnergyPoint)
+        {
+            hideEnergyPoint();
+        }
 	}
 
     public void energyDown()
@@ -48,6 +56,17 @@ public class machelfEnergy : MonoBehaviour {
             yield return new WaitForSeconds(0.1f);
             attr.SetActive(false);
 
+        }
+    }
+    /// <summary>
+    /// 这是给噪音能量点显隐用的
+    /// </summary>
+    public void hideEnergyPoint()
+    {
+        if (whoseEnergy.energy <= whenHide)
+        {
+            this.gameObject.SetActive(false);
+            Debug.Log(this.name);
         }
     }
 }

@@ -1511,6 +1511,7 @@ GameObject:
   - component: {fileID: 70313532}
   - component: {fileID: 70313534}
   - component: {fileID: 70313533}
+  - component: {fileID: 70313535}
   m_Layer: 5
   m_Name: energy2
   m_TagString: Untagged
@@ -1569,6 +1570,22 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 70313531}
+--- !u!114 &70313535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 70313531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52bc1d78c1e84c54995f614673188bcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energy: 5
+  attr: {fileID: 0}
+  whenHide: 3
+  isEnergyPoint: 1
+  whoseEnergy: {fileID: 833023571}
 --- !u!1 &73091363
 GameObject:
   m_ObjectHideFlags: 0
@@ -8138,8 +8155,9 @@ GameObject:
   - component: {fileID: 185544309}
   - component: {fileID: 185544311}
   - component: {fileID: 185544310}
+  - component: {fileID: 185544312}
   m_Layer: 5
-  m_Name: energy2 (2)
+  m_Name: energy4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8196,6 +8214,22 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 185544308}
+--- !u!114 &185544312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 185544308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52bc1d78c1e84c54995f614673188bcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energy: 5
+  attr: {fileID: 0}
+  whenHide: 1
+  isEnergyPoint: 1
+  whoseEnergy: {fileID: 833023571}
 --- !u!1 &188397263
 GameObject:
   m_ObjectHideFlags: 0
@@ -19033,6 +19067,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energy: 5
   attr: {fileID: 194927805}
+  whenHide: 0
+  isEnergyPoint: 0
+  whoseEnergy: {fileID: 0}
 --- !u!50 &833023572
 Rigidbody2D:
   serializedVersion: 4
@@ -19962,7 +19999,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameContent: {fileID: 1071756839}
-  elfAttentionButton: {fileID: 2013516660}
+  elfAttentionButton:
+  - {fileID: 2013516660}
+  - {fileID: 2125123492}
+  - {fileID: 70313531}
+  - {fileID: 1364597667}
+  - {fileID: 185544308}
+  - {fileID: 1592975097}
 --- !u!4 &845608325
 Transform:
   m_ObjectHideFlags: 0
@@ -28038,7 +28081,7 @@ RectTransform:
   m_Children:
   - {fileID: 2061758894}
   m_Father: {fileID: 1497922924}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -29950,8 +29993,9 @@ GameObject:
   - component: {fileID: 1364597668}
   - component: {fileID: 1364597670}
   - component: {fileID: 1364597669}
+  - component: {fileID: 1364597671}
   m_Layer: 5
-  m_Name: energy2 (1)
+  m_Name: energy3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30008,6 +30052,22 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1364597667}
+--- !u!114 &1364597671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1364597667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52bc1d78c1e84c54995f614673188bcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energy: 5
+  attr: {fileID: 0}
+  whenHide: 2
+  isEnergyPoint: 1
+  whoseEnergy: {fileID: 833023571}
 --- !u!1 &1371139721
 GameObject:
   m_ObjectHideFlags: 0
@@ -32075,8 +32135,8 @@ RectTransform:
   - {fileID: 259801989}
   - {fileID: 1608978705}
   - {fileID: 1885043196}
-  - {fileID: 2125123493}
   - {fileID: 1291707731}
+  - {fileID: 2125123493}
   - {fileID: 70313532}
   - {fileID: 1364597668}
   - {fileID: 185544309}
@@ -35406,8 +35466,9 @@ GameObject:
   - component: {fileID: 1592975098}
   - component: {fileID: 1592975100}
   - component: {fileID: 1592975099}
+  - component: {fileID: 1592975101}
   m_Layer: 5
-  m_Name: energy2 (3)
+  m_Name: energy5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35464,6 +35525,22 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1592975097}
+--- !u!114 &1592975101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1592975097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52bc1d78c1e84c54995f614673188bcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energy: 5
+  attr: {fileID: 0}
+  whenHide: 0
+  isEnergyPoint: 1
+  whoseEnergy: {fileID: 833023571}
 --- !u!1 &1597156717
 GameObject:
   m_ObjectHideFlags: 0
@@ -48882,6 +48959,7 @@ GameObject:
   - component: {fileID: 2125123493}
   - component: {fileID: 2125123495}
   - component: {fileID: 2125123494}
+  - component: {fileID: 2125123496}
   m_Layer: 5
   m_Name: energy1
   m_TagString: Untagged
@@ -48900,7 +48978,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1497922924}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -48940,6 +49018,22 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2125123492}
+--- !u!114 &2125123496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2125123492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52bc1d78c1e84c54995f614673188bcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energy: 5
+  attr: {fileID: 0}
+  whenHide: 4
+  isEnergyPoint: 1
+  whoseEnergy: {fileID: 833023571}
 --- !u!1 &2132653627
 GameObject:
   m_ObjectHideFlags: 0
