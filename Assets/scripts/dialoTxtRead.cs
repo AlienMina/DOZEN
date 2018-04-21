@@ -16,7 +16,7 @@ public class dialoTxtRead : MonoBehaviour {
 
     //文本中每行的内容
     ArrayList dialogArray;
-    string[] dialogArrayAndroid;
+    public string[] dialogArrayAndroid;
     public Text textShown;
 
     public int diaNum;
@@ -29,7 +29,7 @@ public class dialoTxtRead : MonoBehaviour {
 
     string androidDialog;
 
-    public TextAsset dialogText;
+    //public TextAsset dialogText;
 
     public string dialogPath;
     public string dialogName;
@@ -45,7 +45,7 @@ public class dialoTxtRead : MonoBehaviour {
         {
             dialogArrayAndroid = androidLoadfile();
         }
-        Debug.Log(dialogArray);
+        //Debug.Log(dialogArray);
         Debug.Log(androidRead());
         //Debug.Log(Application.streamingAssetsPath);
         //textShown.text = dialogArray[0].ToString();
