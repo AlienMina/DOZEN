@@ -55,33 +55,41 @@ public class playerMove : MonoBehaviour {
                     test.y = hit.point.y;
                     //test.z = hit.point.z;//测试
                     test.z = this.transform.position.z;
-                    
+                    /*
                     if (EventSystem.current.IsPointerOverGameObject())
                     {
                     Debug.Log("point on UI");
                     }
-                    /*
+                    
                     if (playerMove.Instance.IsPointerOverUIObject(Input.GetTouch(0).position))
                     {
                         Debug.Log("方法二： 点击在UI 上");
                     }
                     */
-                    else
-                    {
+                    //else
+                    //{
                         //Debug.Log(test);
                         if (GameContent.isHidden)
                         {
                             GameContent.DozenLeaveHidden();//当主角移动的时候，解除隐藏
                         }
-                        //agent.Resume();
-                        agent.enabled = true;
+                    //agent.Resume();
+                    //agent.enabled = true;
+                    //agent.setS
+                    //agent.velocity = new Vector3(0, 0, 0);
+                    StartCoroutine(wait());
                         agent.destination = test;
-                    }
+                    //}
                     
                 }
 
             }
         }
+    }
+
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(0.01f);
     }
 
     public void hideMove(Vector3 hideHere)//走到隐藏点
