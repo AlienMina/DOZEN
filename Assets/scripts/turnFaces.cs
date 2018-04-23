@@ -10,8 +10,10 @@ public class turnFaces : MonoBehaviour {
     public AudioSource audioSource;
     public GameObject mask;
 
-    bool face = true;//true--right,false--left.
+    public bool pause = false;
+    public bool face = true;//true--right,false--left.
     bool turnmask = false;
+
 
     // Use this for initialization
     void Start () {
@@ -20,36 +22,39 @@ public class turnFaces : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (agent.velocity.x < 0)
+        if (!pause)
         {
-            anim.Play("dozenWalkLeft");
-            audioSource.volume = 1;
-            face = false;
-            turnMask();
-            //Debug.Log("left.");
-        }
-        else if (agent.velocity.x > 0)
-        {
-            anim.Play("dozenWalkRight");
-            audioSource.volume = 1;
-            face = true;
-            turnMask();
-            //Debug.Log("right.");
-        }
-        else if (agent.velocity.x == 0)
-        {
-            turnmask = false;
-            if (face)
+            if (agent.velocity.x < 0)
             {
-                anim.Play("dozenWaitRight");
+                anim.Play("dozenWalkLeft");
+                audioSource.volume = 1;
+                face = false;
+                turnMask();
+                //Debug.Log("left.");
             }
-            else
+            else if (agent.velocity.x > 0)
             {
-                anim.Play("dozenWaitLeft");
+                anim.Play("dozenWalkRight");
+                audioSource.volume = 1;
+                face = true;
+                turnMask();
+                //Debug.Log("right.");
             }
-            
-            audioSource.volume = 0;
-            //Debug.Log("wait.");
+            else if (agent.velocity.x == 0)
+            {
+                turnmask = false;
+                if (face)
+                {
+                    anim.Play("dozenWaitRight");
+                }
+                else
+                {
+                    anim.Play("dozenWaitLeft");
+                }
+
+                audioSource.volume = 0;
+                //Debug.Log("wait.");
+            }
         }
     }
 

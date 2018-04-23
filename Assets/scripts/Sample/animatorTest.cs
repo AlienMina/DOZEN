@@ -7,8 +7,8 @@ public class animatorTest : MonoBehaviour {
 
     public Animator anim;
     public NavMeshAgent agent;
-    public Rigidbody rigid;
     // Use this for initialization
+
 
 
 	void Start () {
