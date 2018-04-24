@@ -233,7 +233,10 @@ public class enemyMove : MonoBehaviour {
 
     //}
 
-   
+   public void stopMove()
+    {
+        agent.speed=0;
+    }
 
 
 

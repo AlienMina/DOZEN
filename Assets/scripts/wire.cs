@@ -30,7 +30,7 @@ public class wire : MonoBehaviour {
         }
         else if (collision.tag == "Enemy")
         {
-
+            StartCoroutine(killEnemy());
         }
     }
 
@@ -59,5 +59,17 @@ public class wire : MonoBehaviour {
         yield return new WaitForSeconds(0.2f);
         colli.gameObject.GetComponentInParent<machelfEnergy>().energy = 0;
         this.gameObject.SetActive(false);
+    }
+
+    IEnumerator killEnemy()
+    {
+        this.GetComponent<AudioSource>().Play();
+        colli.gameObject.GetComponent<turnFaceEnemy>().dead = true;
+        colli.gameObject.GetComponentInParent<NavMeshAgent>().speed=0;
+        Debug.Log(colli.gameObject.GetComponentInParent<NavMeshAgent>());
+        colli.gameObject.GetComponent<Animator>().Play("enemySimpleDied");
+        yield return new WaitForSeconds(1f);
+        this.gameObject.SetActive(false);
+        colli.gameObject.SetActive(false);
     }
 }

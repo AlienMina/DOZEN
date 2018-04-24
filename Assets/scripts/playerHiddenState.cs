@@ -16,7 +16,7 @@ public class playerHiddenState : MonoBehaviour {
 	void Update () {
         if (GameContent.isHidden)
         {
-            r.color = new Color(1f, 1f, 1f, 0.5f);
+            r.color = new Color(1f, 1f, 1f, 0f);
             
         }
         else
