@@ -55,12 +55,12 @@ public class playerMove : MonoBehaviour {
                     test.y = hit.point.y;
                     //test.z = hit.point.z;//测试
                     test.z = this.transform.position.z;
-                    /*
+                   
                     if (EventSystem.current.IsPointerOverGameObject())
                     {
                     Debug.Log("point on UI");
                     }
-                    
+                     /*
                     if (playerMove.Instance.IsPointerOverUIObject(Input.GetTouch(0).position))
                     {
                         Debug.Log("方法二： 点击在UI 上");

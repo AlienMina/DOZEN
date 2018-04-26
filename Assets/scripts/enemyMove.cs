@@ -174,7 +174,7 @@ public class enemyMove : MonoBehaviour {
         yield return new WaitForSeconds(1);
         if(Mathf.Abs(agent.remainingDistance) < between)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(4);
             //Debug.Log(this.GetComponent<Transform>().position);
             isAttracted = false;
             agent.destination = place1;
