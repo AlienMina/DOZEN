@@ -116,7 +116,7 @@ public class enemyMove : MonoBehaviour {
             {
                 string enemyHouseName = houseTag.name;
                 string playerHouseName = gameplayer.GetComponentInChildren<playerHouseTag>().playerHouseName;
-                Debug.Log("enemyHouseName " + enemyHouseName + " playerHouseName " + playerHouseName);
+                //Debug.Log("enemyHouseName " + enemyHouseName + " playerHouseName " + playerHouseName);
                 if (enemyHouseName != playerHouseName)//敌人和主角不在同一房间
                 {
                     audios.Stop();
