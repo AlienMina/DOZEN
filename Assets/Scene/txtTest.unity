@@ -923,8 +923,8 @@ MonoBehaviour:
   dialogWindow: {fileID: 492414832}
   dialogText: {fileID: 1927717203}
   dialogTxt: {fileID: 1483973762}
-  dozenWindow: {fileID: 21300000, guid: 4b4e420086ee1164a816638f745b5400, type: 3}
-  machelfTWindow: {fileID: 21300000, guid: 3e61434a4a2eb074eb4cc2f75deee65e, type: 3}
+  dozenWindow: {fileID: 21300000, guid: 9923119aa90663940919789f849d8dcc, type: 3}
+  machelfTWindow: {fileID: 21300000, guid: 9923119aa90663940919789f849d8dcc, type: 3}
   waitTimes: 5
   textinfo:
   - dialogType: 0
