@@ -17,6 +17,9 @@ public class level1 : MonoBehaviour {
     [HideInInspector]
     public bool Memory2;
 
+    [HideInInspector]
+    public bool getAllItems;
+
 	// Use this for initialization
 	void Start () {
         Item1 = false;
@@ -24,6 +27,7 @@ public class level1 : MonoBehaviour {
         key = false;
         Memory1 = false;
         Memory2 = false;
+        getAllItems = false;
     }
 	
 	// Update is called once per frame
@@ -50,5 +54,13 @@ public class level1 : MonoBehaviour {
     public void getMemory2()
     {
         Memory2 = true;
+    }
+
+    public void AllItems()
+    {
+        if (Item1 && Item2)
+        {
+            getAllItems = true;
+        }
     }
 }
