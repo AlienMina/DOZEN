@@ -106,6 +106,8 @@ public class enemyMove : MonoBehaviour {
     {
         if (!GameContent.isHidden)//在主角没有藏起来的状态下
         {
+            float oldSpeed = agent.speed;
+            float newSpeed = oldSpeed * 1.2f;
             //停止追声音的行为
             chasingVoice = false;
             setVoicePlace = false;
@@ -121,11 +123,13 @@ public class enemyMove : MonoBehaviour {
                 {
                     audios.Stop();
                     chasingPlayer = false;
+                    agent.speed = oldSpeed;
                     agent.destination = place1;//返回初始地点
                 }
             }
             else
             {
+                agent.speed = newSpeed;
                 agent.destination = playerPlace;
             }
         }
