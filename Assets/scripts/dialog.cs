@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
+[AddComponentMenu("dialog/add a Dialog Script")]
 public class dialog : MonoBehaviour {
 
     public GameObject dialogWindow;
@@ -13,6 +15,9 @@ public class dialog : MonoBehaviour {
     public Sprite machelfTWindow;
 
     public float waitTimes=10f;//等待的时间
+
+    public bool isStop = true;//是否需要角色停下，默认停下
+    public NavMeshAgent playerAgent;
 
     int state = 2;
 
@@ -52,9 +57,16 @@ public class dialog : MonoBehaviour {
 
     public IEnumerator DialogLoop()
     {
+        //让玩家立刻停下
+        float oldSpeed = playerAgent.speed;
+        if (isStop)
+        {
+            playerAgent.speed = 0;
+            playerAgent.destination = playerAgent.gameObject.GetComponent<Transform>().position;
+        }
         
         //这是一个循环……
-        for(int i = 0; i < textinfo.Length; i++)
+        for (int i = 0; i < textinfo.Length; i++)
         {
             
             yield return StartCoroutine(loadDialog(textinfo[i].dialogType, textinfo[i].textNum));
@@ -69,6 +81,9 @@ public class dialog : MonoBehaviour {
             
 
         }
+        //恢复速度
+        playerAgent.speed = oldSpeed;
+
         state = 2;
     }
 

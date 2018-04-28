@@ -2363,7 +2363,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1032921569}
-        m_MethodName: startDialog
+        m_MethodName: desdroyImmediately
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
