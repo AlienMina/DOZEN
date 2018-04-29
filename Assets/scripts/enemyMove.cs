@@ -104,10 +104,12 @@ public class enemyMove : MonoBehaviour {
     //追逐玩家
     void ChasingPlayer()
     {
+        float oldSpeed = agent.speed;
+        float newSpeed = oldSpeed * 1.2f;//敌人追击速度的调整
+
         if (!GameContent.isHidden)//在主角没有藏起来的状态下
         {
-            float oldSpeed = agent.speed;
-            float newSpeed = oldSpeed * 1.2f;
+            
             //停止追声音的行为
             chasingVoice = false;
             setVoicePlace = false;
@@ -139,6 +141,7 @@ public class enemyMove : MonoBehaviour {
             chasingPlayer = false;
             chasingVoice = false;
             setVoicePlace = false;
+            agent.speed = oldSpeed;
             agent.destination = place1;
         }
 

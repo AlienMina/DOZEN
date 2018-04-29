@@ -35,6 +35,8 @@ public class level1 : MonoBehaviour {
 		
 	}
 
+    //方便playmaker的调用
+
     public void getItem1()
     {
         Item1 = true;
