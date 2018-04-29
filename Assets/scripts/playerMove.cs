@@ -55,21 +55,23 @@ public class playerMove : MonoBehaviour {
                     test.y = hit.point.y;
                     //test.z = hit.point.z;//测试
                     test.z = this.transform.position.z;
-                   
+#if UNITY_EDITOR
                     if (EventSystem.current.IsPointerOverGameObject())
                     {
                     Debug.Log("point on UI");
                     }
-                     /*
-                    if (playerMove.Instance.IsPointerOverUIObject(Input.GetTouch(0).position))
-                    {
-                        Debug.Log("方法二： 点击在UI 上");
-                    }
-                    */
+#elif UNITY_ANDROID
+                    
+                   if (playerMove.Instance.IsPointerOverUIObject(Input.GetTouch(0).position))
+                   {
+                       Debug.Log("方法二： 点击在UI 上");
+                   }
+                   
+#endif
                     //else
                     //{
-                        //Debug.Log(test);
-                        if (GameContent.isHidden)
+                    //Debug.Log(test);
+                    if (GameContent.isHidden)
                         {
                             GameContent.DozenLeaveHidden();//当主角移动的时候，解除隐藏
                         }

@@ -8,7 +8,7 @@ public class enemyMove : MonoBehaviour {
     public GameCon GameContent;
     GameObject houseTag;//这个是敌人检测到的自己所在的地块
 
-    public AudioSource audios;
+    public AudioSource audios;//追击主角时的声音
 
     public GameObject enemyAnima;
     public GameObject gameplayer;
@@ -36,11 +36,17 @@ public class enemyMove : MonoBehaviour {
     bool setVoicePlace = false;//追声音的时候，用于判定是否定位，如果已经做了定位，打开它，当走到声源位置或者中间就撞到了主角，关闭它
    public  bool attractedSet = false;//用于小精灵吸引内部的判断
 
+
+    float oldSpeed;
+    float newSpeed;//敌人追击速度的调整
+
     // Use this for initialization
     void Start () {
         place1 = this.GetComponent<Transform>().position;//敌人巡逻的起始点
         agent = GetComponent<NavMeshAgent>();//寻路的设置
         agent.enabled = true;
+        oldSpeed = agent.speed;
+        newSpeed = oldSpeed * 1.2f;
     }
 	
 	// Update is called once per frame
@@ -56,6 +62,7 @@ public class enemyMove : MonoBehaviour {
         //Debug.Log(houseTag);
 
         //优先进行判断，追主角优先度>小精灵声音>追主角声音>巡逻，当没有追玩家也没有追声音的时候，进行检测【同时由playmaker进行巡逻】
+        //优先进行判断：当敌人被小精灵闪光晕眩了，这个优先级高于其他一切。--这里还没写呢！
         if (chasingPlayer)
         {
             audios.Play();
@@ -104,8 +111,7 @@ public class enemyMove : MonoBehaviour {
     //追逐玩家
     void ChasingPlayer()
     {
-        float oldSpeed = agent.speed;
-        float newSpeed = oldSpeed * 1.2f;//敌人追击速度的调整
+        
 
         if (!GameContent.isHidden)//在主角没有藏起来的状态下
         {
