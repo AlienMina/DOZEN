@@ -40,6 +40,12 @@ public class enemyMove : MonoBehaviour {
     float oldSpeed;
     float newSpeed;//敌人追击速度的调整
 
+    public bool isDizz;//是否有被小精灵眩晕
+    bool dissy = false;//正在进行眩晕结算吗
+
+    public float dizzyTime=3;
+    public GameObject view;
+
     // Use this for initialization
     void Start () {
         place1 = this.GetComponent<Transform>().position;//敌人巡逻的起始点
@@ -47,6 +53,7 @@ public class enemyMove : MonoBehaviour {
         agent.enabled = true;
         oldSpeed = agent.speed;
         newSpeed = oldSpeed * 1.2f;
+        isDizz = false;
     }
 	
 	// Update is called once per frame
@@ -62,7 +69,16 @@ public class enemyMove : MonoBehaviour {
         //Debug.Log(houseTag);
 
         //优先进行判断，追主角优先度>小精灵声音>追主角声音>巡逻，当没有追玩家也没有追声音的时候，进行检测【同时由playmaker进行巡逻】
-        //优先进行判断：当敌人被小精灵闪光晕眩了，这个优先级高于其他一切。--这里还没写呢！
+        //优先进行判断：当敌人被小精灵闪光晕眩了，这个优先级高于其他一切。
+        if (isDizz)
+        {
+            chasingPlayer = false;
+            isAttracted = false;
+            chasingVoice = false;
+            isChasing = false;
+            setVoicePlace = false;
+            StartCoroutine(Dizzy());
+        }
         if (chasingPlayer)
         {
             audios.Play();
@@ -251,8 +267,17 @@ public class enemyMove : MonoBehaviour {
         agent.speed=0;
     }
 
-
-
+    /// <summary>
+    /// 敌人被晕眩的时候
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator Dizzy()
+    {
+        view.SetActive(false);
+        yield return new WaitForSeconds(dizzyTime);
+        agent.destination = place1;
+        view.SetActive(true);
+    }
 
 
 

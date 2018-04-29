@@ -12141,6 +12141,9 @@ MonoBehaviour:
   isAttracted: 0
   attractedPlace: {x: 0, y: 0, z: 0}
   attractedSet: 0
+  isDizz: 0
+  dizzyTime: 3
+  view: {fileID: 533163085}
 --- !u!54 &557745966
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14687,6 +14690,9 @@ MonoBehaviour:
   isAttracted: 0
   attractedPlace: {x: 0, y: 0, z: 0}
   attractedSet: 0
+  isDizz: 0
+  dizzyTime: 3
+  view: {fileID: 302842912}
 --- !u!54 &675801846
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15824,6 +15830,9 @@ MonoBehaviour:
   isAttracted: 0
   attractedPlace: {x: 0, y: 0, z: 0}
   attractedSet: 0
+  isDizz: 0
+  dizzyTime: 3
+  view: {fileID: 1119079466}
 --- !u!54 &688520081
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19719,7 +19728,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 948789780}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -27774,6 +27783,9 @@ MonoBehaviour:
   isAttracted: 0
   attractedPlace: {x: 0, y: 0, z: 0}
   attractedSet: 0
+  isDizz: 0
+  dizzyTime: 3
+  view: {fileID: 856798151}
 --- !u!54 &1344560712
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29147,6 +29159,11 @@ Transform:
   m_Father: {fileID: 1404382276}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1402959695 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1618956122690970, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+    type: 2}
+  m_PrefabInternal: {fileID: 2012227071}
 --- !u!1 &1404382275
 GameObject:
   m_ObjectHideFlags: 0
@@ -37613,6 +37630,9 @@ MonoBehaviour:
   isAttracted: 0
   attractedPlace: {x: 0, y: 0, z: 0}
   attractedSet: 0
+  isDizz: 0
+  dizzyTime: 3
+  view: {fileID: 0}
 --- !u!54 &1919167864
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -40649,6 +40669,11 @@ Prefab:
       propertyPath: isEasyEnemy
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114682163179881906, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+        type: 2}
+      propertyPath: view
+      value: 
+      objectReference: {fileID: 1402959695}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425, type: 2}
   m_IsPrefabParent: 0

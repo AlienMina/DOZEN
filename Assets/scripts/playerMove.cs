@@ -60,6 +60,7 @@ public class playerMove : MonoBehaviour {
                     {
                     Debug.Log("point on UI");
                     }
+
 #elif UNITY_ANDROID
                     
                    if (playerMove.Instance.IsPointerOverUIObject(Input.GetTouch(0).position))
@@ -68,8 +69,8 @@ public class playerMove : MonoBehaviour {
                    }
                    
 #endif
-                    //else
-                    //{
+                    else
+                    {
                     //Debug.Log(test);
                     if (GameContent.isHidden)
                         {
@@ -81,7 +82,7 @@ public class playerMove : MonoBehaviour {
                     //agent.velocity = new Vector3(0, 0, 0);
                     StartCoroutine(wait());
                         agent.destination = test;
-                    //}
+                    }
                     
                 }
 
