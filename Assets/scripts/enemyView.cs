@@ -5,6 +5,7 @@ using UnityEngine;
 public class enemyView : MonoBehaviour {
 
     public GameCon GameContent;
+
     bool chasingPlayer;
     bool isChasing;
 	// Use this for initialization
@@ -54,4 +55,6 @@ public class enemyView : MonoBehaviour {
 
         }
     }
+
+
 }
