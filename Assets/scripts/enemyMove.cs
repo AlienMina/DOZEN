@@ -36,6 +36,7 @@ public class enemyMove : MonoBehaviour {
     Vector3 playerPlace;
     [HideInInspector]
     public Vector3 attractedPlace;//追逐小精灵时候的定位点
+    bool attring = false;//追逐的单独判断
 
     bool setVoicePlace = false;//追声音的时候，用于判定是否定位，如果已经做了定位，打开它，当走到声源位置或者中间就撞到了主角，关闭它
     [HideInInspector]
@@ -47,7 +48,7 @@ public class enemyMove : MonoBehaviour {
 
     [HideInInspector]
     public bool isDizz;//是否有被小精灵眩晕
-    bool dissy = false;//正在进行眩晕结算吗
+    bool dizzy = false;//正在进行眩晕结算吗
 
     public float dizzyTime=3;
     public GameObject view;
@@ -83,6 +84,9 @@ public class enemyMove : MonoBehaviour {
             chasingVoice = false;
             isChasing = false;
             setVoicePlace = false;
+            Debug.Log("Dizzy.");
+            dizzy = true;
+            isDizz = false;
             StartCoroutine(Dizzy());
         }
         if (chasingPlayer)
@@ -92,7 +96,12 @@ public class enemyMove : MonoBehaviour {
         }
         else if (isAttracted)//小精灵的声音优先级大于主角的声音
         {
-            StartCoroutine(attractedByMachelf());
+            if (!attring)
+            {
+                agent.destination = attractedPlace;
+                StartCoroutine(attractedByMachelf());
+            }
+            
         }
         else if(chasingVoice){
             StartCoroutine(ChasingVoice());
@@ -205,15 +214,21 @@ public class enemyMove : MonoBehaviour {
     //被小精灵吸引
     public IEnumerator attractedByMachelf()
     {
-        agent.destination = attractedPlace;
-        yield return new WaitForSeconds(1);
-        if(Mathf.Abs(agent.remainingDistance) < between)
+        yield return new WaitForSeconds(1f);
+        Debug.Log("wait.");
+        if (Mathf.Abs(agent.remainingDistance) < between)
         {
-            yield return new WaitForSeconds(4);
+            attring = true;
+                Debug.Log(agent.remainingDistance);
+                yield return new WaitForSeconds(5);
+                Debug.Log("wati fininshed.");
             //Debug.Log(this.GetComponent<Transform>().position);
             isAttracted = false;
             agent.destination = place1;
+            attring = false;
         }
+        
+        //}
         /*
         if (!attractedSet)
         {
@@ -279,10 +294,19 @@ public class enemyMove : MonoBehaviour {
     /// <returns></returns>
     IEnumerator Dizzy()
     {
-        view.SetActive(false);
-        yield return new WaitForSeconds(dizzyTime);
-        agent.destination = place1;
-        view.SetActive(true);
+        if (dizzy)
+        {
+            float oldSpeed = agent.speed;
+            view.SetActive(false);
+            agent.speed = 0;
+            yield return new WaitForSeconds(dizzyTime);
+            //Debug.Log(oldSpeed);
+            agent.speed = oldSpeed;
+           // Debug.Log(agent.speed);
+            agent.destination = place1;
+            view.SetActive(true);
+            dizzy = false;
+        }
     }
 
 

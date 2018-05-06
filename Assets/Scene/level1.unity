@@ -3103,9 +3103,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energy: 5
   attr: {fileID: 0}
+  dizzy: {fileID: 0}
+  powerState: 0
   whenHide: 3
   isEnergyPoint: 1
   whoseEnergy: {fileID: 833023571}
+  changeStateEnergyInit: 2
 --- !u!1 &75053183
 GameObject:
   m_ObjectHideFlags: 0
@@ -5301,9 +5304,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energy: 5
   attr: {fileID: 0}
+  dizzy: {fileID: 0}
+  powerState: 0
   whenHide: 1
   isEnergyPoint: 1
   whoseEnergy: {fileID: 833023571}
+  changeStateEnergyInit: 2
 --- !u!1 &188397263
 GameObject:
   m_ObjectHideFlags: 0
@@ -9635,6 +9641,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 321712434}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &328807078 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1181994182743672, guid: e9d8b1dc2d7ab9a4e9874b268cfeb4b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 346566248}
 --- !u!1 &340735413
 GameObject:
   m_ObjectHideFlags: 0
@@ -17255,9 +17266,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energy: 5
   attr: {fileID: 194927805}
+  dizzy: {fileID: 328807078}
+  powerState: 0
   whenHide: 0
   isEnergyPoint: 0
   whoseEnergy: {fileID: 0}
+  changeStateEnergyInit: 2
 --- !u!50 &833023572
 Rigidbody2D:
   serializedVersion: 4
@@ -28642,9 +28656,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energy: 5
   attr: {fileID: 0}
+  dizzy: {fileID: 0}
+  powerState: 0
   whenHide: 2
   isEnergyPoint: 1
   whoseEnergy: {fileID: 833023571}
+  changeStateEnergyInit: 2
 --- !u!1 &1370309840
 GameObject:
   m_ObjectHideFlags: 0
@@ -32046,9 +32063,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energy: 5
   attr: {fileID: 0}
+  dizzy: {fileID: 0}
+  powerState: 0
   whenHide: 0
   isEnergyPoint: 1
   whoseEnergy: {fileID: 833023571}
+  changeStateEnergyInit: 2
 --- !u!1 &1597156717
 GameObject:
   m_ObjectHideFlags: 0
@@ -43563,9 +43583,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energy: 5
   attr: {fileID: 0}
+  dizzy: {fileID: 0}
+  powerState: 0
   whenHide: 4
   isEnergyPoint: 1
   whoseEnergy: {fileID: 833023571}
+  changeStateEnergyInit: 2
 --- !u!1 &2133170516
 GameObject:
   m_ObjectHideFlags: 0
