@@ -19,10 +19,13 @@ public class enemyMove : MonoBehaviour {
 
     public float between = 0.1f;
 
-
+    [HideInInspector]
     bool chasingVoice = false;//追声音
+    [HideInInspector]
     public bool chasingPlayer = false;//追主角
+    [HideInInspector]
     public bool isChasing = false;//正在追……用于chasingPlayer内部的判断
+    [HideInInspector]
     public bool isAttracted = false;//追小精灵
     
 
@@ -31,15 +34,18 @@ public class enemyMove : MonoBehaviour {
 
     Vector3 voicePlace;
     Vector3 playerPlace;
+    [HideInInspector]
     public Vector3 attractedPlace;//追逐小精灵时候的定位点
 
     bool setVoicePlace = false;//追声音的时候，用于判定是否定位，如果已经做了定位，打开它，当走到声源位置或者中间就撞到了主角，关闭它
+    [HideInInspector]
    public  bool attractedSet = false;//用于小精灵吸引内部的判断
 
 
     float oldSpeed;
     float newSpeed;//敌人追击速度的调整
 
+    [HideInInspector]
     public bool isDizz;//是否有被小精灵眩晕
     bool dissy = false;//正在进行眩晕结算吗
 
