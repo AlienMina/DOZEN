@@ -59,6 +59,11 @@ public class machelfMove : MonoBehaviour {
                     {
                         Debug.Log("point on UI");
                     }
+#elif UNITY_STANDALONE_WIN
+                     if (EventSystem.current.IsPointerOverGameObject())
+                    {
+                    Debug.Log("point on UI");
+                    }
 #elif UNITY_ANDROID
                     
                    if (playerMove.Instance.IsPointerOverUIObject(Input.GetTouch(0).position))
