@@ -74,7 +74,9 @@ public class machelfMove : MonoBehaviour {
 #endif
                     else
                     {
-                        agent.destination = test;
+                        
+                            agent.destination = test;
+                        
                     }
                 }
                 

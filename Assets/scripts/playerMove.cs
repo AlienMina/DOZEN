@@ -86,7 +86,13 @@ public class playerMove : MonoBehaviour {
                     //agent.setS
                     //agent.velocity = new Vector3(0, 0, 0);
                     StartCoroutine(wait());
-                        agent.destination = test;
+                        if (GameContent.isKillButton)
+                        {
+                            agent.destination = this.gameObject.transform.position;
+                        }
+                        else { 
+                            agent.destination = test;
+                        }
                     }
                     
                 }
