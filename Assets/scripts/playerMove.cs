@@ -77,7 +77,7 @@ public class playerMove : MonoBehaviour {
                     else
                     {
                     //Debug.Log(test);
-                    if (GameContent.isHidden)
+                        if (GameContent.isHidden)
                         {
                             GameContent.DozenLeaveHidden();//当主角移动的时候，解除隐藏
                         }
@@ -86,13 +86,8 @@ public class playerMove : MonoBehaviour {
                     //agent.setS
                     //agent.velocity = new Vector3(0, 0, 0);
                     StartCoroutine(wait());
-                        if (GameContent.isKillButton)
-                        {
-                            agent.destination = this.gameObject.transform.position;
-                        }
-                        else { 
-                            agent.destination = test;
-                        }
+                    agent.destination = test;
+                        
                     }
                     
                 }

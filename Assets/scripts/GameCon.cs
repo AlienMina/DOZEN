@@ -10,7 +10,7 @@ public class GameCon : MonoBehaviour {
     public bool isHidden = false;//主角是否进行了藏匿，默认是没有
     public AudioSource hideAudio;
     public bool isKillButton = false;
-
+    public bool showKillButton = false;
 
     // Use this for initialization
     void Start () {
@@ -29,17 +29,23 @@ public class GameCon : MonoBehaviour {
             GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>().isStopped=false;
         }
 	}
+    public void showButton()
+    {
+        showKillButton = true;
+    }
+    public void hideButton()
+    {
+        showKillButton = false;
+    }
 
     public void killButton()
     {
-        if (isKillButton)
-        {
-            isKillButton = false;
-        }
-        else
-        {
-            isKillButton = true;
-        }
+        isKillButton = true;
+    }
+
+    public void stopKillButton()
+    {
+        isKillButton = false;
     }
     public void DozenHide()
     {
