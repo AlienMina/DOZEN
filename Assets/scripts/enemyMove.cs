@@ -55,6 +55,9 @@ public class enemyMove : MonoBehaviour {
     public float dizzyTime=3;
     public GameObject view;
 
+    [HideInInspector]
+    public bool isReturn = false;//这个是为了进行状态动画而设置的，只有在它打开的时候才清空头顶的状态
+
     // Use this for initialization
     void Start () {
         place1 = this.GetComponent<Transform>().position;//敌人巡逻的起始点
@@ -165,6 +168,8 @@ public class enemyMove : MonoBehaviour {
                     audios.Stop();
                     chasingPlayer = false;
                     agent.speed = oldSpeed;
+
+                    isReturn = true;
                     agent.destination = place1;//返回初始地点
                 }
             }
@@ -181,6 +186,8 @@ public class enemyMove : MonoBehaviour {
             chasingVoice = false;
             setVoicePlace = false;
             agent.speed = oldSpeed;
+
+            isReturn = true;
             agent.destination = place1;
         }
 
@@ -207,6 +214,8 @@ public class enemyMove : MonoBehaviour {
                 setVoicePlace = false;
                 chasingVoice = false;
                 yield return new WaitForSeconds(5);
+
+                isReturn = true;
                 agent.destination = place1;
                 Debug.Log("chasing finished.");
             }
@@ -217,15 +226,16 @@ public class enemyMove : MonoBehaviour {
     public IEnumerator attractedByMachelf()
     {
         yield return new WaitForSeconds(1f);
-        Debug.Log("wait.");
+        //Debug.Log("wait.");
         if (Mathf.Abs(agent.remainingDistance) < between)
         {
             attring = true;
                 Debug.Log(agent.remainingDistance);
                 yield return new WaitForSeconds(5);
-                Debug.Log("wati fininshed.");
+                //Debug.Log("wati fininshed.");
             //Debug.Log(this.GetComponent<Transform>().position);
             isAttracted = false;
+            isReturn = true;
             agent.destination = place1;
             attring = false;
         }
@@ -304,7 +314,8 @@ public class enemyMove : MonoBehaviour {
             yield return new WaitForSeconds(dizzyTime);
             //Debug.Log(oldSpeed);
             agent.speed = oldSpeed;
-           // Debug.Log(agent.speed);
+            // Debug.Log(agent.speed);
+            isReturn = true;
             agent.destination = place1;
             view.SetActive(true);
             dizzy = false;

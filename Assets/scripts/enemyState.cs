@@ -9,8 +9,8 @@ public class enemyState : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -18,31 +18,34 @@ public class enemyState : MonoBehaviour {
         {
             if (enemymove.dizzy)
             {
+                enemymove.isReturn = false;
                 this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
                 this.gameObject.GetComponent<Animator>().Play("enemyStateDizzy");
             }
-            else if (enemymove.chasingPlayer)
+            else if (enemymove.chasingPlayer||enemymove.isChasing)
             {
+                enemymove.isReturn = false;
                 this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
                 this.gameObject.GetComponent<Animator>().Play("enemyStateWarning");
 
             }
             else if (enemymove.attring || enemymove.isAttracted || enemymove.chasingVoice)
             {
+                enemymove.isReturn = false;
                 this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
                 if (enemymove.gameObject.GetComponentInChildren<turnFaceEnemy>().gameObject.transform.rotation.z == 180)
                 {
                     this.gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
-                    Debug.Log("rotationset");
+
                 }
                 else
                 {
                     this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-                    Debug.Log("rotationset.");
+
                 }
                 this.gameObject.GetComponent<Animator>().Play("enemyStateConfused");
             }
-            else
+            else if(enemymove.isReturn)
             {
                 this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
             }

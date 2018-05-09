@@ -40,10 +40,12 @@ public class level1 : MonoBehaviour {
     public void getItem1()
     {
         Item1 = true;
+        Debug.Log("Item1: " + Item1);
     }
     public void getItem2()
     {
         Item2 = true;
+        Debug.Log("Item2: " + Item2);
     }
     public void getKey()
     {
@@ -52,6 +54,7 @@ public class level1 : MonoBehaviour {
     public void getMemory1()
     {
         Memory1 = true;
+        Debug.Log("Memory1: " + Memory1);
     }
     public void getMemory2()
     {
@@ -60,6 +63,8 @@ public class level1 : MonoBehaviour {
 
     public void AllItems()
     {
+        Debug.Log("Item1: " + Item1);
+        Debug.Log("Item2: " + Item2);
         if (Item1 && Item2)
         {
             getAllItems = true;

@@ -29,15 +29,23 @@ public class GameCon : MonoBehaviour {
             GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>().isStopped=false;
         }
 	}
+    /// <summary>
+    /// 这套……应该是控制头顶按钮显隐的
+    /// </summary>
     public void showButton()
     {
+        Debug.Log("showKillButton");
         showKillButton = true;
     }
     public void hideButton()
     {
+        Debug.Log("hideKillButton.");
         showKillButton = false;
     }
 
+    /// <summary>
+    /// 这套应该是控制人物击杀时强制静止一小下的。
+    /// </summary>
     public void killButton()
     {
         isKillButton = true;

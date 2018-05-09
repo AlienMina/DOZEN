@@ -33,18 +33,18 @@ public class lockedDoor : MonoBehaviour {
         {
             Debug.Log(level1Items.key);
             agent.destination = wayPoint.transform.position;
-            if (!lockedDialog)
-            {
-                lockedDialog1.startDialog();
-                lockedDialog = true;
-                agent.destination = wayPoint.transform.position;
-            }
-            else if (level1Items.key&& !openDoor)
+            if (level1Items.key && !openDoor)
             {
                 Debug.Log("start dialog2");
                 lockedDialog2.startDialog();
                 openDoor = true;
             }
+            else if (!lockedDialog)
+            {
+                lockedDialog1.startDialog();
+                lockedDialog = true;
+                agent.destination = wayPoint.transform.position;
+            }            
             else if (openDoor)
             {
                 this.gameObject.SetActive(false);
