@@ -63,6 +63,7 @@ public class enemyKillView : MonoBehaviour {
 
     IEnumerator playerDied()
     {
+        player.GetComponent<playerMove>().playerDead = true ;
         player.GetComponent<turnFaces>().pause = true;
         player.GetComponent<AudioSource>().Stop();
         player.GetComponent<NavMeshAgent>().ResetPath();
@@ -75,8 +76,8 @@ public class enemyKillView : MonoBehaviour {
             player.GetComponentInChildren<Animator>().Play("dozenKilledLeft");
         }
         playerDead.Play();
-        yield return new WaitForSeconds(1f);
-        player.SetActive(false);        
+        yield return new WaitForSeconds(1.5f);
+        //player.SetActive(false);        
         dead.SetActive(true);
         enemyanim.gameObject.GetComponent<turnFaceEnemy>().dead = false;
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964128, b: 0.5748173, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -3066,62 +3066,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!1001 &346557951
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -18.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
-      propertyPath: m_RootOrder
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 114275627278263286, guid: 90db288f39b2ffe45bde8044f685ef88,
-        type: 2}
-      propertyPath: fsm.states.Array.data[1].actionData.fsmOwnerDefaultParams.Array.data[0].gameObject.value
-      value: 
-      objectReference: {fileID: 1071756834}
-    - target: {fileID: 114275627278263286, guid: 90db288f39b2ffe45bde8044f685ef88,
-        type: 2}
-      propertyPath: fsm.states.Array.data[2].actionData.fsmOwnerDefaultParams.Array.data[4].gameObject.value
-      value: 
-      objectReference: {fileID: 48722465}
-    - target: {fileID: 1248102829109500, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
-      propertyPath: m_Name
-      value: easyEnemy (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &364279329
 GameObject:
   m_ObjectHideFlags: 0
@@ -4109,6 +4053,102 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &572264787
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 26.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -71
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 114344207753829846, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: playerDead
+      value: 
+      objectReference: {fileID: 874592444}
+    - target: {fileID: 114344207753829846, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: GameContent
+      value: 
+      objectReference: {fileID: 1071756839}
+    - target: {fileID: 114344207753829846, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 948789780}
+    - target: {fileID: 114344207753829846, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: dead
+      value: 
+      objectReference: {fileID: 1359218240}
+    - target: {fileID: 114416514393654418, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: GameContent
+      value: 
+      objectReference: {fileID: 1071756839}
+    - target: {fileID: 114275627278263286, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: fsm.states.Array.data[1].actionData.fsmOwnerDefaultParams.Array.data[0].gameObject.value
+      value: 
+      objectReference: {fileID: 1071756834}
+    - target: {fileID: 114275627278263286, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: fsm.states.Array.data[2].actionData.fsmOwnerDefaultParams.Array.data[4].gameObject.value
+      value: 
+      objectReference: {fileID: 48722465}
+    - target: {fileID: 114849168089984588, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: GameContent
+      value: 
+      objectReference: {fileID: 1071756839}
+    - target: {fileID: 114849168089984588, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: audios
+      value: 
+      objectReference: {fileID: 2045195268}
+    - target: {fileID: 114849168089984588, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: gameplayer
+      value: 
+      objectReference: {fileID: 948789780}
+    - target: {fileID: 1248102829109500, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
+      propertyPath: m_Name
+      value: easyEnemy (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &593932912
 GameObject:
   m_ObjectHideFlags: 0
@@ -5918,6 +5958,102 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &703353699
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 9.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -135
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114344207753829846, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: playerDead
+      value: 
+      objectReference: {fileID: 874592444}
+    - target: {fileID: 114344207753829846, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: GameContent
+      value: 
+      objectReference: {fileID: 1071756839}
+    - target: {fileID: 114344207753829846, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 948789780}
+    - target: {fileID: 114344207753829846, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: dead
+      value: 
+      objectReference: {fileID: 1359218240}
+    - target: {fileID: 114416514393654418, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: GameContent
+      value: 
+      objectReference: {fileID: 1071756839}
+    - target: {fileID: 114275627278263286, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: fsm.states.Array.data[1].actionData.fsmOwnerDefaultParams.Array.data[0].gameObject.value
+      value: 
+      objectReference: {fileID: 1071756834}
+    - target: {fileID: 114275627278263286, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: fsm.states.Array.data[2].actionData.fsmOwnerDefaultParams.Array.data[4].gameObject.value
+      value: 
+      objectReference: {fileID: 48722465}
+    - target: {fileID: 114849168089984588, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: GameContent
+      value: 
+      objectReference: {fileID: 1071756839}
+    - target: {fileID: 114849168089984588, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: audios
+      value: 
+      objectReference: {fileID: 2045195268}
+    - target: {fileID: 114849168089984588, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: gameplayer
+      value: 
+      objectReference: {fileID: 948789780}
+    - target: {fileID: 1248102829109500, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
+      propertyPath: m_Name
+      value: easyEnemy (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &749219270
 GameObject:
   m_ObjectHideFlags: 0
@@ -8882,6 +9018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5c56a29d9b7db47a83cfe58d2204f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDead: 0
   GameContent: {fileID: 1071756839}
 --- !u!54 &948789787
 Rigidbody:
@@ -9492,14 +9629,18 @@ MonoBehaviour:
   gameplayer: {fileID: 948789780}
   place2: {fileID: 0}
   between: 0.1
+  chasingVoice: 0
   chasingPlayer: 0
   isChasing: 0
   isAttracted: 0
   attractedPlace: {x: 0, y: 0, z: 0}
+  attring: 0
   attractedSet: 0
   isDizz: 0
+  dizzy: 0
   dizzyTime: 3
   view: {fileID: 0}
+  isReturn: 0
 --- !u!54 &1019272585
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9788,6 +9929,8 @@ MonoBehaviour:
   isDOZEN: 1
   isHidden: 0
   hideAudio: {fileID: 397420164}
+  isKillButton: 0
+  showKillButton: 0
 --- !u!114 &1071756840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10616,7 +10759,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1204649602}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1235337308
+--- !u!1001 &1221854708
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10625,11 +10768,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9.4
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -135
+      value: -18.3
       objectReference: {fileID: 0}
     - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
       propertyPath: m_LocalPosition.z
@@ -10653,8 +10796,33 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
       propertyPath: m_RootOrder
-      value: 20
+      value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 114344207753829846, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: playerDead
+      value: 
+      objectReference: {fileID: 874592444}
+    - target: {fileID: 114344207753829846, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: GameContent
+      value: 
+      objectReference: {fileID: 1071756839}
+    - target: {fileID: 114344207753829846, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 948789780}
+    - target: {fileID: 114344207753829846, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: dead
+      value: 
+      objectReference: {fileID: 1359218240}
+    - target: {fileID: 114416514393654418, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: GameContent
+      value: 
+      objectReference: {fileID: 1071756839}
     - target: {fileID: 114275627278263286, guid: 90db288f39b2ffe45bde8044f685ef88,
         type: 2}
       propertyPath: fsm.states.Array.data[1].actionData.fsmOwnerDefaultParams.Array.data[0].gameObject.value
@@ -10665,9 +10833,24 @@ Prefab:
       propertyPath: fsm.states.Array.data[2].actionData.fsmOwnerDefaultParams.Array.data[4].gameObject.value
       value: 
       objectReference: {fileID: 48722465}
+    - target: {fileID: 114849168089984588, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: GameContent
+      value: 
+      objectReference: {fileID: 1071756839}
+    - target: {fileID: 114849168089984588, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: audios
+      value: 
+      objectReference: {fileID: 2045195268}
+    - target: {fileID: 114849168089984588, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: gameplayer
+      value: 
+      objectReference: {fileID: 948789780}
     - target: {fileID: 1248102829109500, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
       propertyPath: m_Name
-      value: easyEnemy (3)
+      value: easyEnemy (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
@@ -11135,62 +11318,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 948789780}
---- !u!1001 &1345924011
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 26.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -71
-      objectReference: {fileID: 0}
-    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4205507148540524, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
-      propertyPath: m_RootOrder
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 114275627278263286, guid: 90db288f39b2ffe45bde8044f685ef88,
-        type: 2}
-      propertyPath: fsm.states.Array.data[1].actionData.fsmOwnerDefaultParams.Array.data[0].gameObject.value
-      value: 
-      objectReference: {fileID: 1071756834}
-    - target: {fileID: 114275627278263286, guid: 90db288f39b2ffe45bde8044f685ef88,
-        type: 2}
-      propertyPath: fsm.states.Array.data[2].actionData.fsmOwnerDefaultParams.Array.data[4].gameObject.value
-      value: 
-      objectReference: {fileID: 48722465}
-    - target: {fileID: 1248102829109500, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
-      propertyPath: m_Name
-      value: easyEnemy (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1359218240
 GameObject:
   m_ObjectHideFlags: 0
@@ -18834,6 +18961,31 @@ Prefab:
       propertyPath: m_RootOrder
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 114344207753829846, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: playerDead
+      value: 
+      objectReference: {fileID: 874592444}
+    - target: {fileID: 114344207753829846, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: GameContent
+      value: 
+      objectReference: {fileID: 1071756839}
+    - target: {fileID: 114344207753829846, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 948789780}
+    - target: {fileID: 114344207753829846, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: dead
+      value: 
+      objectReference: {fileID: 1359218240}
+    - target: {fileID: 114416514393654418, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: GameContent
+      value: 
+      objectReference: {fileID: 1071756839}
     - target: {fileID: 114275627278263286, guid: 90db288f39b2ffe45bde8044f685ef88,
         type: 2}
       propertyPath: fsm.states.Array.data[1].actionData.fsmOwnerDefaultParams.Array.data[0].gameObject.value
@@ -18844,10 +18996,21 @@ Prefab:
       propertyPath: fsm.states.Array.data[2].actionData.fsmOwnerDefaultParams.Array.data[4].gameObject.value
       value: 
       objectReference: {fileID: 48722465}
-    - target: {fileID: 1248102829109500, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
-      propertyPath: m_Name
-      value: easyEnemy
-      objectReference: {fileID: 0}
+    - target: {fileID: 114849168089984588, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: GameContent
+      value: 
+      objectReference: {fileID: 1071756839}
+    - target: {fileID: 114849168089984588, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: audios
+      value: 
+      objectReference: {fileID: 2045195268}
+    - target: {fileID: 114849168089984588, guid: 90db288f39b2ffe45bde8044f685ef88,
+        type: 2}
+      propertyPath: gameplayer
+      value: 
+      objectReference: {fileID: 948789780}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 90db288f39b2ffe45bde8044f685ef88, type: 2}
   m_IsPrefabParent: 0

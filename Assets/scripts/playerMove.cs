@@ -15,6 +15,10 @@ public class playerMove : MonoBehaviour {
     Vector2 mouseXY;
     Vector3 mousePoint;
 
+
+    [HideInInspector]
+    public bool playerDead = false;
+
     public GameCon GameContent;
 
     private NavMeshAgent agent;
@@ -29,7 +33,7 @@ public class playerMove : MonoBehaviour {
 
     public void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)&&!playerDead)
         {
             //Debug.Log("get mouse down");
             //screenPosition = Camera.main.WorldToScreenPoint(transform.position);
