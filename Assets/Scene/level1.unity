@@ -36803,7 +36803,7 @@ GameObject:
   - component: {fileID: 1686684395}
   - component: {fileID: 1686684396}
   - component: {fileID: 1686684397}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: chasingAlert
   m_TagString: alert
   m_Icon: {fileID: 0}
@@ -36817,7 +36817,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1686684394}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 201.1, y: -32, z: -33.26496}
+  m_LocalPosition: {x: 201.1, y: -32, z: -20}
   m_LocalScale: {x: 174.47076, y: 79.40759, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
