@@ -39,7 +39,7 @@ public class enemyMove : MonoBehaviour {
     [HideInInspector]
     public bool attring = false;//追逐的单独判断，这个公共是为了进行状态动画的结算，不涉及其它
 
-    bool setVoicePlace = false;//追声音的时候，用于判定是否定位，如果已经做了定位，打开它，当走到声源位置或者中间就撞到了主角，关闭它
+    public bool setVoicePlace = false;//追声音的时候，用于判定是否定位，如果已经做了定位，打开它，当走到声源位置或者中间就撞到了主角，关闭它
     [HideInInspector]
    public  bool attractedSet = false;//用于小精灵吸引内部的判断
 
@@ -102,7 +102,7 @@ public class enemyMove : MonoBehaviour {
         }
         if (chasingPlayer)
         {
-            audios.Play();
+            audios.gameObject.SetActive(true);
             alert.SetActive(true);
             ChasingPlayer();
         }
@@ -172,7 +172,7 @@ public class enemyMove : MonoBehaviour {
                 //Debug.Log("enemyHouseName " + enemyHouseName + " playerHouseName " + playerHouseName);
                 if (enemyHouseName != playerHouseName)//敌人和主角不在同一房间
                 {
-                    audios.Stop();
+                    audios.gameObject.SetActive(false);
                     chasingPlayer = false;
                     agent.speed = oldSpeed;
                     alert.SetActive(false);
@@ -188,7 +188,7 @@ public class enemyMove : MonoBehaviour {
         }
         else
         {
-            audios.Stop();
+            audios.gameObject.SetActive(false);
             chasingPlayer = false;
             chasingVoice = false;
             setVoicePlace = false;
