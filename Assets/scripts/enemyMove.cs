@@ -58,6 +58,7 @@ public class enemyMove : MonoBehaviour {
     [HideInInspector]
     public bool isReturn = false;//这个是为了进行状态动画而设置的，只有在它打开的时候才清空头顶的状态
 
+    public GameObject alert;
     // Use this for initialization
     void Start () {
         place1 = this.GetComponent<Transform>().position;//敌人巡逻的起始点
@@ -66,6 +67,11 @@ public class enemyMove : MonoBehaviour {
         oldSpeed = agent.speed;
         newSpeed = oldSpeed * 1.2f;
         isDizz = false;
+
+        if (alert != null)
+        {
+            alert.SetActive(false);
+        }
     }
 	
 	// Update is called once per frame
@@ -97,6 +103,7 @@ public class enemyMove : MonoBehaviour {
         if (chasingPlayer)
         {
             audios.Play();
+            alert.SetActive(true);
             ChasingPlayer();
         }
         else if (isAttracted)//小精灵的声音优先级大于主角的声音
@@ -168,7 +175,7 @@ public class enemyMove : MonoBehaviour {
                     audios.Stop();
                     chasingPlayer = false;
                     agent.speed = oldSpeed;
-
+                    alert.SetActive(false);
                     isReturn = true;
                     agent.destination = place1;//返回初始地点
                 }
@@ -186,7 +193,7 @@ public class enemyMove : MonoBehaviour {
             chasingVoice = false;
             setVoicePlace = false;
             agent.speed = oldSpeed;
-
+            alert.SetActive(false);
             isReturn = true;
             agent.destination = place1;
         }
