@@ -15,6 +15,10 @@ public class playerMove : MonoBehaviour {
     Vector2 mouseXY;
     Vector3 mousePoint;
 
+
+    [HideInInspector]
+    public bool playerDead = false;
+
     public GameCon GameContent;
 
     private NavMeshAgent agent;
@@ -29,7 +33,7 @@ public class playerMove : MonoBehaviour {
 
     public void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)&&!playerDead)
         {
             //Debug.Log("get mouse down");
             //screenPosition = Camera.main.WorldToScreenPoint(transform.position);
@@ -61,6 +65,11 @@ public class playerMove : MonoBehaviour {
                     Debug.Log("point on UI");
                     }
 
+#elif UNITY_STANDALONE_WIN
+                     if (EventSystem.current.IsPointerOverGameObject())
+                    {
+                    Debug.Log("point on UI");
+                    }
 #elif UNITY_ANDROID
                     
                    if (playerMove.Instance.IsPointerOverUIObject(Input.GetTouch(0).position))
@@ -72,7 +81,7 @@ public class playerMove : MonoBehaviour {
                     else
                     {
                     //Debug.Log(test);
-                    if (GameContent.isHidden)
+                        if (GameContent.isHidden)
                         {
                             GameContent.DozenLeaveHidden();//当主角移动的时候，解除隐藏
                         }
@@ -81,7 +90,8 @@ public class playerMove : MonoBehaviour {
                     //agent.setS
                     //agent.velocity = new Vector3(0, 0, 0);
                     StartCoroutine(wait());
-                        agent.destination = test;
+                    agent.destination = test;
+                        
                     }
                     
                 }

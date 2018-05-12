@@ -7139,7 +7139,7 @@ Transform:
   m_LocalScale: {x: 1.2586248, y: 1.2586248, z: 1.2586248}
   m_Children: []
   m_Father: {fileID: 593932913}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &234386778
 AudioSource:
@@ -8330,7 +8330,7 @@ Transform:
   m_LocalScale: {x: 0.57748526, y: 0.57748526, z: 0.4714715}
   m_Children: []
   m_Father: {fileID: 593932913}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &289803429
 MonoBehaviour:
@@ -12604,13 +12604,13 @@ Transform:
   - {fileID: 8460860}
   - {fileID: 1737416418}
   - {fileID: 119917002}
+  - {fileID: 1946384531}
   - {fileID: 289803428}
   - {fileID: 234386777}
   - {fileID: 1975802282}
-  - {fileID: 1946384531}
   - {fileID: 683126237}
-  - {fileID: 1764834418}
   - {fileID: 990439103}
+  - {fileID: 1764834418}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20463,7 +20463,7 @@ GameObject:
   - component: {fileID: 990439105}
   - component: {fileID: 990439104}
   m_Layer: 0
-  m_Name: Memory (1)
+  m_Name: Memory2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20480,7 +20480,7 @@ Transform:
   m_LocalScale: {x: 0.5000208, y: 0.5000207, z: 1.2586241}
   m_Children: []
   m_Father: {fileID: 593932913}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &990439104
 AudioSource:
@@ -20738,7 +20738,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: getMemory1
+          value: getMemory2
         fsmObjectParams:
         - useVariable: 0
           name: 
@@ -20867,7 +20867,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -20876,7 +20876,7 @@ MonoBehaviour:
     activeStateName: 
     mouseEvents: 0
     handleLevelLoaded: 0
-    handleTriggerEnter2D: 1
+    handleTriggerEnter2D: 0
     handleTriggerExit2D: 0
     handleTriggerStay2D: 0
     handleCollisionEnter2D: 0
@@ -35221,7 +35221,7 @@ Transform:
   m_Children:
   - {fileID: 349264877}
   m_Father: {fileID: 593932913}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1764834420
 BoxCollider2D:
@@ -38691,7 +38691,7 @@ Transform:
   m_LocalScale: {x: 1.6409234, y: 1.5987616, z: 1.6226908}
   m_Children: []
   m_Father: {fileID: 593932913}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1946384532
 MonoBehaviour:
@@ -39588,7 +39588,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -39597,7 +39597,7 @@ MonoBehaviour:
     activeStateName: 
     mouseEvents: 0
     handleLevelLoaded: 0
-    handleTriggerEnter2D: 1
+    handleTriggerEnter2D: 0
     handleTriggerExit2D: 0
     handleTriggerStay2D: 0
     handleCollisionEnter2D: 0
@@ -40269,7 +40269,7 @@ Transform:
   m_LocalScale: {x: 1.2586778, y: 1.2586789, z: 1.2586241}
   m_Children: []
   m_Father: {fileID: 593932913}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1975802283
 AudioSource:

@@ -13,6 +13,8 @@ public class dialog : MonoBehaviour {
 
     public Sprite dozenWindow;
     public Sprite machelfTWindow;
+    public Sprite NPCWindow;
+    public Sprite GWindow;
 
     public float waitTimes=10f;//等待的时间
 
@@ -102,12 +104,15 @@ public class dialog : MonoBehaviour {
         {
             dialogWindow.gameObject.GetComponent<Image>().sprite = machelfTWindow;
         }
-        /*
+        
         else if (dialogType == 2)
         {
-           //这里就自己添加吧，如果有更多的对话框需求
+            dialogWindow.gameObject.GetComponent<Image>().sprite = NPCWindow;
         }
-        */
+        else if (dialogType == 3)
+        {
+            dialogWindow.gameObject.GetComponent<Image>().sprite = GWindow;
+        }
 
         //接下来是读text
         dialogText.gameObject.GetComponent<Text>().text = dialogTxt.dialogArrayAndroid[textNum];
