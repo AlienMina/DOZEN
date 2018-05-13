@@ -588,6 +588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameContent: {fileID: 0}
+  seeMachelfWait: 2
 --- !u!114 &114182020370691214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2417,15 +2418,17 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.AudioStop
         - HutongGames.PlayMaker.Actions.InvokeMethod
+        - HutongGames.PlayMaker.Actions.ActivateGameObject
         customNames:
         - 
         - 
         - 
         - 
-        actionEnabled: 01010101
-        actionIsOpen: 01010101
-        actionStartIndex: 00000000050000000700000008000000
-        actionHashCodes: b2cf10005ac852048d4bb50359f9a004
+        - 
+        actionEnabled: 0101010101
+        actionIsOpen: 0101010101
+        actionStartIndex: 000000000500000007000000080000000f000000
+        actionHashCodes: b2cf10005ac852048d4bb50359f9a004b2cf1000
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -2437,6 +2440,14 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             value: {fileID: 1412169001430108}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
         - ownerOption: 1
           gameObject:
             useVariable: 0
@@ -2647,18 +2658,30 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 000000
+        byteData: 0000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 14000000110000001100000001000000010000002400000001000000140000001400000012000000120000000f000000110000000f00000011000000
+        paramDataType: 14000000110000001100000001000000010000002400000001000000140000001400000012000000120000000f000000110000000f000000110000001400000011000000110000000100000001000000
         paramName:
         - gameObject
         - activate
@@ -2675,8 +2698,13 @@ MonoBehaviour:
         - repeating
         - repeatDelay
         - cancelOnExit
-        paramDataPos: 000000000000000001000000000000000100000000000000020000000100000002000000000000000100000000000000020000000100000003000000
-        paramByteDataSize: 000000000000000000000000010000000100000000000000010000000000000000000000000000000000000000000000000000000000000000000000
+        - gameObject
+        - activate
+        - recursive
+        - resetOnExit
+        - everyFrame
+        paramDataPos: 0000000000000000010000000000000001000000000000000200000001000000020000000000000001000000000000000200000001000000030000000300000004000000050000000300000004000000
+        paramByteDataSize: 0000000000000000000000000100000001000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -3455,6 +3483,7 @@ MonoBehaviour:
   isAttracted: 0
   attractedPlace: {x: 0, y: 0, z: 0}
   attring: 0
+  setVoicePlace: 0
   attractedSet: 0
   isDizz: 0
   dizzy: 0
