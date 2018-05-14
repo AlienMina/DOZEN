@@ -72,6 +72,10 @@ public class GameCon : MonoBehaviour {
     {
         Application.Quit();
     }
+    public void back2Menu()
+    {
+        SceneManager.LoadScene("start", LoadSceneMode.Single);
+    }
 
     public void RestartLevel()
     {
