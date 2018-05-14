@@ -59,6 +59,8 @@ public class enemyMove : MonoBehaviour {
     public bool isReturn = false;//这个是为了进行状态动画而设置的，只有在它打开的时候才清空头顶的状态
 
     public GameObject alert;
+
+    public float elfSoundWait = 5f;
     // Use this for initialization
     void Start () {
         place1 = this.GetComponent<Transform>().position;//敌人巡逻的起始点
@@ -238,8 +240,8 @@ public class enemyMove : MonoBehaviour {
         {
             attring = true;
                 Debug.Log(agent.remainingDistance);
-                yield return new WaitForSeconds(5);
-                //Debug.Log("wati fininshed.");
+                yield return new WaitForSeconds(elfSoundWait);
+                Debug.Log("wati fininshed.");
             //Debug.Log(this.GetComponent<Transform>().position);
             isAttracted = false;
             isReturn = true;

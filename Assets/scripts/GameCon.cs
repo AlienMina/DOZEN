@@ -11,6 +11,8 @@ public class GameCon : MonoBehaviour {
     public AudioSource hideAudio;
     public bool isKillButton = false;
     public bool showKillButton = false;
+    public bool playerDied = false;
+
 
     // Use this for initialization
     void Start () {

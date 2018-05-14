@@ -21,20 +21,23 @@ public class changeCharacter : MonoBehaviour {
 
     public void ChangeCharacter()
     {
-        Debug.Log("isDozen "+GameContent.isDOZEN);
-        if (GameContent.isDOZEN)
+        if (!GameContent.playerDied)
         {
-            GameContent.isDOZEN = false;
             Debug.Log("isDozen " + GameContent.isDOZEN);
-            audios.Play();
-            this.GetComponent<Image>().sprite = controlT;
-        }
-        else
-        {
-            GameContent.isDOZEN = true;
-            Debug.Log("isDozen " + GameContent.isDOZEN);
-            audios.Play();
-            this.GetComponent<Image>().sprite = controlDozen;
+            if (GameContent.isDOZEN)
+            {
+                GameContent.isDOZEN = false;
+                Debug.Log("isDozen " + GameContent.isDOZEN);
+                audios.Play();
+                this.GetComponent<Image>().sprite = controlT;
+            }
+            else
+            {
+                GameContent.isDOZEN = true;
+                Debug.Log("isDozen " + GameContent.isDOZEN);
+                audios.Play();
+                this.GetComponent<Image>().sprite = controlDozen;
+            }
         }
     }
 }
