@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 114682163179881906}
   - component: {fileID: 114182020370691214}
   m_Layer: 0
-  m_Name: EnemyStatic
+  m_Name: laserEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,7 +89,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1706133422808026
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,13 +146,14 @@ GameObject:
   - component: {fileID: 212049923139506768}
   - component: {fileID: 61536986289810396}
   - component: {fileID: 114720332356369974}
+  - component: {fileID: 95231537912298224}
   m_Layer: 0
   m_Name: laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4309837461887700
 Transform:
   m_ObjectHideFlags: 1
@@ -177,7 +178,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1412169001430108}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 16, z: -11}
+  m_LocalPosition: {x: -92.6, y: 45.3, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4309837461887700}
@@ -217,7 +218,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1873979873056972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.55, z: 0}
+  m_LocalPosition: {x: 0, y: 8.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4309837461887700}
@@ -244,8 +245,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1954596270329784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.18, y: 0.94, z: 0}
-  m_LocalScale: {x: 8.655303, y: -2.0084345, z: 1}
+  m_LocalPosition: {x: -19.81, y: 2.95, z: 0}
+  m_LocalScale: {x: 1.4027238, y: 2, z: 1.4027238}
   m_Children: []
   m_Father: {fileID: 4309837461887700}
   m_RootOrder: 1
@@ -418,7 +419,7 @@ BoxCollider2D:
     border: {x: 0, y: 0.04, z: 0.59, w: 0.07}
     pivot: {x: 0, y: 0.5}
     oldSize: {x: 2.92, y: 2.57}
-    newSize: {x: 38.095524, y: 20.096262}
+    newSize: {x: 55.862926, y: 20.096262}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
@@ -438,18 +439,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06736183, y: 0}
+  m_Offset: {x: 0.18093586, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.28, y: 0, z: 0.089999996, w: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.47, y: 0.9}
+    oldSize: {x: 25.92, y: 2.24}
     newSize: {x: 0.51, y: 3.09}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.335276, y: 0.9}
+  m_Size: {x: 25.350286, y: 0.9}
   m_EdgeRadius: 0
 --- !u!61 &61603782616224514
 BoxCollider2D:
@@ -467,7 +468,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20, y: 13.54}
+    oldSize: {x: 26.3, y: 19.22}
     newSize: {x: 2.84, y: 4.27}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -493,7 +494,7 @@ BoxCollider2D:
     border: {x: 0, y: 0.04, z: 0.59, w: 0.07}
     pivot: {x: 0, y: 0.5}
     oldSize: {x: 2.92, y: 2.57}
-    newSize: {x: 16.358276, y: 8.348362}
+    newSize: {x: 24.111328, y: 8.348362}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
@@ -501,6 +502,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15.985762, y: 8.38034}
   m_EdgeRadius: 0
+--- !u!95 &95231537912298224
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1954596270329784}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 93f99ea89e2c24f4d9a583d33f5b2100, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95731307850985742
 Animator:
   serializedVersion: 3
@@ -510,7 +528,7 @@ Animator:
   m_GameObject: {fileID: 1706133422808026}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c755d2dd8d71db8428134e74caa8cd27, type: 2}
+  m_Controller: {fileID: 9100000, guid: fc915a24ab3b7bf4e9082a1d0f684767, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -563,7 +581,7 @@ MonoBehaviour:
   laserObject: {fileID: 1954596270329784}
   laserRemaining: 3
   laserRest: 2
-  enemyKillView: {fileID: 0}
+  enemyKillView: {fileID: 1526057340999142}
 --- !u!114 &114129893232900550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2748,7 +2766,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -3545,8 +3563,8 @@ MonoBehaviour:
   dead: {fileID: 0}
   isEasyEnemy: 1
   easyEnemyWait: 1.75
-  isLaserEnemy: 0
-  laser: {fileID: 0}
+  isLaserEnemy: 1
+  laser: {fileID: 1954596270329784}
   stopLaser: 0
 --- !u!114 &114976485444940574
 MonoBehaviour:
@@ -3627,9 +3645,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 11
-  m_Sprite: {fileID: 21300000, guid: 6f73c5638ab693c498cbfe9368379d60, type: 3}
-  m_Color: {r: 1, g: 0.51724136, b: 0, a: 1}
-  m_FlipX: 0
+  m_Sprite: {fileID: 21300000, guid: f115c44d9b11b104fbc99b8355f16172, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.51, y: 3.09}
@@ -3671,7 +3689,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: ccfca0dc619bf3e47bfcb2325c714d82, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76baac3bfbfd8754a84ba8a9603bdbad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -3764,7 +3782,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 16.358276, y: 8.348362}
+  m_Size: {x: 24.111328, y: 8.348362}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3808,7 +3826,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 38.095524, y: 20.096262}
+  m_Size: {x: 55.862926, y: 20.096262}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

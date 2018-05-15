@@ -14,9 +14,14 @@ public class enemyKillView : MonoBehaviour {
     public bool isEasyEnemy;
     public float easyEnemyWait=2f;
 
+    public bool isLaserEnemy;
+    public GameObject laser;
+
 
     bool easyWaited = false;
     bool startWait = false;
+
+    public bool stopLaser;
 
 	// Use this for initialization
 	void Start () {
@@ -44,10 +49,22 @@ public class enemyKillView : MonoBehaviour {
                     
 
                 }
-                else { 
+                else {
+                    if (isLaserEnemy)
+                    {
+                        stopLaser = true;
+                        laser.SetActive(true);
+                        enemyanim.Play("enemySimpleAttack");
+                        enemyanim.gameObject.GetComponent<turnFaceEnemy>().dead = true;
+                        StartCoroutine(playerDied());
+                    }
+                    else
+                    {
                 enemyanim.Play("enemySimpleAttack");
                 enemyanim.gameObject.GetComponent<turnFaceEnemy>().dead = true;
                 StartCoroutine(playerDied());
+                    }
+
                 }
             }
         }
@@ -85,6 +102,7 @@ public class enemyKillView : MonoBehaviour {
         //player.SetActive(false);        
         dead.SetActive(true);
         enemyanim.gameObject.GetComponent<turnFaceEnemy>().dead = false;
+        stopLaser = false;
     }
 
     IEnumerator easyWait()

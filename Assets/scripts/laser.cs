@@ -10,6 +10,8 @@ public class laser : MonoBehaviour {
 
     bool isLaser = false;
 
+    public GameObject enemyKillView;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -17,7 +19,7 @@ public class laser : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!isLaser)
+        if (!isLaser&&enemyKillView.GetComponent<enemyKillView>().stopLaser==false)
         {
             StartCoroutine(laserLoop());
         }
