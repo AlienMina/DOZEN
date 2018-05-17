@@ -14,6 +14,7 @@ public class buttonMonitor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        /*
 		if (GameContent.isDOZEN)
         {
             for(int i = 0; i < elfAttentionButton.Length; i++)
@@ -24,8 +25,9 @@ public class buttonMonitor : MonoBehaviour {
             isSet = false;
             
         }
-        else
-        {
+        */
+        //else
+        //{
             if (!isSet)
             {
                 for (int i = 0; i < elfAttentionButton.Length; i++)
@@ -34,6 +36,6 @@ public class buttonMonitor : MonoBehaviour {
                 }
                 isSet = true;
             }
-        }
+        //}
 	}
 }

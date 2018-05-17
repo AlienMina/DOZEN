@@ -27,6 +27,7 @@ public class playerMove : MonoBehaviour {
 
     Vector3 playerPosition;
     public float StepDistance=1f;
+    public GameObject machElf;
 
     void Awake()
     {
@@ -36,6 +37,7 @@ public class playerMove : MonoBehaviour {
 
     public void Update()
     {
+        /*
         if (Input.GetMouseButtonDown(0)&&!playerDead)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -88,7 +90,7 @@ public class playerMove : MonoBehaviour {
                 }
 
             }
-        }
+        }*/
     }
 
     IEnumerator wait()
@@ -132,6 +134,11 @@ public class playerMove : MonoBehaviour {
 
     public void moveRight()
     {
+        if (GameContent.isHidden)
+        {
+            GameContent.DozenLeaveHidden();//当主角移动的时候，解除隐藏
+        }
+        moveElf();
         getPlayerPosition();
         Vector3 rightPosition = new Vector3(playerPosition.x+StepDistance, playerPosition.y, playerPosition.z);
         agent.destination = rightPosition;
@@ -139,6 +146,11 @@ public class playerMove : MonoBehaviour {
 
     public void moveLeft()
     {
+        if (GameContent.isHidden)
+        {
+            GameContent.DozenLeaveHidden();//当主角移动的时候，解除隐藏
+        }
+        moveElf();
         getPlayerPosition();
         Vector3 leftPosition = new Vector3(playerPosition.x - StepDistance, playerPosition.y, playerPosition.z);
         agent.destination = leftPosition;
@@ -146,16 +158,32 @@ public class playerMove : MonoBehaviour {
 
     public void moveUp()
     {
+        if (GameContent.isHidden)
+        {
+            GameContent.DozenLeaveHidden();//当主角移动的时候，解除隐藏
+        }
+        moveElf();
         agent.destination = new Vector3(agent.destination.x, agent.destination.y + StepDistance, agent.destination.z);
     }
 
     public void moveDown()
     {
+        if (GameContent.isHidden)
+        {
+            GameContent.DozenLeaveHidden();//当主角移动的时候，解除隐藏
+        }
+        moveElf();
         agent.destination = new Vector3(agent.destination.x, agent.destination.y - StepDistance, agent.destination.z);
     }
 
     public void getPlayerPosition()
     {
         playerPosition = this.gameObject.transform.position;
+    }
+
+    public void moveElf()
+    {
+        machElf.GetComponent<NavMeshAgent>().speed = 20;
+        machElf.GetComponent<NavMeshAgent>().destination = new Vector3(playerPosition.x, playerPosition.y + 20, playerPosition.z + 10);
     }
 }

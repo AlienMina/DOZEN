@@ -11796,7 +11796,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1372625422
   m_Radius: 0.5
-  m_Speed: 40
+  m_Speed: 20
   m_Acceleration: 1000
   avoidancePriority: 50
   m_AngularSpeed: 0
@@ -22702,6 +22702,7 @@ MonoBehaviour:
   playerDead: 0
   GameContent: {fileID: 1071756839}
   StepDistance: 1
+  machElf: {fileID: 502650821}
 --- !u!54 &948789787
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26867,7 +26868,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1109719633
 RectTransform:
   m_ObjectHideFlags: 0
