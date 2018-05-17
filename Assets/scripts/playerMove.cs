@@ -25,6 +25,9 @@ public class playerMove : MonoBehaviour {
     private Vector3 test;
     //public float zAxis=0;
 
+    Vector3 playerPosition;
+    public float StepDistance=1f;
+
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -35,18 +38,6 @@ public class playerMove : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0)&&!playerDead)
         {
-            //Debug.Log("get mouse down");
-            //screenPosition = Camera.main.WorldToScreenPoint(transform.position);
-            //mousePositionOnScreen = Input.mousePosition;
-            //mousePositionOnScreen.z = screenPosition.z;
-            //mousePositionInWorld = Camera.main.ScreenToWorldPoint(mousePositionOnScreen);
-
-            //mousePoint.x = mousePositionInWorld.x;
-            //mousePoint.y = mousePositionInWorld.y;
-            //mousePoint.z = zAxis;
-            ////agent.destination = mousePoint;
-            //agent.SetDestination(mousePoint);
-            //Debug.Log(agent.destination);
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
@@ -137,5 +128,34 @@ public class playerMove : MonoBehaviour {
         EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
 
         return results.Count > 0;
+    }
+
+    public void moveRight()
+    {
+        getPlayerPosition();
+        Vector3 rightPosition = new Vector3(playerPosition.x+StepDistance, playerPosition.y, playerPosition.z);
+        agent.destination = rightPosition;
+    }
+
+    public void moveLeft()
+    {
+        getPlayerPosition();
+        Vector3 leftPosition = new Vector3(playerPosition.x - StepDistance, playerPosition.y, playerPosition.z);
+        agent.destination = leftPosition;
+    }
+
+    public void moveUp()
+    {
+        agent.destination = new Vector3(agent.destination.x, agent.destination.y + StepDistance, agent.destination.z);
+    }
+
+    public void moveDown()
+    {
+        agent.destination = new Vector3(agent.destination.x, agent.destination.y - StepDistance, agent.destination.z);
+    }
+
+    public void getPlayerPosition()
+    {
+        playerPosition = this.gameObject.transform.position;
     }
 }
