@@ -26019,7 +26019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 948789785}
-  machelf: {fileID: 502650828}
+  machelf: {fileID: 948789785}
   GameContent: {fileID: 1071756839}
   adjustHeight: 10
   smoothRate: 0.5
@@ -26868,7 +26868,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1109719633
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30688,7 +30688,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1245091323
 MonoBehaviour:
   m_ObjectHideFlags: 0

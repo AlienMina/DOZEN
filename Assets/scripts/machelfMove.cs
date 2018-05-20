@@ -47,8 +47,8 @@ public class machelfMove : MonoBehaviour {
 
             if (Physics.Raycast(ray, out hit, 1000) )
             {
-                //if (GameContent.isDOZEN == false)
-                //{
+                if (GameContent.isDOZEN == false)
+                {
                     //Debug.Log(hit.point);
                     test.x = hit.point.x;
                     test.y = hit.point.y;
@@ -78,7 +78,7 @@ public class machelfMove : MonoBehaviour {
                             agent.destination = test;
                         
                     }
-                //}
+                }
                 
             }
         }

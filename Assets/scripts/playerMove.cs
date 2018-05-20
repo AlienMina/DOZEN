@@ -37,7 +37,7 @@ public class playerMove : MonoBehaviour {
 
     public void Update()
     {
-        /*
+        
         if (Input.GetMouseButtonDown(0)&&!playerDead)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -90,7 +90,12 @@ public class playerMove : MonoBehaviour {
                 }
 
             }
-        }*/
+        }
+        if (GameContent.isDOZEN)
+        {
+            getPlayerPosition();
+            moveElf();
+        }
     }
 
     IEnumerator wait()
