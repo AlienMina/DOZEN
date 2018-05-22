@@ -16,8 +16,28 @@ public class changeCharacter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        //TAB切换角色
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            keyboardChangeCharacter();
+        }
+
 	}
+    void keyboardChangeCharacter()
+    {
+        if (GameContent.isDOZEN)
+        {
+            GameContent.isDOZEN = false;
+            audios.Play();
+            this.GetComponent<Image>().sprite = controlT;
+        }
+        else
+        {
+            GameContent.isDOZEN = true;
+            audios.Play();
+            this.GetComponent<Image>().sprite = controlDozen;
+        }
+    }
 
     public void ChangeCharacter()
     {

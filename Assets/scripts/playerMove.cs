@@ -73,18 +73,20 @@ public class playerMove : MonoBehaviour {
 #endif
                     else
                     {
-                    //Debug.Log(test);
-                        if (GameContent.isHidden)
+                        if (!GameContent.isElevator)
                         {
-                            GameContent.DozenLeaveHidden();//当主角移动的时候，解除隐藏
+                            Debug.Log("isnotElevator now");
+                            if (GameContent.isHidden)
+                            {
+                                GameContent.DozenLeaveHidden();//当主角移动的时候，解除隐藏
+                            }
+                            //agent.Resume();
+                            //agent.enabled = true;
+                            //agent.setS
+                            //agent.velocity = new Vector3(0, 0, 0);
+                            StartCoroutine(wait());
+                            agent.destination = test;
                         }
-                    //agent.Resume();
-                    //agent.enabled = true;
-                    //agent.setS
-                    //agent.velocity = new Vector3(0, 0, 0);
-                    StartCoroutine(wait());
-                    agent.destination = test;
-                        
                     }
                     
                 }

@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class turnFaces : MonoBehaviour {
 
+    public GameCon gameCon;
     public Animator anim;
     public NavMeshAgent agent;
     public AudioSource audioSource;
@@ -24,37 +25,53 @@ public class turnFaces : MonoBehaviour {
 	void Update () {
         if (!pause)
         {
-            if (agent.velocity.x < 0)
-            {
-                anim.Play("dozenWalkLeft");
-                audioSource.volume = 1;
-                face = false;
-                turnMask();
-                //Debug.Log("left.");
-            }
-            else if (agent.velocity.x > 0)
-            {
-                anim.Play("dozenWalkRight");
-                audioSource.volume = 1;
-                face = true;
-                turnMask();
-                //Debug.Log("right.");
-            }
-            else if (agent.velocity.x == 0)
-            {
-                turnmask = false;
-                if (face)
+
+                if (agent.velocity.x < 0)
+                {
+                    if (gameCon.moveable)
+                    {
+                        anim.Play("dozenWalkLeft");
+                        audioSource.volume = 1;
+                        face = false;
+                        turnMask();
+                        //Debug.Log("left.");
+                    }
+                    else
+                    {
+                        anim.Play("dozenWaitRight");
+                    }
+                }
+                else if (agent.velocity.x > 0)
+                {
+                    if (gameCon.moveable)
+                    {
+                    anim.Play("dozenWalkRight");
+                    audioSource.volume = 1;
+                    face = true;
+                    turnMask();
+                    //Debug.Log("right.");
+                    }
+                else
                 {
                     anim.Play("dozenWaitRight");
                 }
-                else
-                {
-                    anim.Play("dozenWaitLeft");
-                }
-
-                audioSource.volume = 0;
-                //Debug.Log("wait.");
             }
+                else if (agent.velocity.x == 0)
+                {
+                    turnmask = false;
+                    if (face)
+                    {
+                        anim.Play("dozenWaitRight");
+                    }
+                    else
+                    {
+                        anim.Play("dozenWaitLeft");
+                    }
+
+                    audioSource.volume = 0;
+                    //Debug.Log("wait.");
+                }
+            
         }
     }
 

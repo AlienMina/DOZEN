@@ -13,6 +13,8 @@ public class GameCon : MonoBehaviour {
     public bool showKillButton = false;
     public bool playerDied = false;
 
+    public bool isElevator = false;//是否在升降梯上
+    public bool moveable = true;//是否可以播放走路的动画
 
     // Use this for initialization
     void Start () {
@@ -30,7 +32,11 @@ public class GameCon : MonoBehaviour {
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>().isStopped=false;
         }
+
+        
 	}
+
+
     /// <summary>
     /// 这套……应该是控制头顶按钮显隐的
     /// </summary>
