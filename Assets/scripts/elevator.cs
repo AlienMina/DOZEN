@@ -51,7 +51,8 @@ public class elevator : MonoBehaviour
         //已经上电梯了，点击也点不走了
         gameCon.isElevator = true;
         isDown = true;
-        Debug.Log(Mathf.Abs(player.GetComponent<NavMeshAgent>().remainingDistance));
+        //elevatorAnim.transform.position = upperPoint.transform.position;
+       Debug.Log(Mathf.Abs(player.GetComponent<NavMeshAgent>().remainingDistance));
         //走到平台上
         player.GetComponent<NavMeshAgent>().destination = upperPoint.transform.position;
 
@@ -76,6 +77,7 @@ public class elevator : MonoBehaviour
             player.GetComponent<NavMeshAgent>().destination = lowerPoint.transform.position;
             //移动电梯……
             elevatorAnim.transform.position = player.transform.position;
+           
             //如果已经到达了目标点
             if (Mathf.Abs(player.transform.position.y - lowerPoint.transform.position.y) < between)
             {
@@ -103,7 +105,8 @@ public class elevator : MonoBehaviour
         //已经上电梯了，点击也点不走了
         gameCon.isElevator = true;
         isUp = true;
-        Debug.Log(Mathf.Abs(player.GetComponent<NavMeshAgent>().remainingDistance));
+        //elevatorAnim.transform.position = lowerPoint.transform.position;
+      // Debug.Log(Mathf.Abs(player.GetComponent<NavMeshAgent>().remainingDistance));
         //走到平台上
         player.GetComponent<NavMeshAgent>().destination = lowerPoint.transform.position;
 

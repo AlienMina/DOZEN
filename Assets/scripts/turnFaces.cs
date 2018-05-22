@@ -39,6 +39,7 @@ public class turnFaces : MonoBehaviour {
                     else
                     {
                         anim.Play("dozenWaitRight");
+                        audioSource.volume = 0;
                     }
                 }
                 else if (agent.velocity.x > 0)
@@ -54,6 +55,7 @@ public class turnFaces : MonoBehaviour {
                 else
                 {
                     anim.Play("dozenWaitRight");
+                    audioSource.volume = 0;
                 }
             }
                 else if (agent.velocity.x == 0)
