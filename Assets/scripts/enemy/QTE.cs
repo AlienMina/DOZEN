@@ -8,6 +8,8 @@ public class QTE : MonoBehaviour {
     public float qteTime = 1;//每个qte的反应时间
     public float qteAbleTime = 0.6f;//qte的正确按键时间
     public GameObject[] qteIcons=new GameObject[3];//三个不同的QTE按键
+    public shakecamera shake;//镜头震动
+    public QTEaccounts qteAccounts;//结算存放处
 
     int[] qteSeries=new int[3] { 0, 0, 0 };//记录动作的序列
     
@@ -50,7 +52,7 @@ public class QTE : MonoBehaviour {
             if (Input.GetKeyUp(KeyCode.Alpha1)){
                 if (time - oldTime >= qteAbleTime)//已经进入了
                 {
-                    Debug.Log("此处应有shake");
+                    shake.shake();
                     qteSeries[num] = 1;
                     num++;
                     if (num > 2)//如果已经是最后一个按键
@@ -74,7 +76,7 @@ public class QTE : MonoBehaviour {
             {
                 if (time - oldTime >= qteAbleTime)//已经进入了
                 {
-                    Debug.Log("此处应有shake");
+                    shake.shake();
                     qteSeries[num] = 2;
                     num++;
                     if (num > 2)//如果已经是最后一个按键
@@ -98,7 +100,7 @@ public class QTE : MonoBehaviour {
             {
                 if (time - oldTime >= qteAbleTime)//已经进入了
                 {
-                    Debug.Log("此处应有shake");
+                    shake.shake();
                     qteSeries[num] = 3;
                     num++;
                     if (num > 2)//如果已经是最后一个按键
