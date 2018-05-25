@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.AI;
+using UnityEngine.UI;
 //这个是用来记全局变量和公共事件的，默认挂在Main Camera上
 public class GameCon : MonoBehaviour {
 
@@ -15,6 +16,9 @@ public class GameCon : MonoBehaviour {
 
     public bool isElevator = false;//是否在升降梯上
     public bool moveable = true;//是否可以播放走路的动画
+
+    public int playerHealth = 6;
+    public Slider blood;
 
     // Use this for initialization
     void Start () {
@@ -33,6 +37,7 @@ public class GameCon : MonoBehaviour {
             GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>().isStopped=false;
         }
 
+        blood.value = playerHealth;
         
 	}
 
