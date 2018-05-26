@@ -73,8 +73,11 @@ public class shakecamera : MonoBehaviour
         }
     }
 
-    public void shake()
+    public void shake(float shakelevel,float shakeTime,float shakeFPS)
     {
         isshakeCamera = true;
+        shakeLevel = shakelevel;
+        setShakeTime = shakeTime;
+        shakeFps = shakeFPS;
     }
 }

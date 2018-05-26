@@ -435,13 +435,14 @@ GameObject:
   - component: {fileID: 165834658}
   - component: {fileID: 165834660}
   - component: {fileID: 165834666}
+  - component: {fileID: 165834667}
   m_Layer: 0
   m_Name: Player-10
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &165834658
 AudioSource:
   m_ObjectHideFlags: 0
@@ -633,7 +634,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 165834657}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -119.8, y: 17.3, z: -12.19}
+  m_LocalPosition: {x: -116.9, y: 17.3, z: -12.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 173048535}
@@ -657,6 +658,24 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &165834667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 165834657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f0c288b104f6fe4f97d7abc27424f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameCon: {fileID: 1979724710}
+  anim: {fileID: 173048542}
+  agent: {fileID: 165834661}
+  audioSource: {fileID: 165834658}
+  mask: {fileID: 2100721658}
+  pause: 0
+  face: 1
 --- !u!1 &173048534
 GameObject:
   m_ObjectHideFlags: 0
@@ -3302,7 +3321,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1979724705}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 032711fd81fa1634ebf5185cb02b6279, type: 3}
   m_Name: 
@@ -3327,6 +3346,8 @@ MonoBehaviour:
   - {fileID: 292538003}
   - {fileID: 128383125}
   shake: {fileID: 1979724713}
+  qteAccounts: {fileID: 0}
+  player: {fileID: 165834657}
 --- !u!114 &1979724713
 MonoBehaviour:
   m_ObjectHideFlags: 0

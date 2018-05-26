@@ -11,17 +11,21 @@ public class QTE : MonoBehaviour {
     public shakecamera shake;//镜头震动
     public QTEaccounts qteAccounts;//结算存放处
 
+    public GameObject player;
+
     int[] qteSeries=new int[3] { 0, 0, 0 };//记录动作的序列
     
     bool qteStart=false;//qte是否开始
     float oldTime;//计时器开始时的时间
     float time;//计时器
     int num= 0;
+    bool wait4finish = false;
 
 	// Use this for initialization
 	void Start () {
         //这里重置三个QTE按键，让它们不显示
         clearIcons();
+        
 	}
 	
 	// Update is called once per frame
@@ -38,6 +42,7 @@ public class QTE : MonoBehaviour {
         oldTime = Time.time;//开始计时
         num = 0;
         qteIcons[0].SetActive(true);
+        player.GetComponent<turnFaces>().pause = true;//角色动画的改变
     }
     
     void qte()
@@ -45,19 +50,29 @@ public class QTE : MonoBehaviour {
         time = Time.time;//刷新时间
         if (time - oldTime >= qteTime)//如果已经超时了的情况
         {
-            fail();
+            if (wait4finish)
+            {
+                finish();
+            }
+            else
+            {
+                fail();
+            }
         }
         else//没有超时的情况，检测按键
         {
             if (Input.GetKeyUp(KeyCode.Alpha1)){
                 if (time - oldTime >= qteAbleTime)//已经进入了
                 {
-                    shake.shake();
+                    player.GetComponent<turnFaces>().playAttackAnim();
+                    shake.shake(2,0.2f,45);
                     qteSeries[num] = 1;
                     num++;
                     if (num > 2)//如果已经是最后一个按键
                     {
-                        finish();
+                        wait4finish = true;
+                        //finish();
+                        Debug.Log("wait4finish");
                     }
                     else
                     {
@@ -76,12 +91,13 @@ public class QTE : MonoBehaviour {
             {
                 if (time - oldTime >= qteAbleTime)//已经进入了
                 {
-                    shake.shake();
+                    player.GetComponent<turnFaces>().playAttackAnim();
+                    shake.shake(2, 0.2f, 45);
                     qteSeries[num] = 2;
                     num++;
                     if (num > 2)//如果已经是最后一个按键
                     {
-                        finish();
+                        wait4finish = true;
                     }
                     else
                     {
@@ -100,12 +116,13 @@ public class QTE : MonoBehaviour {
             {
                 if (time - oldTime >= qteAbleTime)//已经进入了
                 {
-                    shake.shake();
+                    player.GetComponent<turnFaces>().playAttackAnim();
+                    shake.shake(2, 0.2f, 45);
                     qteSeries[num] = 3;
                     num++;
                     if (num > 2)//如果已经是最后一个按键
                     {
-                        finish();
+                        wait4finish = true;
                     }
                     else
                     {
@@ -130,22 +147,27 @@ public class QTE : MonoBehaviour {
     }
     void fail()
     {
+        shake.shake(10, 0.2f, 45);
         clearIcons();
         qteStart = false;
         num = 0;
         qteSeries = new int[3] { 0, 0, 0 };
+        player.GetComponent<turnFaces>().pause = false;//角色动画的改变
         Debug.Log("此处应有敌人暴走");
     }
 
     void finish()
     {
-        clearIcons();
-        qteStart = false;
-        num = 0;
-        //此处应有结算过程
-        Debug.Log(qteSeries[0] +""+ qteSeries[1] +""+ qteSeries[2]);
-        Debug.Log("此处应该有结算");
-        qteSeries = new int[3] { 0, 0, 0 };
+              wait4finish = false;
+            clearIcons();
+            qteStart = false;
+            num = 0;
+            //此处应有结算过程
+            Debug.Log(qteSeries[0] + "" + qteSeries[1] + "" + qteSeries[2]);
+            player.GetComponent<turnFaces>().pause = false;//角色动画的改变
+            Debug.Log("此处应该有结算");
+            qteSeries = new int[3] { 0, 0, 0 };
+        
     }
 
     void clearIcons()

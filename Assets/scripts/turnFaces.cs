@@ -46,17 +46,17 @@ public class turnFaces : MonoBehaviour {
                 {
                     if (gameCon.moveable)
                     {
-                    anim.Play("dozenWalkRight");
-                    audioSource.volume = 1;
-                    face = true;
+                        anim.Play("dozenWalkRight");
+                        audioSource.volume = 1;
+                        face = true;
                     turnMask();
                     //Debug.Log("right.");
                     }
-                else
-                {
-                    anim.Play("dozenWaitRight");
-                    audioSource.volume = 0;
-                }
+                    else
+                    {
+                        anim.Play("dozenWaitRight");
+                        audioSource.volume = 0;
+                    }
             }
                 else if (agent.velocity.x == 0)
                 {
@@ -68,6 +68,7 @@ public class turnFaces : MonoBehaviour {
                     else
                     {
                         anim.Play("dozenWaitLeft");
+                    Debug.Log("waitLeft");
                     }
 
                     audioSource.volume = 0;
@@ -88,5 +89,20 @@ public class turnFaces : MonoBehaviour {
             mask.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         turnmask = true;
+    }
+
+    public void playAttackAnim()
+    {
+        
+        if (face)
+        {
+            anim.Play("dozenAttackRight");
+        }
+        else
+        {
+            anim.Play("dozenAttackLeft");
+
+        }
+        
     }
 }
