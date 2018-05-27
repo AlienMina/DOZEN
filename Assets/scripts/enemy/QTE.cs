@@ -50,6 +50,7 @@ public class QTE : MonoBehaviour {
         time = Time.time;//刷新时间
         if (time - oldTime >= qteTime)//如果已经超时了的情况
         {
+            //这个是为了确保最后一次的动画可以正常触发，所以放在这里结算，否则直接结算会立刻顶掉最后一次QTE的震动屏幕和主角动画
             if (wait4finish)
             {
                 finish();
@@ -158,14 +159,14 @@ public class QTE : MonoBehaviour {
 
     void finish()
     {
-              wait4finish = false;
+            wait4finish = false;
             clearIcons();
             qteStart = false;
             num = 0;
             //此处应有结算过程
             Debug.Log(qteSeries[0] + "" + qteSeries[1] + "" + qteSeries[2]);
             player.GetComponent<turnFaces>().pause = false;//角色动画的改变
-            Debug.Log("此处应该有结算");
+            accounts();
             qteSeries = new int[3] { 0, 0, 0 };
         
     }
@@ -175,6 +176,31 @@ public class QTE : MonoBehaviour {
         for (int i = 0; i < qteIcons.Length; i++)
         {
             qteIcons[i].SetActive(false);
+        }
+    }
+
+    void accounts()
+    {
+        int qteFinalNum = qteSeries[0] * 100 + qteSeries[1] * 10 + qteSeries[2];
+        if (qteFinalNum == 123)//ABC 直接杀死敌人
+        {
+            qteAccounts.enemyDiedImmediately();
+        }
+        else if (qteFinalNum == 231)
+        {
+            qteAccounts.enemyDizzy();
+        }
+        else if (qteFinalNum == 312)
+        {
+            qteAccounts.enemyFriendly();
+        }
+        else if (qteFinalNum == 132 || qteFinalNum == 213 || qteFinalNum == 321)
+        {
+            qteAccounts.enemyCrazy();
+        }
+        else
+        {
+            qteAccounts.enemyAngry();
         }
     }
 }

@@ -19,6 +19,7 @@ public class GameCon : MonoBehaviour {
 
     public int playerHealth = 6;
     public Slider blood;
+    public int Gold = 0;//金钱
 
     // Use this for initialization
     void Start () {

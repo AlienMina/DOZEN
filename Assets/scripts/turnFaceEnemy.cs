@@ -9,7 +9,7 @@ public class turnFaceEnemy : MonoBehaviour
     public Animator anim;
     public NavMeshAgent agent;
     // Use this for initialization
-    public bool dead = false;
+    public bool pause = false;//其实应该给它改个名叫pause……
     bool face=true ;
     void Start()
     {
@@ -19,7 +19,7 @@ public class turnFaceEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!dead)
+        if (!pause)
         {
             if (agent.velocity.x < 0)
             {
@@ -31,12 +31,16 @@ public class turnFaceEnemy : MonoBehaviour
                 this.transform.rotation = Quaternion.Euler(0, 180, 0);
                 anim.Play("enemySimpleWalk");
             }
+            else if (agent.velocity.x == 0)
+            {
+                anim.Play("enemySimpleWait");
+            }
         }
     }
 
     public void setdead()
     {
-        dead = true;
+        pause = true;
         
     }
 }

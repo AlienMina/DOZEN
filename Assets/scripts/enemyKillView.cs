@@ -55,13 +55,13 @@ public class enemyKillView : MonoBehaviour {
                         stopLaser = true;
                         laser.SetActive(true);
                         enemyanim.Play("enemySimpleAttack");
-                        enemyanim.gameObject.GetComponent<turnFaceEnemy>().dead = true;
+                        enemyanim.gameObject.GetComponent<turnFaceEnemy>().pause = true;
                         StartCoroutine(playerDied());
                     }
                     else
                     {
                 enemyanim.Play("enemySimpleAttack");
-                enemyanim.gameObject.GetComponent<turnFaceEnemy>().dead = true;
+                enemyanim.gameObject.GetComponent<turnFaceEnemy>().pause = true;
                 StartCoroutine(playerDied());
                     }
 
@@ -101,7 +101,7 @@ public class enemyKillView : MonoBehaviour {
         yield return new WaitForSeconds(1.5f);
         //player.SetActive(false);        
         dead.SetActive(true);
-        enemyanim.gameObject.GetComponent<turnFaceEnemy>().dead = false;
+        enemyanim.gameObject.GetComponent<turnFaceEnemy>().pause = false;
         stopLaser = false;
     }
 

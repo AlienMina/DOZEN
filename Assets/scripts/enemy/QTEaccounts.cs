@@ -6,7 +6,7 @@ public class QTEaccounts : MonoBehaviour {
     /// <summary>
     /// QTE的结算效果存放处
     /// </summary>
-
+    public enemyStatus enemysta;
 
 	// Use this for initialization
 	void Start () {
@@ -21,40 +21,41 @@ public class QTEaccounts : MonoBehaviour {
     /// <summary>
     /// 立刻死亡
     /// </summary>
-    void enemyDiedImmediately()
+    public void enemyDiedImmediately()
     {
-
+        StartCoroutine(enemysta.diedImmediately());
+        
     }
 
     /// <summary>
     /// 晕眩
     /// </summary>
-    void enemyDizzy()
+    public void enemyDizzy()
     {
-
+        StartCoroutine(enemysta.dizzy());
     }
 
     /// <summary>
     /// 温顺
     /// </summary>
-    void enemyFriendly()
+    public void enemyFriendly()
     {
-
+        StartCoroutine(enemysta.friendly());
     }
 
     /// <summary>
     /// 发疯
     /// </summary>
-    void enemyCrazy()
+    public void enemyCrazy()
     {
-
+        StartCoroutine(enemysta.crazy());
     }
 
     /// <summary>
     /// 暴走
     /// </summary>
-    void enemyAngry()
+    public void enemyAngry()
     {
-
+        Debug.Log("此处应有暴走");
     }
 }

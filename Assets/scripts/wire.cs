@@ -64,7 +64,7 @@ public class wire : MonoBehaviour {
     IEnumerator killEnemy()
     {
         this.GetComponent<AudioSource>().Play();
-        colli.gameObject.GetComponent<turnFaceEnemy>().dead = true;
+        colli.gameObject.GetComponent<turnFaceEnemy>().pause = true;
         colli.gameObject.GetComponentInParent<NavMeshAgent>().speed=0;
         Debug.Log(colli.gameObject.GetComponentInParent<NavMeshAgent>());
         colli.gameObject.GetComponent<Animator>().Play("enemySimpleDied");
