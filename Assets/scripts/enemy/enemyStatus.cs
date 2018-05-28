@@ -19,6 +19,11 @@ public class enemyStatus : MonoBehaviour {
     public GameObject enemyState;//这是敌人头顶显示状态的按钮……使用的时候记得把ganecon.showkillbutton打开……
     Animator anim;
     bool Crazy = false;
+    bool angry = false;
+    float oldSpeed;
+
+    [SerializeField] float crazyTime = 3f;
+    [SerializeField] float angrySpeed = 16;
     
 	// Use this for initialization
 	void Start () {
@@ -38,6 +43,20 @@ public class enemyStatus : MonoBehaviour {
             else
             {
                 enemymov.gameObject.GetComponent<NavMeshAgent>().destination = new Vector3(enemymov.gameObject.transform.position.x - Random.value, enemymov.gameObject.transform.position.y, enemymov.gameObject.transform.position.z);
+            }
+        }
+        if (angry)
+        {
+            if (!gameCon.isHidden)
+            {
+                enemymov.gameObject.GetComponent<NavMeshAgent>().destination = GameObject.FindWithTag("Player").transform.position;
+            }
+            else
+            {
+                angry = false;
+                enemymov.gameObject.GetComponent<NavMeshAgent>().speed = oldSpeed;
+                enemymov.gameObject.GetComponent<NavMeshAgent>().destination = enemymov.place1;
+
             }
         }
 		
@@ -84,14 +103,29 @@ public class enemyStatus : MonoBehaviour {
     public IEnumerator crazy()
     {
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause = true;
-        enemymov.enabled = false;
+        enemymov.enabled = false;        
         anim.Play("enemySimpleDied");//此处动画应该替换，还应该有一个头顶动画的出现
+        yield return new WaitForSeconds(1f);
         Crazy = true;
         enemymov.enabled = true;
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause = false;
         enemymov.enabled = false;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(crazyTime);
         Crazy = false;
         enemymov.enabled = true;
+    }
+
+    public IEnumerator Angry()
+    {
+        //此处应有主角HP-2
+        enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause = true;
+        enemymov.enabled = false;
+        anim.Play("enemySimpleDied");//此处动画应该替换，还应该有一个头顶动画的出现
+        yield return new WaitForSeconds(1f);
+        angry = true;
+        enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause = false;
+        oldSpeed = enemymov.gameObject.GetComponent<NavMeshAgent>().speed;
+        enemymov.gameObject.GetComponent<NavMeshAgent>().speed = angrySpeed;
+
     }
 }

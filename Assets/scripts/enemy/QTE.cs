@@ -154,7 +154,7 @@ public class QTE : MonoBehaviour {
         num = 0;
         qteSeries = new int[3] { 0, 0, 0 };
         player.GetComponent<turnFaces>().pause = false;//角色动画的改变
-        Debug.Log("此处应有敌人暴走");
+        qteAccounts.enemyAngry();
     }
 
     void finish()

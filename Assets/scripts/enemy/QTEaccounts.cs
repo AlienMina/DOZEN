@@ -56,6 +56,6 @@ public class QTEaccounts : MonoBehaviour {
     /// </summary>
     public void enemyAngry()
     {
-        Debug.Log("此处应有暴走");
+        StartCoroutine(enemysta.Angry());
     }
 }

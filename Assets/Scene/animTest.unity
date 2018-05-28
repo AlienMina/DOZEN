@@ -2211,6 +2211,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &715754746 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1873979873056972, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+    type: 2}
+  m_PrefabInternal: {fileID: 235469150}
 --- !u!1 &745716026
 GameObject:
   m_ObjectHideFlags: 0
@@ -3449,7 +3454,8 @@ MonoBehaviour:
   enemymov: {fileID: 858210157}
   enemyview: {fileID: 214998903}
   gameCon: {fileID: 1979724710}
-  enemyState: {fileID: 0}
+  enemyState: {fileID: 715754746}
+  crazyTime: 3
 --- !u!1 &2100721658
 GameObject:
   m_ObjectHideFlags: 0

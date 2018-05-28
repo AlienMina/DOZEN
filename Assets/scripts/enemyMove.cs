@@ -13,7 +13,7 @@ public class enemyMove : MonoBehaviour {
     public GameObject enemyAnima;
     public GameObject gameplayer;
 
-    Vector3 place1;//巡逻的初始点
+    public Vector3 place1;//巡逻的初始点
     public GameObject place2;//巡逻的终点，请拖一个Object
     //Vector3 enemyPlace;
 
