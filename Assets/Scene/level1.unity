@@ -3520,6 +3520,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c28b556f925e6f34da34604a94243822, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &79070839 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 192522, guid: c28b556f925e6f34da34604a94243822, type: 2}
+  m_PrefabInternal: {fileID: 79070838}
+--- !u!114 &79070840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 79070839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57a8953a62f38e145a18c2f50bc41ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameCon: {fileID: 1071756839}
+  blood: {fileID: 1620576578}
 --- !u!1 &92959968
 GameObject:
   m_ObjectHideFlags: 0
@@ -4491,11 +4508,101 @@ Prefab:
       propertyPath: m_RootOrder
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 114561769542194808, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+        type: 2}
+      propertyPath: gameCon
+      value: 
+      objectReference: {fileID: 1071756839}
+    - target: {fileID: 114720332356369974, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+        type: 2}
+      propertyPath: playerDead
+      value: 
+      objectReference: {fileID: 874592444}
+    - target: {fileID: 114720332356369974, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+        type: 2}
+      propertyPath: GameContent
+      value: 
+      objectReference: {fileID: 1071756839}
+    - target: {fileID: 114720332356369974, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 948789780}
+    - target: {fileID: 114720332356369974, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+        type: 2}
+      propertyPath: dead
+      value: 
+      objectReference: {fileID: 1359218240}
+    - target: {fileID: 114744131084697272, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+        type: 2}
+      propertyPath: playerDead
+      value: 
+      objectReference: {fileID: 874592444}
+    - target: {fileID: 114744131084697272, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+        type: 2}
+      propertyPath: GameContent
+      value: 
+      objectReference: {fileID: 1071756839}
+    - target: {fileID: 114744131084697272, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 948789780}
+    - target: {fileID: 114744131084697272, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+        type: 2}
+      propertyPath: dead
+      value: 
+      objectReference: {fileID: 1359218240}
+    - target: {fileID: 114682163179881906, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+        type: 2}
+      propertyPath: GameContent
+      value: 
+      objectReference: {fileID: 1071756839}
+    - target: {fileID: 114682163179881906, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+        type: 2}
+      propertyPath: audios
+      value: 
+      objectReference: {fileID: 2045195268}
+    - target: {fileID: 114682163179881906, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+        type: 2}
+      propertyPath: gameplayer
+      value: 
+      objectReference: {fileID: 948789780}
+    - target: {fileID: 114682163179881906, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+        type: 2}
+      propertyPath: alert
+      value: 
+      objectReference: {fileID: 1686684394}
+    - target: {fileID: 114280194256900300, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+        type: 2}
+      propertyPath: fsm.states.Array.data[1].actionData.fsmOwnerDefaultParams.Array.data[1].gameObject.value
+      value: 
+      objectReference: {fileID: 1071756834}
+    - target: {fileID: 114280194256900300, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+        type: 2}
+      propertyPath: fsm.states.Array.data[2].actionData.fsmOwnerDefaultParams.Array.data[1].gameObject.value
+      value: 
+      objectReference: {fileID: 1071756834}
+    - target: {fileID: 114180199317681630, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+        type: 2}
+      propertyPath: GameContent
+      value: 
+      objectReference: {fileID: 1071756839}
     - target: {fileID: 114662649456204890, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
         type: 2}
       propertyPath: gameCon
       value: 
       objectReference: {fileID: 1071756839}
+    - target: {fileID: 114887687424939384, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+        type: 2}
+      propertyPath: gameCon
+      value: 
+      objectReference: {fileID: 1071756839}
+    - target: {fileID: 114887687424939384, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+        type: 2}
+      propertyPath: mouseClick
+      value: 
+      objectReference: {fileID: 1103417507}
     - target: {fileID: 114887687424939384, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
         type: 2}
       propertyPath: shake
@@ -4506,51 +4613,6 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 948789780}
-    - target: {fileID: 114744131084697272, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
-        type: 2}
-      propertyPath: playerDead
-      value: 
-      objectReference: {fileID: 874592444}
-    - target: {fileID: 114744131084697272, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
-        type: 2}
-      propertyPath: GameContent
-      value: 
-      objectReference: {fileID: 1071756839}
-    - target: {fileID: 114744131084697272, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 948789780}
-    - target: {fileID: 114744131084697272, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
-        type: 2}
-      propertyPath: dead
-      value: 
-      objectReference: {fileID: 1359218240}
-    - target: {fileID: 114720332356369974, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
-        type: 2}
-      propertyPath: playerDead
-      value: 
-      objectReference: {fileID: 874592444}
-    - target: {fileID: 114720332356369974, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
-        type: 2}
-      propertyPath: GameContent
-      value: 
-      objectReference: {fileID: 1071756839}
-    - target: {fileID: 114720332356369974, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 948789780}
-    - target: {fileID: 114720332356369974, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
-        type: 2}
-      propertyPath: dead
-      value: 
-      objectReference: {fileID: 1359218240}
-    - target: {fileID: 114561769542194808, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
-        type: 2}
-      propertyPath: gameCon
-      value: 
-      objectReference: {fileID: 1071756839}
     - target: {fileID: 114301277605885950, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
         type: 2}
       propertyPath: fsm.states.Array.data[1].actionData.fsmOwnerDefaultParams.Array.data[0].gameObject.value
@@ -4586,44 +4648,39 @@ Prefab:
       propertyPath: fsm.states.Array.data[5].actionData.fsmOwnerDefaultParams.Array.data[3].gameObject.value
       value: 
       objectReference: {fileID: 1686684394}
-    - target: {fileID: 114280194256900300, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+    - target: {fileID: 224555099368300144, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
         type: 2}
-      propertyPath: fsm.states.Array.data[1].actionData.fsmOwnerDefaultParams.Array.data[1].gameObject.value
-      value: 
-      objectReference: {fileID: 1071756834}
-    - target: {fileID: 114280194256900300, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224555099368300144, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
         type: 2}
-      propertyPath: fsm.states.Array.data[2].actionData.fsmOwnerDefaultParams.Array.data[1].gameObject.value
-      value: 
-      objectReference: {fileID: 1071756834}
-    - target: {fileID: 114682163179881906, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114327789832353320, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
         type: 2}
-      propertyPath: GameContent
-      value: 
-      objectReference: {fileID: 1071756839}
-    - target: {fileID: 114682163179881906, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+      propertyPath: m_Value
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114327789832353320, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
         type: 2}
-      propertyPath: audios
-      value: 
-      objectReference: {fileID: 2045195268}
-    - target: {fileID: 114682163179881906, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+      propertyPath: m_MaxValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114662649456204890, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
         type: 2}
-      propertyPath: gameplayer
+      propertyPath: blood
       value: 
-      objectReference: {fileID: 948789780}
-    - target: {fileID: 114682163179881906, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
-        type: 2}
-      propertyPath: alert
-      value: 
-      objectReference: {fileID: 1686684394}
-    - target: {fileID: 114180199317681630, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
-        type: 2}
-      propertyPath: GameContent
-      value: 
-      objectReference: {fileID: 1071756839}
+      objectReference: {fileID: 170551065}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425, type: 2}
   m_IsPrefabParent: 0
+--- !u!224 &145992193 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224180002753434604, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+    type: 2}
+  m_PrefabInternal: {fileID: 145992192}
 --- !u!1 &150106070
 GameObject:
   m_ObjectHideFlags: 0
@@ -4971,6 +5028,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &170551065 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1307407091095100, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+    type: 2}
+  m_PrefabInternal: {fileID: 145992192}
 --- !u!1 &174218512
 GameObject:
   m_ObjectHideFlags: 0
@@ -26522,6 +26584,7 @@ MonoBehaviour:
   playerHealth: 10
   blood: {fileID: 1620576578}
   Gold: 0
+  enemyStop: 0
 --- !u!114 &1071756840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31273,6 +31336,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1240801062 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1706133422808026, guid: 2e4e0c8a1d94d6946a5ac0e46ffd0425,
+    type: 2}
+  m_PrefabInternal: {fileID: 145992192}
+--- !u!114 &1240801063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1240801062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a084db1f976bcbe49ba693fb5c52f423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xOffset: -10
+  yOffset: 140
+  recTransform: {fileID: 145992193}
 --- !u!1 &1245091322
 GameObject:
   m_ObjectHideFlags: 0

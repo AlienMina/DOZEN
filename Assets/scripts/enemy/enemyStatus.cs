@@ -10,17 +10,21 @@ using UnityEngine.AI;
  * QTE开启时，暂停敌人的行动，存储当前的状态，然后在QTE结束后结算QTE状态并执行
  * 执行结束后再读取之前的状态继续
  * ——现在暂时想偷个懒：在结算QTE状态的时候停掉enemyMove，然后结算完了再打开……
+ * 敌人血量写在这里了！
  */
 public class enemyStatus : MonoBehaviour {
 
+    public int enemyBlood = 10;//敌人的血量写在这里
     public enemyMove enemymov;
     public enemyView enemyview;
     public GameCon gameCon;
     public GameObject enemyState;//这是敌人头顶显示状态的按钮……使用的时候记得把ganecon.showkillbutton打开……
+    public GameObject blood;
     Animator anim;
     bool Crazy = false;
     bool angry = false;
     float oldSpeed;
+    float speedBeforeStop;
 
     [SerializeField] float crazyTime = 3f;
     [SerializeField] float angrySpeed = 16;
@@ -28,15 +32,15 @@ public class enemyStatus : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         anim = enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().gameObject.GetComponent<Animator>();
-        
+        speedBeforeStop = enemymov.gameObject.GetComponent<NavMeshAgent>().speed;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
         if (Crazy)
         {
             Random.InitState((int)Time.time);
-            if (Random.value >0.5)
+            if (Random.value > 0.5)
             {
                 enemymov.gameObject.GetComponent<NavMeshAgent>().destination = new Vector3(enemymov.gameObject.transform.position.x + Random.value, enemymov.gameObject.transform.position.y, enemymov.gameObject.transform.position.z);
             }
@@ -59,7 +63,21 @@ public class enemyStatus : MonoBehaviour {
 
             }
         }
-		
+        if (!gameCon.enemyStop)
+        {
+            
+            enemymov.gameObject.GetComponent<NavMeshAgent>().speed = speedBeforeStop;
+            speedBeforeStop = enemymov.gameObject.GetComponent<NavMeshAgent>().speed;
+        }
+        else
+        {
+            enemymov.gameObject.GetComponent<NavMeshAgent>().speed = 0;
+        }
+
+        if (enemyBlood == 0)
+        {
+            StartCoroutine(diedImmediately());
+        }
 	}
 
     public IEnumerator diedImmediately()
@@ -67,7 +85,8 @@ public class enemyStatus : MonoBehaviour {
         enemymov.enabled = false;
         enemyview.gameObject.SetActive(false);
         gameCon.Gold += 100;
-        //此处应有敌人血条归零
+        blood.SetActive(true);
+        enemyBlood = 0;
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().setdead();
         anim.Play("enemySimpleDied");
         yield return new WaitForSeconds(1f);
@@ -79,13 +98,15 @@ public class enemyStatus : MonoBehaviour {
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause = true;
         enemymov.enabled = false;
         enemyview.gameObject.SetActive(false);
-        //此处应有敌人HP-1        
+        blood.SetActive(true);
+        enemyBlood -= 1;      
         anim.Play("enemySimpleDied");//此处动画应该替换，还应该有一个头顶动画的出现
         
         yield return new WaitForSeconds(2f);
         enemymov.enabled = true;
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause=false;
         enemyview.gameObject.SetActive(true);
+        blood.SetActive(false);
     }
 
     public IEnumerator friendly()
@@ -117,7 +138,7 @@ public class enemyStatus : MonoBehaviour {
 
     public IEnumerator Angry()
     {
-        //此处应有主角HP-2
+        gameCon.playerHealth -= 2;
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause = true;
         enemymov.enabled = false;
         anim.Play("enemySimpleDied");//此处动画应该替换，还应该有一个头顶动画的出现
