@@ -61,6 +61,8 @@ public class enemyMove : MonoBehaviour {
     public GameObject alert;
 
     public float elfSoundWait = 5f;
+
+    float speedBeforeStop;
     // Use this for initialization
     void Start () {
         place1 = this.GetComponent<Transform>().position;//敌人巡逻的起始点
@@ -69,15 +71,25 @@ public class enemyMove : MonoBehaviour {
         oldSpeed = agent.speed;
         newSpeed = oldSpeed * 1.2f;
         isDizz = false;
-
         if (alert != null)
         {
             alert.SetActive(false);
         }
+        speedBeforeStop = this.gameObject.GetComponent<NavMeshAgent>().speed;
     }
 	
 	// Update is called once per frame
 	void Update () {
+        if (!GameContent.enemyStop)
+        {
+            this.gameObject.GetComponent<NavMeshAgent>().speed = speedBeforeStop;
+            speedBeforeStop = this.gameObject.GetComponent<NavMeshAgent>().speed;
+            
+        }
+        else
+        {
+            this.gameObject.GetComponent<NavMeshAgent>().speed = 0;
+        }
         //enemyPlace = this.GetComponent<Transform>().position;
         //if (!chasingPlayer && !chasingVoice)
         //StartCoroutine(patrol());

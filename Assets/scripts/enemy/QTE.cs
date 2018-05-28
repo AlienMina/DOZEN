@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class QTE : MonoBehaviour {
 
-    
+    public GameCon gameCon;
+    public GameObject mouseClick;
     public float qteTime = 1;//每个qte的反应时间
     public float qteAbleTime = 0.6f;//qte的正确按键时间
     public GameObject[] qteIcons=new GameObject[3];//三个不同的QTE按键
@@ -43,6 +45,8 @@ public class QTE : MonoBehaviour {
         num = 0;
         qteIcons[0].SetActive(true);
         player.GetComponent<turnFaces>().pause = true;//角色动画的改变
+        mouseClick.SetActive(false);
+        gameCon.enemyStop = true;
     }
     
     void qte()
@@ -148,6 +152,8 @@ public class QTE : MonoBehaviour {
     }
     void fail()
     {
+        mouseClick.SetActive(true);
+        gameCon.enemyStop = false;
         shake.shake(10, 0.2f, 45);
         clearIcons();
         qteStart = false;
@@ -159,7 +165,9 @@ public class QTE : MonoBehaviour {
 
     void finish()
     {
-            wait4finish = false;
+        mouseClick.SetActive(true);
+        gameCon.enemyStop = false;
+        wait4finish = false;
             clearIcons();
             qteStart = false;
             num = 0;

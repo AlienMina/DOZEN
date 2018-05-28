@@ -17,9 +17,11 @@ public class GameCon : MonoBehaviour {
     public bool isElevator = false;//是否在升降梯上
     public bool moveable = true;//是否可以播放走路的动画
 
-    public int playerHealth = 6;
+    public int playerHealth = 10;
     public Slider blood;
     public int Gold = 0;//金钱
+
+    public bool enemyStop = false;//QTE-停止所有敌人
 
     // Use this for initialization
     void Start () {
@@ -40,6 +42,7 @@ public class GameCon : MonoBehaviour {
 
         blood.value = playerHealth;
         
+
 	}
 
 
