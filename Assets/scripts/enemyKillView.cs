@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class enemyKillView : MonoBehaviour {
 
+    public GameCon gameCon;
     public Animator enemyanim;
     public AudioSource playerDead;
     public GameCon GameContent;
@@ -30,7 +31,10 @@ public class enemyKillView : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (gameCon.playerHealth == 0)
+        {
+            StartCoroutine(playerDied());
+        }
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -56,13 +60,15 @@ public class enemyKillView : MonoBehaviour {
                         laser.SetActive(true);
                         enemyanim.Play("enemySimpleAttack");
                         enemyanim.gameObject.GetComponent<turnFaceEnemy>().pause = true;
-                        StartCoroutine(playerDied());
+                        //StartCoroutine(playerDied());
+                        StartCoroutine(hitPlayer());
                     }
                     else
                     {
                 enemyanim.Play("enemySimpleAttack");
                 enemyanim.gameObject.GetComponent<turnFaceEnemy>().pause = true;
-                StartCoroutine(playerDied());
+                        //StartCoroutine(playerDied());
+                        StartCoroutine(hitPlayer());
                     }
 
                 }
@@ -103,6 +109,13 @@ public class enemyKillView : MonoBehaviour {
         dead.SetActive(true);
         enemyanim.gameObject.GetComponent<turnFaceEnemy>().pause = false;
         stopLaser = false;
+    }
+
+    IEnumerator hitPlayer()
+    {
+        gameCon.playerHealth -= 1;
+        yield return new WaitForSeconds(1.5f);
+        enemyanim.gameObject.GetComponent<turnFaceEnemy>().pause = false;
     }
 
     IEnumerator easyWait()

@@ -23,9 +23,10 @@ public class GameCon : MonoBehaviour {
 
     public bool enemyStop = false;//QTE-停止所有敌人
 
+
     // Use this for initialization
     void Start () {
-
+       
     }
 	
 	// Update is called once per frame
@@ -97,4 +98,6 @@ public class GameCon : MonoBehaviour {
         string restartScene= SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(restartScene, LoadSceneMode.Single);
     }
+
+    
 }

@@ -307,6 +307,7 @@ GameObject:
   - component: {fileID: 114129893232900550}
   - component: {fileID: 114723877638121262}
   - component: {fileID: 114114327062064574}
+  - component: {fileID: 114924718659265436}
   m_Layer: 0
   m_Name: enemyAnima
   m_TagString: Enemy
@@ -3409,9 +3410,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 20
+  m_MaxValue: 10
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3468,7 +3469,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 20
+    width: 10
     height: 1
 --- !u!114 &114504281512004464
 MonoBehaviour:
@@ -3550,6 +3551,7 @@ MonoBehaviour:
   enemyview: {fileID: 114180199317681630}
   gameCon: {fileID: 0}
   enemyState: {fileID: 1873979873056972}
+  blood: {fileID: 1307407091095100}
   crazyTime: 3
   angrySpeed: 16
 --- !u!114 &114681117825874904
@@ -4248,6 +4250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b73f12cd0243c4587f657ccf756485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameCon: {fileID: 0}
   enemyanim: {fileID: 95731307850985742}
   playerDead: {fileID: 0}
   GameContent: {fileID: 0}
@@ -4282,6 +4285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b73f12cd0243c4587f657ccf756485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameCon: {fileID: 0}
   enemyanim: {fileID: 95731307850985742}
   playerDead: {fileID: 0}
   GameContent: {fileID: 0}
@@ -4326,6 +4330,20 @@ MonoBehaviour:
   shake: {fileID: 0}
   qteAccounts: {fileID: 114782523817258354}
   player: {fileID: 0}
+--- !u!114 &114924718659265436
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1706133422808026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a084db1f976bcbe49ba693fb5c52f423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xOffset: -10
+  yOffset: 140
+  recTransform: {fileID: 224180002753434604}
 --- !u!114 &114976485444940574
 MonoBehaviour:
   m_ObjectHideFlags: 1
