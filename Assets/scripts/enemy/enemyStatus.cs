@@ -39,6 +39,8 @@ public class enemyStatus : MonoBehaviour {
     void Update() {
         if (Crazy)
         {
+            enemymov.audios.gameObject.SetActive(false);
+            enemymov.alert.SetActive(false);
             Random.InitState((int)Time.time);
             if (Random.value > 0.5)
             {
@@ -51,6 +53,8 @@ public class enemyStatus : MonoBehaviour {
         }
         if (angry)
         {
+            enemymov.audios.gameObject.SetActive(false);
+            enemymov.alert.SetActive(false);
             if (!gameCon.isHidden)
             {
                 enemymov.gameObject.GetComponent<NavMeshAgent>().destination = GameObject.FindWithTag("Player").transform.position;
@@ -65,7 +69,8 @@ public class enemyStatus : MonoBehaviour {
         }
         if (!gameCon.enemyStop)
         {
-            
+            enemymov.audios.gameObject.SetActive(false);
+            enemymov.alert.SetActive(false);
             enemymov.gameObject.GetComponent<NavMeshAgent>().speed = speedBeforeStop;
             speedBeforeStop = enemymov.gameObject.GetComponent<NavMeshAgent>().speed;
         }
@@ -76,6 +81,8 @@ public class enemyStatus : MonoBehaviour {
 
         if (enemyBlood == 0)
         {
+            enemymov.audios.gameObject.SetActive(false);
+            enemymov.alert.SetActive(false);
             StartCoroutine(diedImmediately());
         }
 	}

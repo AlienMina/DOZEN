@@ -114,6 +114,13 @@ public class enemyMove : MonoBehaviour {
             isDizz = false;
             StartCoroutine(Dizzy());
         }
+        if (agent.destination == place1)
+        {
+            audios.gameObject.SetActive(false);
+            alert.SetActive(false);
+            chasingPlayer = false;
+            Debug.Log("stop chasing alert?");
+        }
         if (chasingPlayer)
         {
             audios.gameObject.SetActive(true);
