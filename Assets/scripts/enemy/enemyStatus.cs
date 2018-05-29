@@ -100,7 +100,7 @@ public class enemyStatus : MonoBehaviour {
         enemyview.gameObject.SetActive(false);
         blood.SetActive(true);
         enemyBlood -= 1;      
-        anim.Play("enemySimpleDied");//此处动画应该替换，还应该有一个头顶动画的出现
+        //anim.Play("enemySimpleDied");//此处动画应该替换，还应该有一个头顶动画的出现
         
         yield return new WaitForSeconds(2f);
         enemymov.enabled = true;
@@ -114,7 +114,7 @@ public class enemyStatus : MonoBehaviour {
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause = true;
         enemymov.enabled = false;
         enemyview.gameObject.SetActive(false);
-        anim.Play("enemySimpleDied");//此处动画应该替换，还应该有一个头顶动画的出现
+        anim.Play("enemySimpleFriendly");//此处动画应该替换，还应该有一个头顶动画的出现
         yield return new WaitForSeconds(3f);
         enemymov.enabled = true;
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause = false;
@@ -125,7 +125,7 @@ public class enemyStatus : MonoBehaviour {
     {
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause = true;
         enemymov.enabled = false;        
-        anim.Play("enemySimpleDied");//此处动画应该替换，还应该有一个头顶动画的出现
+        anim.Play("enemySimpleCrazy");//此处动画应该替换，还应该有一个头顶动画的出现
         yield return new WaitForSeconds(1f);
         Crazy = true;
         enemymov.enabled = true;
@@ -141,7 +141,7 @@ public class enemyStatus : MonoBehaviour {
         gameCon.playerHealth -= 2;
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause = true;
         enemymov.enabled = false;
-        anim.Play("enemySimpleDied");//此处动画应该替换，还应该有一个头顶动画的出现
+        anim.Play("enemySimpleAngry");//此处动画应该替换，还应该有一个头顶动画的出现
         yield return new WaitForSeconds(1f);
         angry = true;
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause = false;
