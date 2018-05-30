@@ -8,15 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/start.unity
     guid: fa527f87575afd84bba6cebe9164d878
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/level1.unity
     guid: 45a8253b5d01b40408c4019801aa3a73
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/levelTeaching.unity
     guid: 79caec9001214534e96f0e6fcb198db5
   - enabled: 0
     path: Assets/Scene/txtTest.unity
     guid: 3b5c31036c1752545baa78b4c3b36b2a
+  - enabled: 1
+    path: Assets/Scene/level1new.unity
+    guid: 5dc27598c40c98b42835958a438eea21

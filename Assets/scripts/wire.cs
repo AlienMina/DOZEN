@@ -70,6 +70,6 @@ public class wire : MonoBehaviour {
         colli.gameObject.GetComponent<Animator>().Play("enemySimpleDied");
         yield return new WaitForSeconds(1f);
         this.gameObject.SetActive(false);
-        colli.gameObject.SetActive(false);
+        colli.gameObject.GetComponentInParent<enemyMove>().gameObject.SetActive(false);
     }
 }
