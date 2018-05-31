@@ -42,7 +42,11 @@ public class GameCon : MonoBehaviour {
         }
 
         blood.value = playerHealth;
-        
+
+        if (playerHealth == 0)
+        {
+            StartCoroutine(playerDie());
+        }
 
 	}
 
@@ -99,5 +103,34 @@ public class GameCon : MonoBehaviour {
         SceneManager.LoadScene(restartScene, LoadSceneMode.Single);
     }
 
-    
+
+    IEnumerator playerDie()
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+        AudioSource playerDead = GameObject.Find("playerDead").GetComponent<AudioSource>();
+        GameObject dead= GameObject.Find("dead");
+
+        player.GetComponent<playerMove>().playerDead = true;
+        player.GetComponent<turnFaces>().pause = true;
+        player.GetComponent<AudioSource>().Stop();
+        player.GetComponent<NavMeshAgent>().ResetPath();
+        if (player.GetComponent<turnFaces>().face)
+        {
+            player.GetComponentInChildren<Animator>().Play("dozenKilledRight");
+        }
+        else
+        {
+            player.GetComponentInChildren<Animator>().Play("dozenKilledLeft");
+        }
+        if (!playerDied)
+        {
+            playerDead.Play();
+        }
+        playerDied = true;
+        yield return new WaitForSeconds(1.5f);
+        //player.SetActive(false);        
+        dead.SetActive(true);
+
+    }
+
 }

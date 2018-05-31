@@ -16,6 +16,9 @@ public class enemyMove : MonoBehaviour {
     public Vector3 place1;//巡逻的初始点
     public GameObject place2;//巡逻的终点，请拖一个Object
     //Vector3 enemyPlace;
+    public float chasingTime = 3f;
+    bool chasingTimer = false;//追逐用的timer
+    float oldTime=0;
 
     public float between = 0.1f;
 
@@ -63,6 +66,7 @@ public class enemyMove : MonoBehaviour {
     public float elfSoundWait = 5f;
 
     float speedBeforeStop;
+
     // Use this for initialization
     void Start () {
         place1 = this.GetComponent<Transform>().position;//敌人巡逻的起始点
@@ -102,6 +106,8 @@ public class enemyMove : MonoBehaviour {
 
         //优先进行判断，追主角优先度>小精灵声音>追主角声音>巡逻，当没有追玩家也没有追声音的时候，进行检测【同时由playmaker进行巡逻】
         //优先进行判断：当敌人被小精灵闪光晕眩了，这个优先级高于其他一切。
+        //----------上面的都是扯蛋了
+        //晕眩保留，去除掉追主角声音的部分
         if (isDizz)
         {
             chasingPlayer = false;
@@ -126,6 +132,7 @@ public class enemyMove : MonoBehaviour {
             audios.gameObject.SetActive(true);
             alert.SetActive(true);
             ChasingPlayer();
+            
         }
         else if (isAttracted)//小精灵的声音优先级大于主角的声音
         {
@@ -137,15 +144,16 @@ public class enemyMove : MonoBehaviour {
             
         }
         else if(chasingVoice){
-            StartCoroutine(ChasingVoice());
+            //StartCoroutine(ChasingVoice());
             //ChasingVoice();
         }
+        /*这里也不需要了，注掉吧……
         else if (houseTag!=null && houseTag.GetComponent<houseController>().hearPlayer)
         {
-            Debug.Log("chaseVoice=true");
-            chasingVoice = true;//当地块上可以听到player的时候，开启追逐声源效果
+            //Debug.Log("chaseVoice=true");
+            //chasingVoice = true;//当地块上可以听到player的时候，开启追逐声源效果
             //houseTag.GetComponent<houseController>().hearPlayer = false;
-        }
+        }*/
         
 	}
 
@@ -180,6 +188,7 @@ public class enemyMove : MonoBehaviour {
         if (!GameContent.isHidden)//在主角没有藏起来的状态下
         {
             
+            
             //停止追声音的行为
             chasingVoice = false;
             setVoicePlace = false;
@@ -188,6 +197,35 @@ public class enemyMove : MonoBehaviour {
             //检测主角的位置
             if (!isChasing)//主角已经不在视野范围内了
             {
+                //这里需要改，改成计时
+                //不在视野范围内，如果没有打开计时器开关，打开它，并且记录下当前的时间
+                if (!chasingTimer)
+                {
+                    Debug.Log("OpenChasingTimer");
+                    oldTime = Time.time;
+                    chasingTimer = true;
+                }
+                else
+                {
+                    //如果时间已经超过了
+                    Debug.Log("oldTime:"+oldTime + "timeNow:"+Time.time + "chasingTime:"+chasingTime);
+                    if (Time.time - oldTime > chasingTime)
+                    {
+                       
+                        chasingTimer = false;
+                        oldTime = 0;
+
+                        audios.gameObject.SetActive(false);
+                        chasingPlayer = false;
+                        agent.speed = oldSpeed;
+                        alert.SetActive(false);
+                        isReturn = true;
+                        agent.destination = place1;//返回初始地点
+                    }
+                }
+                
+
+                /*
                 string enemyHouseName = houseTag.name;
                 string playerHouseName = gameplayer.GetComponentInChildren<playerHouseTag>().playerHouseName;
                 //Debug.Log("enemyHouseName " + enemyHouseName + " playerHouseName " + playerHouseName);
@@ -200,9 +238,12 @@ public class enemyMove : MonoBehaviour {
                     isReturn = true;
                     agent.destination = place1;//返回初始地点
                 }
+                */
             }
             else
             {
+                chasingTimer = false;//进入视野范围，关闭计时器
+
                 agent.speed = newSpeed;
                 agent.destination = playerPlace;
             }
@@ -224,7 +265,9 @@ public class enemyMove : MonoBehaviour {
     //前往声源
     IEnumerator ChasingVoice()
     {
-        
+        //不想改代码了，直接注掉……
+        yield return new WaitForSeconds(0.01f);
+        /*
         if (!setVoicePlace)
         {
             //如果还没有设置声源点，那么设置为当前主角的位置
@@ -241,13 +284,14 @@ public class enemyMove : MonoBehaviour {
                 Debug.Log(houseTag);
                 setVoicePlace = false;
                 chasingVoice = false;
-                yield return new WaitForSeconds(5);
+                
 
                 isReturn = true;
                 agent.destination = place1;
                 Debug.Log("chasing finished.");
             }
         }
+        */
     }
 
     //被小精灵吸引

@@ -86,8 +86,8 @@ public class enemyKillView : MonoBehaviour {
 
     IEnumerator playerDied()
     {
-        
-        player.GetComponent<playerMove>().playerDead = true ;
+        //GameObject player = GameObject.FindWithTag("Player");
+        player.GetComponent<playerMove>().playerDead = true;
         player.GetComponent<turnFaces>().pause = true;
         player.GetComponent<AudioSource>().Stop();
         player.GetComponent<NavMeshAgent>().ResetPath();
@@ -99,11 +99,11 @@ public class enemyKillView : MonoBehaviour {
         {
             player.GetComponentInChildren<Animator>().Play("dozenKilledLeft");
         }
-        if (!GameContent.playerDied)
+        if (!gameCon.playerDied)
         {
             playerDead.Play();
         }
-        GameContent.playerDied = true;
+        gameCon.playerDied = true;
         yield return new WaitForSeconds(1.5f);
         //player.SetActive(false);        
         dead.SetActive(true);

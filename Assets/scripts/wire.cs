@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class wire : MonoBehaviour {
 
+
     public GameObject died;
     Collider2D colli;
     // Use this for initialization
@@ -36,7 +37,10 @@ public class wire : MonoBehaviour {
 
     IEnumerator killPlayer()
     {
+       
+
         this.GetComponent<AudioSource>().Play();
+       
         colli.gameObject.GetComponentInParent<turnFaces>().pause = true;
         colli.gameObject.GetComponentInParent<AudioSource>().Stop();
         colli.gameObject.GetComponentInParent<NavMeshAgent>().ResetPath();
@@ -50,12 +54,15 @@ public class wire : MonoBehaviour {
         }       
         yield return new WaitForSeconds(1f);
         died.SetActive(true);
-        this.gameObject.SetActive(false);       
+        Debug.Log("wireDied");
+         this.gameObject.SetActive(false);   
+
     }
 
     IEnumerator breakMachelf()
     {
         this.GetComponent<AudioSource>().Play();
+        
         yield return new WaitForSeconds(0.2f);
         colli.gameObject.GetComponentInParent<machelfEnergy>().energy = 0;
         this.gameObject.SetActive(false);
