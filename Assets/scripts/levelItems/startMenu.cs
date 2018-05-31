@@ -24,7 +24,7 @@ public class startMenu : MonoBehaviour {
         {
             onLoading = true;
             levelAudio.SetActive(true);
-            SceneManager.LoadScene("level1", LoadSceneMode.Single);
+            SceneManager.LoadScene("level1new", LoadSceneMode.Single);
         }
     }
     public void startLevel0()
