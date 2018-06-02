@@ -67,6 +67,7 @@ public class enemyMove : MonoBehaviour {
 
     float speedBeforeStop;
 
+    bool isReturning = false;
     // Use this for initialization
     void Start () {
         place1 = this.GetComponent<Transform>().position;//敌人巡逻的起始点
@@ -143,11 +144,19 @@ public class enemyMove : MonoBehaviour {
             }
             
         }
+        else
+        {
+            if (place2 != null)
+            {
+                Patrol();
+            }
+        }
+        /*这里也不需要了，注掉吧……
         else if(chasingVoice){
             //StartCoroutine(ChasingVoice());
             //ChasingVoice();
         }
-        /*这里也不需要了，注掉吧……
+        
         else if (houseTag!=null && houseTag.GetComponent<houseController>().hearPlayer)
         {
             //Debug.Log("chaseVoice=true");
@@ -168,11 +177,36 @@ public class enemyMove : MonoBehaviour {
     //    }
     //}
 
+    void Patrol()
+    {
+
+        Debug.Log("Patrol.");
+        if (!isReturning)
+        {
+            patrol2place2();
+            if (Mathf.Abs(this.gameObject.transform.position.x - place2.transform.position.x) < 0.1f)
+            {
+                isReturning = true;
+            }
+        }
+        else
+        {
+            patrol2place1();
+            if (Mathf.Abs(this.gameObject.transform.position.x - place1.x) < 0.1f)
+            {
+                isReturning = false;
+            }
+        }
+        
+    }
 
     //这两个是playmaker用的移动
     public void patrol2place2()
     {
-        agent.destination = place2.transform.position;
+        if (place2 != null)
+            agent.destination = place2.transform.position;
+        else
+            Debug.Log("noPlace2");
     }
 
     public void patrol2place1()
