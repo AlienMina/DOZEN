@@ -16,20 +16,20 @@ public class enemyState : MonoBehaviour {
 	void Update () {
         if (!gameCon.showKillButton)//在没有显示击杀的情况下
         {
-            if (enemymove.dizzy)
+            if (enemymove.enemyDizzy)
             {
                 enemymove.isReturn = false;
                 this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
                 this.gameObject.GetComponent<Animator>().Play("enemyStateDizzy");
             }
-            else if (enemymove.chasingPlayer||enemymove.isChasing)
+            else if (enemymove.enemyChasing)
             {
                 enemymove.isReturn = false;
                 this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
                 this.gameObject.GetComponent<Animator>().Play("enemyStateWarning");
 
             }
-            else if (enemymove.attring || enemymove.isAttracted || enemymove.chasingVoice)
+            else if (enemymove.enemyHeard)
             {
                 enemymove.isReturn = false;
                 this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
@@ -45,14 +45,23 @@ public class enemyState : MonoBehaviour {
                 }
                 this.gameObject.GetComponent<Animator>().Play("enemyStateConfused");
             }
-            else if(enemymove.isReturn)
+            else if(enemymove.nothingOnHead)
             {
                 this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
             }
         }
         else
         {
+            clearState();
             this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
         }
 	}
+
+    public void clearState()
+    {
+        enemymove.enemyHeard = false;
+        enemymove.enemyDizzy = false;
+        enemymove.enemyChasing = false;
+        enemymove.nothingOnHead = true;
+    }
 }

@@ -3554,6 +3554,7 @@ MonoBehaviour:
   blood: {fileID: 1307407091095100}
   crazyTime: 3
   angrySpeed: 16
+  enemystate: {fileID: 114561769542194808}
 --- !u!114 &114681117825874904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4240,6 +4241,10 @@ MonoBehaviour:
   isReturn: 0
   alert: {fileID: 0}
   elfSoundWait: 5
+  enemyDizzy: 0
+  enemyChasing: 0
+  enemyHeard: 0
+  nothingOnHead: 1
 --- !u!114 &114720332356369974
 MonoBehaviour:
   m_ObjectHideFlags: 1

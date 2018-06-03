@@ -28,6 +28,8 @@ public class enemyStatus : MonoBehaviour {
 
     [SerializeField] float crazyTime = 3f;
     [SerializeField] float angrySpeed = 16;
+
+    public enemyState enemystate;//头顶状态相关
     
 	// Use this for initialization
 	void Start () {
@@ -39,6 +41,9 @@ public class enemyStatus : MonoBehaviour {
     void Update() {
         if (Crazy)
         {
+
+
+
             enemymov.audios.gameObject.SetActive(false);
             enemymov.alert.SetActive(false);
             Random.InitState((int)Time.time);
@@ -53,6 +58,8 @@ public class enemyStatus : MonoBehaviour {
         }
         if (angry)
         {
+
+
             enemymov.audios.gameObject.SetActive(false);
             enemymov.alert.SetActive(false);
             if (!gameCon.isHidden)
@@ -64,11 +71,14 @@ public class enemyStatus : MonoBehaviour {
                 angry = false;
                 enemymov.gameObject.GetComponent<NavMeshAgent>().speed = oldSpeed;
                 enemymov.gameObject.GetComponent<NavMeshAgent>().destination = enemymov.place1;
+                enemymov.Patrol();
 
             }
         }
         if (!gameCon.enemyStop)
         {
+
+
             enemymov.audios.gameObject.SetActive(false);
             enemymov.alert.SetActive(false);
             enemymov.gameObject.GetComponent<NavMeshAgent>().speed = speedBeforeStop;
@@ -81,6 +91,9 @@ public class enemyStatus : MonoBehaviour {
 
         if (enemyBlood == 0)
         {
+
+            
+
             enemymov.audios.gameObject.SetActive(false);
             enemymov.alert.SetActive(false);
             StartCoroutine(diedImmediately());
@@ -89,6 +102,9 @@ public class enemyStatus : MonoBehaviour {
 
     public IEnumerator diedImmediately()
     {
+        //头顶动画相关
+        enemystate.clearState();
+
         enemymov.enabled = false;
         enemyview.gameObject.SetActive(false);
         gameCon.Gold += 100;
@@ -102,6 +118,9 @@ public class enemyStatus : MonoBehaviour {
 
     public IEnumerator dizzy()
     {
+        //头顶动画相关
+        enemystate.clearState();
+
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause = true;
         enemymov.enabled = false;
         enemyview.gameObject.SetActive(false);
@@ -118,6 +137,9 @@ public class enemyStatus : MonoBehaviour {
 
     public IEnumerator friendly()
     {
+        //头顶动画相关
+        enemystate.clearState();
+
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause = true;
         enemymov.enabled = false;
         enemyview.gameObject.SetActive(false);
@@ -130,6 +152,9 @@ public class enemyStatus : MonoBehaviour {
 
     public IEnumerator crazy()
     {
+        //头顶动画相关
+        enemystate.clearState();
+
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause = true;
         enemymov.enabled = false;        
         anim.Play("enemySimpleCrazy");//此处动画应该替换，还应该有一个头顶动画的出现
@@ -141,10 +166,14 @@ public class enemyStatus : MonoBehaviour {
         yield return new WaitForSeconds(crazyTime);
         Crazy = false;
         enemymov.enabled = true;
+
     }
 
     public IEnumerator Angry()
     {
+        //头顶动画相关
+        enemystate.clearState();
+
         gameCon.playerHealth -= 2;
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause = true;
         enemymov.enabled = false;

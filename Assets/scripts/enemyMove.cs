@@ -68,6 +68,16 @@ public class enemyMove : MonoBehaviour {
     float speedBeforeStop;
 
     bool isReturning = false;
+
+
+    //这里是一组给enemyState用的
+
+    [HideInInspector] public bool enemyDizzy = false;
+    [HideInInspector] public bool enemyChasing = false;
+    [HideInInspector] public bool enemyHeard = false;
+    [HideInInspector] public bool nothingOnHead = true;
+
+
     // Use this for initialization
     void Start () {
         place1 = this.GetComponent<Transform>().position;//敌人巡逻的起始点
@@ -109,7 +119,11 @@ public class enemyMove : MonoBehaviour {
         //优先进行判断：当敌人被小精灵闪光晕眩了，这个优先级高于其他一切。
         //----------上面的都是扯蛋了
         //晕眩保留，去除掉追主角声音的部分
-        if (isDizz)
+        /*
+         晕眩的部分暂且不考虑，然后要把后面的一些判断的地方加上state图标的调整……
+         还是给一组特定的布尔值让它去判断吧
+         */
+        if (isDizz)//如果眩晕了的操作
         {
             chasingPlayer = false;
             isAttracted = false;
@@ -120,35 +134,59 @@ public class enemyMove : MonoBehaviour {
             dizzy = true;
             isDizz = false;
             StartCoroutine(Dizzy());
+            //下面是头顶状态相关的东西
+            enemyDizzy = true;
+            enemyChasing = false;
+            enemyHeard = false;
+            nothingOnHead = false;
         }
-        if (agent.destination == place1)
+        /*这里的逻辑应该是有问题的……需要修改
+        if (agent.destination == place1)//当主角开始准备回自己初始点的时候……这里好像得改改，和巡逻逻辑有冲突
         {
             audios.gameObject.SetActive(false);
             alert.SetActive(false);
             chasingPlayer = false;
             Debug.Log("stop chasing alert?");
+            //下面是头顶状态相关的东西
+            nothingOnHead = true;
+            enemyDizzy = false;
+            enemyChasing = false;
+            enemyHeard = false;
         }
-        if (chasingPlayer)
+        */
+        if (chasingPlayer)//如果是在追玩家，这个地方应该是放出叹号的
         {
             audios.gameObject.SetActive(true);
             alert.SetActive(true);
             ChasingPlayer();
-            
+            //下面是头顶状态相关的东西
+            enemyChasing = true;
+            enemyHeard = false;
+            nothingOnHead = false;
+
         }
-        else if (isAttracted)//小精灵的声音优先级大于主角的声音
+        else if (isAttracted)//小精灵的声音优先级大于主角的声音    ---这里应该是听到声音放出问号了
         {
             if (!attring)
             {
                 agent.destination = attractedPlace;
                 StartCoroutine(attractedByMachelf());
+                //下面是头顶状态相关的东西
+                nothingOnHead = false;
+                enemyHeard = true;
             }
-            
+
         }
-        else
+        else//在这里要清空头顶上的标志
         {
             if (place2 != null)
             {
                 Patrol();
+                //下面是头顶状态相关的东西
+                enemyChasing = false;
+                enemyHeard = false;
+                enemyDizzy = false;
+                nothingOnHead = true;
             }
         }
         /*这里也不需要了，注掉吧……
@@ -177,7 +215,7 @@ public class enemyMove : MonoBehaviour {
     //    }
     //}
 
-    void Patrol()
+   public void Patrol()
     {
 
         Debug.Log("Patrol.");
@@ -255,6 +293,11 @@ public class enemyMove : MonoBehaviour {
                         alert.SetActive(false);
                         isReturn = true;
                         agent.destination = place1;//返回初始地点
+                                                   //下面是头顶状态相关的东西
+                        enemyChasing = false;
+                        enemyHeard = false;
+                        enemyDizzy = false;
+                        nothingOnHead = true;
                     }
                 }
                 
@@ -292,6 +335,12 @@ public class enemyMove : MonoBehaviour {
             alert.SetActive(false);
             isReturn = true;
             agent.destination = place1;
+
+            //下面是头顶状态相关的东西
+            enemyChasing = false;
+            enemyHeard = false;
+            enemyDizzy = false;
+            nothingOnHead = true;
         }
 
     }
@@ -343,6 +392,12 @@ public class enemyMove : MonoBehaviour {
             isAttracted = false;
             isReturn = true;
             agent.destination = place1;
+            //下面是头顶状态相关的东西
+            enemyChasing = false;
+            enemyHeard = false;
+            enemyDizzy = false;
+            nothingOnHead = true;
+
             attring = false;
         }
         
@@ -423,6 +478,12 @@ public class enemyMove : MonoBehaviour {
             // Debug.Log(agent.speed);
             isReturn = true;
             agent.destination = place1;
+            //下面是头顶状态相关的东西
+            enemyChasing = false;
+            enemyHeard = false;
+            enemyDizzy = false;
+            nothingOnHead = true;
+
             view.SetActive(true);
             dizzy = false;
         }
