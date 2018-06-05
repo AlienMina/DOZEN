@@ -5,22 +5,30 @@ using UnityEngine.AI;
 
 public class enemyMove : MonoBehaviour {
 
+    [Header("全局的一些东西")]
     public GameCon GameContent;
-    GameObject houseTag;//这个是敌人检测到的自己所在的地块
+    //GameObject houseTag;//这个是敌人检测到的自己所在的地块
+    
 
-    public AudioSource audios;//追击主角时的声音
-
-    public GameObject enemyAnima;
-    public GameObject gameplayer;
-
+    [Space(10)]
+    [Header("巡逻的两个点")]
     public Vector3 place1;//巡逻的初始点
     public GameObject place2;//巡逻的终点，请拖一个Object
-    //Vector3 enemyPlace;
-    public float chasingTime = 3f;
-    bool chasingTimer = false;//追逐用的timer
-    float oldTime=0;
 
-    public float between = 0.1f;
+    [Space(10)]
+    [Header("追主角相关")]
+    public AudioSource audios;//追主角时的声音
+    public GameObject alert;//追逐时的红色动画
+    //public GameObject enemyAnima;
+    //Vector3 enemyPlace;
+    public GameObject gameplayer;//追逐玩家时的玩家位置    
+    public float chasingTime = 3f;//追逐时敌人的追逐时间
+    [HideInInspector] public bool chasingTimer = false;//追逐用的timer
+    [HideInInspector] public float oldTime=0;//追逐时计时器的起始时间
+    
+
+    [Space(10)]
+    public float between = 0.1f;//被小精灵吸引时的距离判断
 
     [HideInInspector]
     public bool chasingVoice = false;//追声音
@@ -61,7 +69,7 @@ public class enemyMove : MonoBehaviour {
     [HideInInspector]
     public bool isReturn = false;//这个是为了进行状态动画而设置的，只有在它打开的时候才清空头顶的状态
 
-    public GameObject alert;
+    
 
     public float elfSoundWait = 5f;
 
@@ -109,10 +117,10 @@ public class enemyMove : MonoBehaviour {
         //if (!chasingPlayer && !chasingVoice)
         //StartCoroutine(patrol());
         //enemyAnima.GetComponent<houseController>().hearPlayer
-        if (enemyAnima != null)
-        {
-            houseTag = enemyAnima.GetComponent<getHouseTag>().houseBetween;
-        }
+        //if (enemyAnima != null)
+        //{
+           // houseTag = enemyAnima.GetComponent<getHouseTag>().houseBetween;
+        //}
         //Debug.Log(houseTag);
 
         //优先进行判断，追主角优先度>小精灵声音>追主角声音>巡逻，当没有追玩家也没有追声音的时候，进行检测【同时由playmaker进行巡逻】
@@ -154,10 +162,20 @@ public class enemyMove : MonoBehaviour {
             enemyHeard = false;
         }
         */
-        if (chasingPlayer)//如果是在追玩家，这个地方应该是放出叹号的
+        if (chasingTimer)
         {
+            ChasingTimer();
+            //下面是头顶状态相关的东西
+            enemyChasing = true;
+            enemyHeard = false;
+            nothingOnHead = false;
+        }
+        else if (chasingPlayer)//如果是在追玩家，这个地方应该是放出叹号的
+        {
+            //打开声音和警报
             audios.gameObject.SetActive(true);
             alert.SetActive(true);
+            //追主角
             ChasingPlayer();
             //下面是头顶状态相关的东西
             enemyChasing = true;
@@ -255,17 +273,24 @@ public class enemyMove : MonoBehaviour {
     //追逐玩家
     void ChasingPlayer()
     {
-        
-
         if (!GameContent.isHidden)//在主角没有藏起来的状态下
         {
-            
-            
+            //关闭其他的状态
+            isAttracted = false;
+
+            //向主角的位置移动
+            playerPlace = gameplayer.GetComponent<Transform>().position;
+            agent.speed = newSpeed;//调整速度
+            agent.destination = playerPlace;//向主角移动
+
+            #region oldCode
+            /*
             //停止追声音的行为
             chasingVoice = false;
             setVoicePlace = false;
 
             playerPlace = gameplayer.GetComponent<Transform>().position;
+            
             //检测主角的位置
             if (!isChasing)//主角已经不在视野范围内了
             {
@@ -293,7 +318,8 @@ public class enemyMove : MonoBehaviour {
                         alert.SetActive(false);
                         isReturn = true;
                         agent.destination = place1;//返回初始地点
-                                                   //下面是头顶状态相关的东西
+
+                        //下面是头顶状态相关的东西
                         enemyChasing = false;
                         enemyHeard = false;
                         enemyDizzy = false;
@@ -302,7 +328,7 @@ public class enemyMove : MonoBehaviour {
                 }
                 
 
-                /*
+                
                 string enemyHouseName = houseTag.name;
                 string playerHouseName = gameplayer.GetComponentInChildren<playerHouseTag>().playerHouseName;
                 //Debug.Log("enemyHouseName " + enemyHouseName + " playerHouseName " + playerHouseName);
@@ -315,7 +341,7 @@ public class enemyMove : MonoBehaviour {
                     isReturn = true;
                     agent.destination = place1;//返回初始地点
                 }
-                */
+                
             }
             else
             {
@@ -324,9 +350,12 @@ public class enemyMove : MonoBehaviour {
                 agent.speed = newSpeed;
                 agent.destination = playerPlace;
             }
+            */
+            #endregion
         }
         else
         {
+            //这里需要调整，有一些东西需要关掉，有一些不需要
             audios.gameObject.SetActive(false);
             chasingPlayer = false;
             chasingVoice = false;
@@ -335,6 +364,62 @@ public class enemyMove : MonoBehaviour {
             alert.SetActive(false);
             isReturn = true;
             agent.destination = place1;
+
+            //下面是头顶状态相关的东西
+            enemyChasing = false;
+            enemyHeard = false;
+            enemyDizzy = false;
+            nothingOnHead = true;
+        }
+
+    }
+
+    //离开主角视野之后的持续追击部分
+    void ChasingTimer()
+    {
+        if (!GameContent.isHidden)
+        {
+                //如果时间已经超过了，就扭头回去，否则继续追
+                Debug.Log("oldTime:" + oldTime + "timeNow:" + Time.time + "chasingTime:" + chasingTime);
+                if (Time.time - oldTime > chasingTime)
+                {
+                Debug.Log(Time.time - oldTime + "return.");
+                    chasingTimer = false;
+                    oldTime = 0;
+
+                    audios.gameObject.SetActive(false);
+                    chasingPlayer = false;
+                    agent.speed = oldSpeed;
+                    alert.SetActive(false);
+                    isReturn = true;
+                    agent.destination = place1;//返回初始地点
+
+                    //下面是头顶状态相关的东西
+                    enemyChasing = false;
+                    enemyHeard = false;
+                    enemyDizzy = false;
+                    nothingOnHead = true;
+                }
+            else
+            {
+                //向主角的位置移动
+                playerPlace = gameplayer.GetComponent<Transform>().position;
+                agent.speed = newSpeed;//调整速度
+                agent.destination = playerPlace;//向主角移动
+            }
+            
+        }
+        else
+        {
+            chasingTimer = false;
+            oldTime = 0;
+
+            audios.gameObject.SetActive(false);
+            chasingPlayer = false;
+            agent.speed = oldSpeed;
+            alert.SetActive(false);
+            isReturn = true;
+            agent.destination = place1;//返回初始地点
 
             //下面是头顶状态相关的东西
             enemyChasing = false;
