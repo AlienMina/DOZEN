@@ -113,18 +113,20 @@ public class enemyMove : MonoBehaviour {
         {
             this.gameObject.GetComponent<NavMeshAgent>().speed = 0;
         }
+        #region oldCode
         //enemyPlace = this.GetComponent<Transform>().position;
         //if (!chasingPlayer && !chasingVoice)
         //StartCoroutine(patrol());
         //enemyAnima.GetComponent<houseController>().hearPlayer
         //if (enemyAnima != null)
         //{
-           // houseTag = enemyAnima.GetComponent<getHouseTag>().houseBetween;
+        // houseTag = enemyAnima.GetComponent<getHouseTag>().houseBetween;
         //}
         //Debug.Log(houseTag);
-
+        #endregion
         //优先进行判断，追主角优先度>小精灵声音>追主角声音>巡逻，当没有追玩家也没有追声音的时候，进行检测【同时由playmaker进行巡逻】
         //优先进行判断：当敌人被小精灵闪光晕眩了，这个优先级高于其他一切。
+
         //----------上面的都是扯蛋了
         //晕眩保留，去除掉追主角声音的部分
         /*
@@ -148,6 +150,7 @@ public class enemyMove : MonoBehaviour {
             enemyHeard = false;
             nothingOnHead = false;
         }
+        #region wrongArea
         /*这里的逻辑应该是有问题的……需要修改
         if (agent.destination == place1)//当主角开始准备回自己初始点的时候……这里好像得改改，和巡逻逻辑有冲突
         {
@@ -162,6 +165,7 @@ public class enemyMove : MonoBehaviour {
             enemyHeard = false;
         }
         */
+        #endregion
         if (chasingTimer)
         {
             ChasingTimer();
@@ -185,6 +189,7 @@ public class enemyMove : MonoBehaviour {
         }
         else if (isAttracted)//小精灵的声音优先级大于主角的声音    ---这里应该是听到声音放出问号了
         {
+
             if (!attring)
             {
                 agent.destination = attractedPlace;
@@ -207,6 +212,7 @@ public class enemyMove : MonoBehaviour {
                 nothingOnHead = true;
             }
         }
+        #region oldCode
         /*这里也不需要了，注掉吧……
         else if(chasingVoice){
             //StartCoroutine(ChasingVoice());
@@ -219,9 +225,10 @@ public class enemyMove : MonoBehaviour {
             //chasingVoice = true;//当地块上可以听到player的时候，开启追逐声源效果
             //houseTag.GetComponent<houseController>().hearPlayer = false;
         }*/
-        
-	}
+        #endregion
+    }
 
+    #region trash
     //获取当前的地块--这里应该是获取下面挂载的动画小朋友的碰撞
 
     //private void OnTriggerStay2D(Collider2D collision)
@@ -232,8 +239,9 @@ public class enemyMove : MonoBehaviour {
     //        Debug.Log("setHouseTag");
     //    }
     //}
+    #endregion
 
-   public void Patrol()
+    public void Patrol()
     {
 
         Debug.Log("Patrol.");
@@ -256,7 +264,7 @@ public class enemyMove : MonoBehaviour {
         
     }
 
-    //这两个是playmaker用的移动
+    //这两个是（原计划用于）playmaker用的移动，现在被改成了普通巡逻用
     public void patrol2place2()
     {
         if (place2 != null)
@@ -380,26 +388,26 @@ public class enemyMove : MonoBehaviour {
         if (!GameContent.isHidden)
         {
                 //如果时间已经超过了，就扭头回去，否则继续追
-                Debug.Log("oldTime:" + oldTime + "timeNow:" + Time.time + "chasingTime:" + chasingTime);
-                if (Time.time - oldTime > chasingTime)
-                {
+            Debug.Log("oldTime:" + oldTime + "timeNow:" + Time.time + "chasingTime:" + chasingTime);
+            if (Time.time - oldTime > chasingTime)
+            {
                 Debug.Log(Time.time - oldTime + "return.");
-                    chasingTimer = false;
-                    oldTime = 0;
+                chasingTimer = false;
+                oldTime = 0;
 
-                    audios.gameObject.SetActive(false);
-                    chasingPlayer = false;
-                    agent.speed = oldSpeed;
-                    alert.SetActive(false);
-                    isReturn = true;
-                    agent.destination = place1;//返回初始地点
+                audios.gameObject.SetActive(false);
+                chasingPlayer = false;
+                agent.speed = oldSpeed;
+                alert.SetActive(false);
+                isReturn = true;
+                agent.destination = place1;//返回初始地点
 
                     //下面是头顶状态相关的东西
-                    enemyChasing = false;
-                    enemyHeard = false;
-                    enemyDizzy = false;
-                    nothingOnHead = true;
-                }
+                enemyChasing = false;
+                enemyHeard = false;
+                enemyDizzy = false;
+                nothingOnHead = true;
+            }
             else
             {
                 //向主角的位置移动
@@ -430,11 +438,12 @@ public class enemyMove : MonoBehaviour {
 
     }
 
-    //前往声源
+    //前往声源【废弃
     IEnumerator ChasingVoice()
     {
         //不想改代码了，直接注掉……
         yield return new WaitForSeconds(0.01f);
+        #region oldCode
         /*
         if (!setVoicePlace)
         {
@@ -460,6 +469,7 @@ public class enemyMove : MonoBehaviour {
             }
         }
         */
+        #endregion
     }
 
     //被小精灵吸引
@@ -485,7 +495,7 @@ public class enemyMove : MonoBehaviour {
 
             attring = false;
         }
-        
+        #region trash
         //}
         /*
         if (!attractedSet)
@@ -517,8 +527,10 @@ public class enemyMove : MonoBehaviour {
                 //停顿1s后，结束吸引状态，返回原处
             }
         } */
+        #endregion
     }
 
+    #region trash
     //IEnumerator patrol() {       
     //    if (isPlace1)
     //        agent.destination = place2.transform.position;
@@ -540,8 +552,9 @@ public class enemyMove : MonoBehaviour {
     //    }
 
     //}
+    #endregion
 
-   public void stopMove()
+    public void stopMove()
     {
         agent.speed=0;
     }

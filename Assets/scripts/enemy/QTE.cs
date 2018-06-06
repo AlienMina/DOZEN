@@ -45,6 +45,7 @@ public class QTE : MonoBehaviour {
         num = 0;
         qteIcons[0].SetActive(true);
         player.GetComponent<turnFaces>().pause = true;//角色动画的改变
+        player.GetComponent<NavMeshAgent>().destination = player.transform.position;//主角停步
         mouseClick.SetActive(false);
         gameCon.enemyStop = true;
     }
