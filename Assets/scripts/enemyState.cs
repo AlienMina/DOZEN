@@ -7,6 +7,7 @@ public class enemyState : MonoBehaviour {
     public enemyMove enemymove;
     public GameCon gameCon;
 
+   [HideInInspector] public bool qteState;
 	// Use this for initialization
 	void Start () {
         this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
@@ -45,7 +46,7 @@ public class enemyState : MonoBehaviour {
                 }
                 this.gameObject.GetComponent<Animator>().Play("enemyStateConfused");
             }
-            else if(enemymove.nothingOnHead)
+            else if(enemymove.nothingOnHead && !qteState)
             {
                 this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
             }
@@ -63,5 +64,10 @@ public class enemyState : MonoBehaviour {
         enemymove.enemyDizzy = false;
         enemymove.enemyChasing = false;
         enemymove.nothingOnHead = true;
+    }
+
+    public void resetColor()
+    {
+        this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
     }
 }

@@ -104,6 +104,7 @@ public class enemyStatus : MonoBehaviour {
     {
         //头顶动画相关
         enemystate.clearState();
+        
 
         enemymov.enabled = false;
         enemyview.gameObject.SetActive(false);
@@ -120,6 +121,9 @@ public class enemyStatus : MonoBehaviour {
     {
         //头顶动画相关
         enemystate.clearState();
+        enemystate.qteState = true;
+        enemystate.resetColor();        
+        enemystate.gameObject.GetComponent<Animator>().Play("enemyStateDizz");
 
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause = true;
         enemymov.enabled = false;
@@ -133,12 +137,17 @@ public class enemyStatus : MonoBehaviour {
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause=false;
         enemyview.gameObject.SetActive(true);
         blood.SetActive(false);
+        enemystate.qteState = false;
     }
 
     public IEnumerator friendly()
     {
         //头顶动画相关
         enemystate.clearState();
+        enemystate.qteState = true;
+        enemystate.resetColor();
+        enemystate.gameObject.GetComponent<Animator>().Play("enemyStateFriendly");
+        Debug.Log("play friendly.");
 
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause = true;
         enemymov.enabled = false;
@@ -148,12 +157,16 @@ public class enemyStatus : MonoBehaviour {
         enemymov.enabled = true;
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause = false;
         enemyview.gameObject.SetActive(true);
+        enemystate.qteState = false;
     }
 
     public IEnumerator crazy()
     {
         //头顶动画相关
         enemystate.clearState();
+        enemystate.qteState = true;
+        enemystate.resetColor();
+        enemystate.gameObject.GetComponent<Animator>().Play("enemyStateCrazy");
 
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause = true;
         enemymov.enabled = false;        
@@ -166,6 +179,7 @@ public class enemyStatus : MonoBehaviour {
         yield return new WaitForSeconds(crazyTime);
         Crazy = false;
         enemymov.enabled = true;
+        enemystate.qteState = false;
 
     }
 
@@ -173,6 +187,9 @@ public class enemyStatus : MonoBehaviour {
     {
         //头顶动画相关
         enemystate.clearState();
+        enemystate.qteState = true;
+        enemystate.resetColor();
+        enemystate.gameObject.GetComponent<Animator>().Play("enemyStateAngry");
 
         gameCon.playerHealth -= 2;
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause = true;
@@ -183,6 +200,7 @@ public class enemyStatus : MonoBehaviour {
         enemymov.gameObject.GetComponentInChildren<turnFaceEnemy>().pause = false;
         oldSpeed = enemymov.gameObject.GetComponent<NavMeshAgent>().speed;
         enemymov.gameObject.GetComponent<NavMeshAgent>().speed = angrySpeed;
+        enemystate.qteState = false;
 
     }
 }
