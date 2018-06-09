@@ -9,6 +9,7 @@ public class turnFaceT : MonoBehaviour {
     public NavMeshAgent agent;
     public AudioSource audioSource;
     public machelfEnergy energy;
+    public float machelfSound=0.5f;
     // Use this for initialization
     void Start () {
 		
@@ -32,7 +33,7 @@ public class turnFaceT : MonoBehaviour {
         }
         else
         {
-            audioSource.volume = 1;
+            audioSource.volume = machelfSound;
         }
     }
 }
