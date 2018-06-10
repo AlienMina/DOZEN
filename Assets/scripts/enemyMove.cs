@@ -388,10 +388,10 @@ public class enemyMove : MonoBehaviour {
         if (!GameContent.isHidden)
         {
                 //如果时间已经超过了，就扭头回去，否则继续追
-            Debug.Log("oldTime:" + oldTime + "timeNow:" + Time.time + "chasingTime:" + chasingTime);
+            //Debug.Log("oldTime:" + oldTime + "timeNow:" + Time.time + "chasingTime:" + chasingTime);
             if (Time.time - oldTime > chasingTime)
             {
-                Debug.Log(Time.time - oldTime + "return.");
+                //Debug.Log(Time.time - oldTime + "return.");
                 chasingTimer = false;
                 oldTime = 0;
 
