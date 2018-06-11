@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class QTE : MonoBehaviour {
 
@@ -14,6 +15,7 @@ public class QTE : MonoBehaviour {
     public QTEaccounts qteAccounts;//结算存放处
 
     public GameObject player;
+    public Image icons;//QTE的图标
 
     int[] qteSeries=new int[3] { 0, 0, 0 };//记录动作的序列
     
@@ -48,6 +50,7 @@ public class QTE : MonoBehaviour {
         player.GetComponent<NavMeshAgent>().destination = player.transform.position;//主角停步
         mouseClick.SetActive(false);
         gameCon.enemyStop = true;
+        showIcon();
     }
     
     void qte()
@@ -162,6 +165,7 @@ public class QTE : MonoBehaviour {
         qteSeries = new int[3] { 0, 0, 0 };
         player.GetComponent<turnFaces>().pause = false;//角色动画的改变
         qteAccounts.enemyAngry();
+        hideIcon();
     }
 
     void finish()
@@ -177,6 +181,8 @@ public class QTE : MonoBehaviour {
             player.GetComponent<turnFaces>().pause = false;//角色动画的改变
             accounts();
             qteSeries = new int[3] { 0, 0, 0 };
+        hideIcon();
+
         
     }
 
@@ -211,5 +217,16 @@ public class QTE : MonoBehaviour {
         {
             qteAccounts.enemyAngry();
         }
+    }
+
+    void showIcon()
+    {
+        icons.gameObject.SetActive(true);
+        Debug.Log("icons set active");
+    }
+
+    void hideIcon()
+    {
+        icons.gameObject.SetActive(false);
     }
 }
