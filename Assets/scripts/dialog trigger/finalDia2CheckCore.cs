@@ -142,6 +142,7 @@ public class finalDia2CheckCore : MonoBehaviour {
                 G.transform.position = Vector3.MoveTowards(G.transform.position, waypointG1.transform.position, 10 * Time.deltaTime);
                 if (Mathf.Abs(G.transform.position.x - waypointG1.transform.position.x) < 0.1 && Mathf.Abs(G.transform.position.y - waypointG1.transform.position.y) < 0.1)
                 {
+                G.GetComponent<SpriteRenderer>().sortingOrder = 10;
                     G.transform.position = waypointG2.transform.position;
                     G.GetComponent<SpriteRenderer>().flipX = true;
                     G.GetComponent<Animator>().Play("GIdle");
