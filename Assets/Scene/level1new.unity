@@ -2087,6 +2087,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 0
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 0
     textNum: 91
@@ -2583,6 +2584,7 @@ MonoBehaviour:
   waitTimes: 10
   isStop: 1
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 0
     textNum: 27
@@ -3220,6 +3222,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 0
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 1
     textNum: 4
@@ -4770,12 +4773,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 186904975}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc0ca2fa344789f4981ecb54bb22be16, type: 3}
+  m_Script: {fileID: 11500000, guid: bd527195da6784c489f7318d9d31a1c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level1Items: {fileID: 1071756842}
-  Dialog: {fileID: 2107283452}
-  agent: {fileID: 948789781}
+  MainCamera: {fileID: 1071756837}
+  cameraFollow: {fileID: 1071756840}
+  speed: 50
+  dialog1: {fileID: 2107283452}
+  player: {fileID: 948789780}
 --- !u!61 &186904978
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4788,7 +4793,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.080705285, y: 0.080705136}
+  m_Offset: {x: 0.080705285, y: -0.065311596}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4799,7 +4804,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6747097, y: 1.237576}
+  m_Size: {x: 0.6747097, y: 0.94554245}
   m_EdgeRadius: 0
 --- !u!212 &186904979
 SpriteRenderer:
@@ -5328,6 +5333,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 0
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 0
     textNum: 85
@@ -6377,6 +6383,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 1
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 0
     textNum: 30
@@ -7764,6 +7771,7 @@ MonoBehaviour:
   waitTimes: 10
   isStop: 1
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 1
     textNum: 1
@@ -12585,7 +12593,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1636749953437054, guid: 46a26476745e5b34791b8f2dc49dd10e, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114192315217697800, guid: 46a26476745e5b34791b8f2dc49dd10e,
         type: 2}
@@ -12646,6 +12654,26 @@ Prefab:
         type: 2}
       propertyPath: keyword
       value: 2015
+      objectReference: {fileID: 0}
+    - target: {fileID: 114432519336235444, guid: 46a26476745e5b34791b8f2dc49dd10e,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114432519336235444, guid: 46a26476745e5b34791b8f2dc49dd10e,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114432519336235444, guid: 46a26476745e5b34791b8f2dc49dd10e,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114432519336235444, guid: 46a26476745e5b34791b8f2dc49dd10e,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46a26476745e5b34791b8f2dc49dd10e, type: 2}
@@ -13407,6 +13435,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 0
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 0
     textNum: 73
@@ -18317,6 +18346,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 0
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 0
     textNum: 68
@@ -18564,6 +18594,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 1
   playerAgent: {fileID: 502650822}
+  finishDialog: 0
   textinfo:
   - dialogType: 3
     textNum: 41
@@ -18900,7 +18931,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 948789780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -79.6, y: 19.4, z: -12.19}
+  m_LocalPosition: {x: 260.2, y: 25.7, z: -12.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1877484600}
@@ -19173,6 +19204,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 0
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 0
     textNum: 79
@@ -22386,6 +22418,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 0
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 1
     textNum: 70
@@ -22579,6 +22612,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 1
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 0
     textNum: 66
@@ -23313,6 +23347,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 1
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 1
     textNum: 38
@@ -28581,6 +28616,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 0
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 1
     textNum: 82
@@ -31664,6 +31700,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 0
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 1
     textNum: 88
@@ -32056,6 +32093,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 1
   playerAgent: {fileID: 502650822}
+  finishDialog: 0
   textinfo:
   - dialogType: 0
     textNum: 48
@@ -34072,6 +34110,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 1
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 0
     textNum: 15
@@ -34135,6 +34174,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 0
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 1
     textNum: 7
@@ -35521,6 +35561,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 0
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 0
     textNum: 13
@@ -36415,6 +36456,7 @@ MonoBehaviour:
   waitTimes: 10
   isStop: 1
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 0
     textNum: 12
@@ -37601,6 +37643,7 @@ MonoBehaviour:
   waitTimes: 10
   isStop: 1
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 0
     textNum: 1
@@ -37958,6 +38001,7 @@ MonoBehaviour:
   waitTimes: 10
   isStop: 1
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 0
     textNum: 4
@@ -39262,6 +39306,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 0
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 1
     textNum: 76
@@ -39506,6 +39551,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 0
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 0
     textNum: 72
@@ -39955,6 +40001,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 1
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 0
     textNum: 21
@@ -43500,6 +43547,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 1
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 3
     textNum: 42
@@ -43564,6 +43612,7 @@ MonoBehaviour:
   waitTimes: 3
   isStop: 1
   playerAgent: {fileID: 948789781}
+  finishDialog: 0
   textinfo:
   - dialogType: 2
     textNum: 32

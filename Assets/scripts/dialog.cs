@@ -26,6 +26,8 @@ public class dialog : MonoBehaviour {
     float lastTime;
     float thisTime;
 
+    [HideInInspector] public bool finishDialog = false;//传出去用于判断对话是否结束的
+
     [System.Serializable]
     public struct textInfo
     {
@@ -85,7 +87,7 @@ public class dialog : MonoBehaviour {
         }
         //恢复速度
         playerAgent.speed = oldSpeed;
-
+        finishDialog = true;
         state = 2;
     }
 

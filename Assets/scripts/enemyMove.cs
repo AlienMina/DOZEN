@@ -244,7 +244,7 @@ public class enemyMove : MonoBehaviour {
     public void Patrol()
     {
 
-        Debug.Log("Patrol.");
+        //Debug.Log("Patrol.");
         if (!isReturning)
         {
             patrol2place2();
