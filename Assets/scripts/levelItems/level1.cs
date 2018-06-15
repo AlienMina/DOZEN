@@ -6,7 +6,7 @@ public class level1 : MonoBehaviour {
 
     [HideInInspector]
     public bool Item1;
-    [HideInInspector]
+
     public bool Item2;
 
     //[HideInInspector]

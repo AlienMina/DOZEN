@@ -40,6 +40,7 @@ public class finalDia1withCamera : MonoBehaviour {
         if (dialog1.finishDialog)
         {
             cameraFollow.enabled = true;
+            this.gameObject.SetActive(false);
         }
 	}
     private void OnTriggerEnter2D(Collider2D collision)
