@@ -5,7 +5,7 @@ using UnityEngine;
 public class jigsawInScene : MonoBehaviour {
 
     public jigsawChest chest;
-    public AudioSource audio;
+    public AudioSource findAudio;
 	// Use this for initialization
 	void Start () {
 		
@@ -22,9 +22,11 @@ public class jigsawInScene : MonoBehaviour {
             if (chest.chestSeen)
             {
                 chest.havePiece = true;
-                audio.Play();
+                findAudio.Play();
                 this.gameObject.SetActive(false);
             }
         }
     }
+
+
 }
