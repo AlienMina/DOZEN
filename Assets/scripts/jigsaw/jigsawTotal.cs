@@ -13,6 +13,8 @@ public class jigsawTotal : MonoBehaviour {
     public Button[] jigsawPieces=new Button[9];//拼图的物体储存，按顺序放进去
     public int emptyPlace = 9;//默认9号拼图是空的
 
+    [HideInInspector] public bool finishJigsaw;
+
 	void Start () {
 		
 	}
@@ -115,6 +117,7 @@ public class jigsawTotal : MonoBehaviour {
         {
             Debug.Log("finish jigsaw.");
             //在这里存放拼好以后的事件
+            finishJigsaw = true;
         }
     }
 }

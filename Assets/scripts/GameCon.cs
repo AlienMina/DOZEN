@@ -23,6 +23,8 @@ public class GameCon : MonoBehaviour {
 
     public bool enemyStop = false;//QTE-停止所有敌人
 
+    public bool haveBill=false;//是否拿到账单
+
 
     // Use this for initialization
     void Start () {
@@ -49,7 +51,13 @@ public class GameCon : MonoBehaviour {
         }
 
 	}
-
+    /// <summary>
+    /// 拿到账单
+    /// </summary>
+    public void getBill()
+    {
+        haveBill = true;
+    }
 
     /// <summary>
     /// 这套……应该是控制头顶按钮显隐的
