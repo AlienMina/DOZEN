@@ -17,6 +17,8 @@ public class brokenChandelierQTE : MonoBehaviour {
     public float final = 1;//最终要达到的数值
     public bool isThere;//主角是否处于范围内
 
+    public GameObject hint;//QTE狂按空格的提示
+
     bool startQTE=false;
 	// Use this for initialization
 	void Start () {
@@ -36,6 +38,7 @@ public class brokenChandelierQTE : MonoBehaviour {
         startQTE = true;
         oldTime = Time.time;//开始计时
         progressBar.gameObject.SetActive(true);
+        hint.SetActive(true);
     }
 
     void QTE()
@@ -82,12 +85,14 @@ public class brokenChandelierQTE : MonoBehaviour {
             progressBar.value = 0;
         }
         progressBar.gameObject.SetActive(false);
+        hint.SetActive(false);
         
     }
     void clear()
     {
         startQTE = false;
         progressBar.gameObject.SetActive(false);
+        hint.SetActive(false);
         brokenProgram.startBroken();
     }
 }
