@@ -18,6 +18,8 @@ public class brokenChandelierQTE : MonoBehaviour {
     public bool isThere;//主角是否处于范围内
 
     public GameObject hint;//QTE狂按空格的提示
+    public GameObject enemy;//需要消失的敌人
+    public GameObject block;
 
     bool startQTE=false;
 	// Use this for initialization
@@ -94,5 +96,7 @@ public class brokenChandelierQTE : MonoBehaviour {
         progressBar.gameObject.SetActive(false);
         hint.SetActive(false);
         brokenProgram.startBroken();
+        enemy.SetActive(false);
+        block.SetActive(false);
     }
 }
