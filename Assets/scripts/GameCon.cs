@@ -25,6 +25,8 @@ public class GameCon : MonoBehaviour {
 
     public bool haveBill=false;//是否拿到账单
 
+    public GameObject menu;//菜单页面
+    public bool fuckActiveSelf=false;
 
     // Use this for initialization
     void Start () {
@@ -48,6 +50,25 @@ public class GameCon : MonoBehaviour {
         if (playerHealth == 0)
         {
             StartCoroutine(playerDie());
+        }
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            Debug.Log("esc");
+            if (!fuckActiveSelf)
+            {
+                enemyStop = true;
+                menu.SetActive(true);
+                fuckActiveSelf = true;
+            }
+            else
+            {
+                enemyStop = false;
+                menu.SetActive(false);
+                fuckActiveSelf = false;
+            }
+
+
         }
 
 	}
