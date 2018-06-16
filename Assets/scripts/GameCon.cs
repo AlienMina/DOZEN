@@ -123,7 +123,7 @@ public class GameCon : MonoBehaviour {
     }
     public void back2Menu()
     {
-        SceneManager.LoadScene("start", LoadSceneMode.Single);
+        SceneManager.LoadScene("restart", LoadSceneMode.Single);
     }
 
     public void RestartLevel()
