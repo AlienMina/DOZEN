@@ -7,6 +7,7 @@ public class brokenChandelierQTE : MonoBehaviour {
     /// <summary>
     /// 这个是拆吊灯的狂按空格的QTE
     /// </summary>
+    public GameCon gameCon;
     public brokenChandelier brokenProgram;
     public Slider progressBar;//进度条
     public float qteTime = 1;
@@ -98,5 +99,6 @@ public class brokenChandelierQTE : MonoBehaviour {
         brokenProgram.startBroken();
         enemy.SetActive(false);
         block.SetActive(false);
+        gameCon.enemyStop = false;
     }
 }

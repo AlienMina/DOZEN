@@ -41,7 +41,7 @@ public class enemyMove : MonoBehaviour {
     
 
 
-    private NavMeshAgent agent;//寻路用的
+    public NavMeshAgent agent;//寻路用的
 
     Vector3 voicePlace;
     Vector3 playerPlace;
@@ -77,6 +77,7 @@ public class enemyMove : MonoBehaviour {
 
     bool isReturning = false;
 
+    public bool isLaserTest=false;
 
     //这里是一组给enemyState用的
 
@@ -103,15 +104,24 @@ public class enemyMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!GameContent.enemyStop)
+        if (!isLaserTest)
         {
-            this.gameObject.GetComponent<NavMeshAgent>().speed = speedBeforeStop;
-            speedBeforeStop = this.gameObject.GetComponent<NavMeshAgent>().speed;
-            
+            if (!GameContent.enemyStop)
+            {
+                this.gameObject.GetComponent<NavMeshAgent>().speed = speedBeforeStop;
+                speedBeforeStop = this.gameObject.GetComponent<NavMeshAgent>().speed;
+
+            }
+            else
+            {
+
+                this.gameObject.GetComponent<NavMeshAgent>().speed = 0;
+            }
         }
         else
         {
-            this.gameObject.GetComponent<NavMeshAgent>().speed = 0;
+            this.gameObject.GetComponent<NavMeshAgent>().speed = speedBeforeStop;
+            speedBeforeStop = this.gameObject.GetComponent<NavMeshAgent>().speed;
         }
         #region oldCode
         //enemyPlace = this.GetComponent<Transform>().position;
@@ -380,6 +390,24 @@ public class enemyMove : MonoBehaviour {
             nothingOnHead = true;
         }
 
+    }
+
+    public void clearChasing()
+    {
+        audios.gameObject.SetActive(false);
+        chasingPlayer = false;
+        chasingVoice = false;
+        setVoicePlace = false;
+        agent.speed = oldSpeed;
+        alert.SetActive(false);
+        isReturn = true;
+        agent.destination = place1;
+
+        //下面是头顶状态相关的东西
+        enemyChasing = false;
+        enemyHeard = false;
+        enemyDizzy = false;
+        nothingOnHead = true;
     }
 
     //离开主角视野之后的持续追击部分

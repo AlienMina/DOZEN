@@ -5533,7 +5533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &216316592
 Transform:
   m_ObjectHideFlags: 0
@@ -9933,7 +9933,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 433410804}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.16, y: -4.45, z: 0}
+  m_LocalPosition: {x: -9.49, y: -6.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1967455705}
@@ -12122,6 +12122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f868a7c8c43daf64d9944a587855133d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameCon: {fileID: 1071756839}
   brokenProgram: {fileID: 548074623}
   progressBar: {fileID: 373327058}
   qteTime: 1
@@ -34225,7 +34226,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.016666668
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 45896029ebb04f4418201ef11a083292, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 27d84b25a6f258042a3477d131fc0b7c, type: 2}
 --- !u!1 &1729054042
 GameObject:
   m_ObjectHideFlags: 0
@@ -36180,8 +36181,8 @@ MonoBehaviour:
   machelfTWindow: {fileID: 21300000, guid: 3e61434a4a2eb074eb4cc2f75deee65e, type: 3}
   NPCWindow: {fileID: 0}
   GWindow: {fileID: 0}
-  waitTimes: 3
-  isStop: 1
+  waitTimes: 1
+  isStop: 0
   playerAgent: {fileID: 948789781}
   finishDialog: 0
   textinfo:
@@ -40111,6 +40112,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114682163179881906, guid: aa2dede03e14e974b8c51c5ae2bdc24a,
+        type: 2}
+      propertyPath: isLaserTest
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114976485444940574, guid: aa2dede03e14e974b8c51c5ae2bdc24a, type: 2}
     - {fileID: 114561769542194808, guid: aa2dede03e14e974b8c51c5ae2bdc24a, type: 2}
@@ -40544,6 +40550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1748c43d459387e42ae85ca31b5079cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameCon: {fileID: 1071756839}
   dialog: {fileID: 1968245566}
   enemy: {fileID: 1934882269}
   block: {fileID: 743439090}

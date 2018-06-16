@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class chandelierDialogwithEnemy : MonoBehaviour {
 
+    public GameCon gameCon;
     public dialog dialog;
     public GameObject enemy;
     public GameObject block;
@@ -39,10 +40,10 @@ public class chandelierDialogwithEnemy : MonoBehaviour {
                 enemy.SetActive(true);
                 block.SetActive(true);
                 shake.shake(3, 0.5f, 45);
-                enemy1.GetComponent<enemyMove>().isDizz = true;
+                gameCon.enemyStop = true;
                 enemy1.transform.position = enemy1.GetComponent<enemyMove>().place1;
                 enemy2.transform.position = enemy1.GetComponent<enemyMove>().place1;
-                enemy2.GetComponent<enemyMove>().isDizz = true;
+                
             }
         }
     }
