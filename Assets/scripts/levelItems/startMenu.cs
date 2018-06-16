@@ -33,7 +33,7 @@ public class startMenu : MonoBehaviour {
         {
             onLoading = true;
             levelAudio.SetActive(true);
-            SceneManager.LoadScene("levelTeaching", LoadSceneMode.Single);
+            SceneManager.LoadScene("level0", LoadSceneMode.Single);
         }
     }
 }

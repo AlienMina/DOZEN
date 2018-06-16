@@ -16,11 +16,15 @@ public class lv0DialogwithT : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (dialog.finishDialog)
+        {
+            teachingT.SetActive(true);
+            this.gameObject.SetActive(false);
+        }
 	}
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag=="Player"&& !enemy.activeSelf)
+        if(collision.tag=="Player"&& enemy==null)
         {
             t.SetActive(true);
             dialog.startDialog();
