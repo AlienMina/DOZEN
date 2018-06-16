@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -3695,6 +3695,8 @@ Transform:
   - {fileID: 2144401308}
   - {fileID: 2089638663}
   - {fileID: 1271787919}
+  - {fileID: 916946823}
+  - {fileID: 1603256640}
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6182,6 +6184,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: -90}
+--- !u!1 &916946822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 916946823}
+  - component: {fileID: 916946824}
+  m_Layer: 0
+  m_Name: Final-Before
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &916946823
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 916946822}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 488579873}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &916946824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 916946822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5affc4f1862c5488f63786d6e8b858, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogWindow: {fileID: 0}
+  dialogText: {fileID: 0}
+  dialogTxt: {fileID: 0}
+  dozenWindow: {fileID: 21300000, guid: 4b4e420086ee1164a816638f745b5400, type: 3}
+  machelfTWindow: {fileID: 21300000, guid: 3e61434a4a2eb074eb4cc2f75deee65e, type: 3}
+  NPCWindow: {fileID: 0}
+  GWindow: {fileID: 0}
+  waitTimes: 3
+  isStop: 0
+  playerAgent: {fileID: 0}
+  finishDialog: 0
+  textinfo:
+  - dialogType: 5
+    textNum: 32
+  - dialogType: 5
+    textNum: 33
+  - dialogType: 0
+    textNum: 34
+  - dialogType: 5
+    textNum: 35
+  - dialogType: 5
+    textNum: 36
+  - dialogType: 5
+    textNum: 37
+  - dialogType: 0
+    textNum: 38
+  - dialogType: 1
+    textNum: 39
+  - dialogType: 1
+    textNum: 40
+  - dialogType: 0
+    textNum: 41
+  - dialogType: 5
+    textNum: 42
 --- !u!1 &931140400
 GameObject:
   m_ObjectHideFlags: 0
@@ -9931,6 +10007,70 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1587720079}
+--- !u!1 &1603256639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1603256640}
+  - component: {fileID: 1603256641}
+  m_Layer: 0
+  m_Name: Final-After
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1603256640
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1603256639}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 488579873}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1603256641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1603256639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5affc4f1862c5488f63786d6e8b858, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogWindow: {fileID: 0}
+  dialogText: {fileID: 0}
+  dialogTxt: {fileID: 0}
+  dozenWindow: {fileID: 21300000, guid: 4b4e420086ee1164a816638f745b5400, type: 3}
+  machelfTWindow: {fileID: 21300000, guid: 3e61434a4a2eb074eb4cc2f75deee65e, type: 3}
+  NPCWindow: {fileID: 0}
+  GWindow: {fileID: 0}
+  waitTimes: 3
+  isStop: 0
+  playerAgent: {fileID: 0}
+  finishDialog: 0
+  textinfo:
+  - dialogType: 5
+    textNum: 43
+  - dialogType: 0
+    textNum: 44
+  - dialogType: 5
+    textNum: 45
+  - dialogType: 1
+    textNum: 46
+  - dialogType: 5
+    textNum: 47
+  - dialogType: 0
+    textNum: 48
 --- !u!1 &1607021321
 GameObject:
   m_ObjectHideFlags: 0
@@ -12549,7 +12689,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1942298299}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
