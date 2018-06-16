@@ -36,6 +36,11 @@ public class check : MonoBehaviour {
             showCheckandWhy();
         }
 
+        if (dialog1.finishDialog)
+        {
+            bill.SetActive(false);
+            this.gameObject.SetActive(false);
+        }
 	}
 
     void showCheckandWhy()
