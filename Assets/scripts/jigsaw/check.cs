@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class check : MonoBehaviour {
 
+    public GameCon gameCon;
+
     public jigsawTotal jigsaw;
 
     public GameObject jigsawBig;//大的拼图
@@ -39,6 +41,8 @@ public class check : MonoBehaviour {
         if (dialog1.finishDialog)
         {
             bill.SetActive(false);
+            emptyButton.SetActive(false);
+            gameCon.haveBill = true;
             this.gameObject.SetActive(false);
         }
 	}
