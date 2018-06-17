@@ -47,7 +47,7 @@ public class GameCon : MonoBehaviour {
 
         blood.value = playerHealth;
 
-        if (playerHealth == 0)
+        if (playerHealth <= 0)
         {
             StartCoroutine(playerDie());
         }

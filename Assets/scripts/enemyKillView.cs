@@ -31,7 +31,7 @@ public class enemyKillView : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (gameCon.playerHealth == 0)
+        if (gameCon.playerHealth <= 0)
         {
             StartCoroutine(playerDied());
         }

@@ -13627,7 +13627,7 @@ MonoBehaviour:
   machelfTWindow: {fileID: 21300000, guid: 3e61434a4a2eb074eb4cc2f75deee65e, type: 3}
   NPCWindow: {fileID: 0}
   GWindow: {fileID: 0}
-  waitTimes: 3
+  waitTimes: 1.5
   isStop: 0
   playerAgent: {fileID: 948789781}
   finishDialog: 0
@@ -19395,7 +19395,7 @@ MonoBehaviour:
   machelfTWindow: {fileID: 21300000, guid: 3e61434a4a2eb074eb4cc2f75deee65e, type: 3}
   NPCWindow: {fileID: 0}
   GWindow: {fileID: 0}
-  waitTimes: 3
+  waitTimes: 1.5
   isStop: 0
   playerAgent: {fileID: 948789781}
   finishDialog: 0
@@ -38971,6 +38971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d354d6b95d6a547a1cf95c228f12b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameCon: {fileID: 0}
   jigsaw: {fileID: 1475978480}
   jigsawBig: {fileID: 1747737032}
   jigsawChest: {fileID: 1906529554}
