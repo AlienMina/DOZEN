@@ -12,8 +12,7 @@ public class lv2Final : MonoBehaviour {
     public dialog dia1;
     public dialog dia2;
 
-    public GameObject win;
-    public AudioSource wins;
+    public GameObject block;
 
     bool i = false;
 
@@ -32,8 +31,7 @@ public class lv2Final : MonoBehaviour {
         }
         else if (dia2.finishDialog)
         {
-            win.SetActive(true);
-            wins.Play();
+            block.SetActive(false);
             this.gameObject.SetActive(false);
         }
 		
