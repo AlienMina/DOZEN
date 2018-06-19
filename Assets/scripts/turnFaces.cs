@@ -91,17 +91,119 @@ public class turnFaces : MonoBehaviour {
         turnmask = true;
     }
 
-    public void playAttackAnim()
+    public void playAttackAnim(int num,int place)
     {
-        
+        //num:攻击的名称 1 敲 2 拆 3 电 place：攻击的位置 1 上 2 中 3 下
         if (face)
         {
-            anim.Play("dozenAttackRight");
+            if (num == 0 && place == 0)
+            {
+                anim.Play("dozenAttackRight");
+            }
+            else
+            {
+                if (num == 1)//敲
+                {
+                    if (place == 1)
+                    {
+                        anim.Play("dozenAttackRightUpQiao");
+                    }
+                    else if (place == 2)
+                    {
+                        anim.Play("dozenAttackRightMiddleQiao");
+                    }
+                    else
+                    {
+                        anim.Play("dozenAttackRightDownQiao");
+                    }
+                }
+                else if (num == 2)//拆
+                {
+                    if (place == 1)
+                    {
+                        anim.Play("dozenAttackRightUpChai");
+                    }
+                    else if (place == 2)
+                    {
+                        anim.Play("dozenAttackRightMiddleChai");
+                    }
+                    else
+                    {
+                        anim.Play("dozenAttackRightDownChai");
+                    }
+                }
+                else if (num == 3)
+                {
+                    if (place == 1)
+                    {
+                        anim.Play("dozenAttackRightUpDian");
+                    }
+                    else if (place == 2)
+                    {
+                        anim.Play("dozenAttackRightMiddleDian");
+                    }
+                    else
+                    {
+                        anim.Play("dozenAttackRightDownDian");
+                    }
+                }
+            }
+            
         }
         else
         {
-            anim.Play("dozenAttackLeft");
-
+            if (num == 0 && place == 0)
+            {
+                anim.Play("dozenAttackLeft");
+            }
+            else
+            {
+                if (num == 1)//敲
+                {
+                    if (place == 1)
+                    {
+                        anim.Play("dozenAttackLeftUpQiao");
+                    }
+                    else if (place == 2)
+                    {
+                        anim.Play("dozenAttackLeftMiddleQiao");
+                    }
+                    else
+                    {
+                        anim.Play("dozenAttackLeftDownQiao");
+                    }
+                }
+                else if (num == 2)//拆
+                {
+                    if (place == 1)
+                    {
+                        anim.Play("dozenAttackLeftUpChai");
+                    }
+                    else if (place == 2)
+                    {
+                        anim.Play("dozenAttackLeftMiddleChai");
+                    }
+                    else
+                    {
+                        anim.Play("dozenAttackLeftDownChai");
+                    }
+                }
+                else if (num == 3)
+                {
+                    if (place == 1)
+                    {
+                        anim.Play("dozenAttackLeftUpDian");
+                    }
+                    else if (place == 2)
+                    {
+                        anim.Play("dozenAttackLeftMiddleDian");
+                    }
+                    else
+                    {
+                        anim.Play("dozenAttackLeftDownDian");
+                    }
+                }
+            }
         }
         
     }

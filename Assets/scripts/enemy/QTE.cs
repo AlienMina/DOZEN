@@ -73,10 +73,10 @@ public class QTE : MonoBehaviour {
             if (Input.GetKeyUp(KeyCode.Alpha1)){
                 if (time - oldTime >= qteAbleTime)//已经进入了
                 {
-                    player.GetComponent<turnFaces>().playAttackAnim();
                     shake.shake(2,0.2f,45);
                     qteSeries[num] = 1;
                     num++;
+                    player.GetComponent<turnFaces>().playAttackAnim(1,num);
                     if (num > 2)//如果已经是最后一个按键
                     {
                         wait4finish = true;
@@ -99,11 +99,11 @@ public class QTE : MonoBehaviour {
             else if (Input.GetKeyUp(KeyCode.Alpha2))
             {
                 if (time - oldTime >= qteAbleTime)//已经进入了
-                {
-                    player.GetComponent<turnFaces>().playAttackAnim();
+                {                    
                     shake.shake(2, 0.2f, 45);
                     qteSeries[num] = 2;
                     num++;
+                    player.GetComponent<turnFaces>().playAttackAnim(2, num);
                     if (num > 2)//如果已经是最后一个按键
                     {
                         wait4finish = true;
@@ -124,11 +124,11 @@ public class QTE : MonoBehaviour {
             else if (Input.GetKeyUp(KeyCode.Alpha3))
             {
                 if (time - oldTime >= qteAbleTime)//已经进入了
-                {
-                    player.GetComponent<turnFaces>().playAttackAnim();
+                {                    
                     shake.shake(2, 0.2f, 45);
                     qteSeries[num] = 3;
                     num++;
+                    player.GetComponent<turnFaces>().playAttackAnim(3, num);
                     if (num > 2)//如果已经是最后一个按键
                     {
                         wait4finish = true;

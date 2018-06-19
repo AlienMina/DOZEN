@@ -163,7 +163,7 @@ public class finalDia2CheckCore : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.Alpha1))
         {
             player.GetComponent<turnFaces>().pause = true;//角色动画的改变      
-            player.GetComponent<turnFaces>().playAttackAnim();
+            player.GetComponent<turnFaces>().playAttackAnim(0,0);
             shake.shake(2, 0.2f, 45);
             StartCoroutine(finish());
         }
