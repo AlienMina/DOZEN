@@ -114,7 +114,13 @@ public class enemyKillView : MonoBehaviour {
     IEnumerator hitPlayer()
     {
         gameCon.playerHealth -= 1;
+        player.GetComponent<playerMove>().playerDead = true;
+        player.GetComponent<NavMeshAgent>().ResetPath();
+        player.GetComponent<turnFaces>().pause = true;
+        player.GetComponent<turnFaces>().playerHitAnima(getEnemyX());        
         yield return new WaitForSeconds(1.5f);
+        player.GetComponent<turnFaces>().pause = false;
+        player.GetComponent<playerMove>().playerDead = false;
         enemyanim.gameObject.GetComponent<turnFaceEnemy>().pause = false;
     }
 
@@ -125,5 +131,44 @@ public class enemyKillView : MonoBehaviour {
         startWait = false;
         Debug.Log("FinishWait.");
         Debug.Log("easyWaited: " + easyWaited + "startWait: " + startWait);
+    }
+
+    /*
+    void playerHitAnima()
+    {
+        if (player.GetComponent<turnFaces>().face)//面向右侧
+        {
+            if (getEnemyX() - player.transform.position.x < 0)//敌人在左边
+            {
+                player.GetComponentInChildren<Animator>().Play("dozenKilledRight");
+                //player.GetComponentInChildren<Animator>().Play("dozenHitRightBehind");
+            }
+            else
+            {
+                player.GetComponentInChildren<Animator>().Play("dozenKilledRight");
+                //player.GetComponentInChildren<Animator>().Play("dozenHitRightFront");
+            }
+          
+        }
+        else
+        {
+            if (getEnemyX() - player.transform.position.x < 0)//敌人在右边
+            {
+                player.GetComponentInChildren<Animator>().Play("dozenKilledRight");
+                //player.GetComponentInChildren<Animator>().Play("dozenHitLeftBehind");
+            }
+            else
+            {
+                player.GetComponentInChildren<Animator>().Play("dozenKilledRight");
+                //player.GetComponentInChildren<Animator>().Play("dozenHitLeftFront");
+            }
+        }
+    }
+    */
+    float getEnemyX()
+    {
+        float x = enemyanim.gameObject.GetComponentInParent<enemyMove>().gameObject.transform.position.x;
+        Debug.Log("this is enemy x: " + x);
+        return x;
     }
 }

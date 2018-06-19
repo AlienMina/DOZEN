@@ -207,4 +207,35 @@ public class turnFaces : MonoBehaviour {
         }
         
     }
+
+    public void playerHitAnima(float x)
+    {
+        pause = true;
+        if (face)//面向右侧
+        {
+            if (x - this.gameObject.transform.position.x < 0)//敌人在左边
+            {
+                anim.Play("dozenHitRightBehind");
+            }
+            else
+            {
+                anim.Play("dozenHitRightFront");
+            }
+
+        }
+        else
+        {
+            if (x - this.gameObject.transform.position.x < 0)//敌人在右边
+            {
+                anim.Play("dozenHitLeftBehind");
+            }
+            else
+            {
+                anim.Play("dozenHitLeftFront");
+            }
+        }
+        pause = false;
+    }
+
+
 }
