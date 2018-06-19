@@ -15,8 +15,10 @@ public class finalDia1withCamera : MonoBehaviour {
 
     public dialog dialog1;
     public GameObject player;
-	// Use this for initialization
-	void Start () {
+
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	

@@ -34,6 +34,9 @@ public class finalDia2CheckCore : MonoBehaviour {
     public GameObject QTE;//QTE的按钮
     public GameObject G;//G
 
+    public AudioSource endBGM;
+    public AudioSource simpleBGM;
+
     bool hcd1 = false;
     bool hcd2 = false;
     bool finishHCD = false;
@@ -75,6 +78,8 @@ public class finalDia2CheckCore : MonoBehaviour {
                 }
                 else
                 {
+                    endBGM.Stop();
+                    simpleBGM.Play();
                     this.gameObject.SetActive(false);
                 }
             }
@@ -91,6 +96,8 @@ public class finalDia2CheckCore : MonoBehaviour {
     {
         if (collision.tag == "Player")
         {
+            simpleBGM.Stop();
+            endBGM.Play();
             if (level1.Item2)//如果拿到了核心
             {
                 haveCore();
