@@ -9,7 +9,7 @@ public class machelfEnergy : MonoBehaviour {
     public GameObject dizzy;
 
     public int powerState = 0;//小精灵的能力种类，默认为0，是吸引。 1-晕眩 2-排斥
-    [HideInInspector]
+
     public int whenHide;
 
     public bool isEnergyPoint;

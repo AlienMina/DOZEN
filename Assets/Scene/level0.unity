@@ -4550,7 +4550,7 @@ MonoBehaviour:
   attr: {fileID: 194927805}
   dizzy: {fileID: 52688103}
   powerState: 0
-  whenHide: 4
+  whenHide: 0
   isEnergyPoint: 1
   whoseEnergy: {fileID: 833023571}
   changeStateEnergyInit: 2
@@ -4985,7 +4985,7 @@ MonoBehaviour:
   attr: {fileID: 194927805}
   dizzy: {fileID: 52688103}
   powerState: 0
-  whenHide: 4
+  whenHide: 2
   isEnergyPoint: 1
   whoseEnergy: {fileID: 833023571}
   changeStateEnergyInit: 2
@@ -18708,7 +18708,7 @@ MonoBehaviour:
   attr: {fileID: 194927805}
   dizzy: {fileID: 52688103}
   powerState: 0
-  whenHide: 4
+  whenHide: 3
   isEnergyPoint: 1
   whoseEnergy: {fileID: 833023571}
   changeStateEnergyInit: 2
@@ -28365,7 +28365,7 @@ MonoBehaviour:
   attr: {fileID: 194927805}
   dizzy: {fileID: 52688103}
   powerState: 0
-  whenHide: 4
+  whenHide: 1
   isEnergyPoint: 1
   whoseEnergy: {fileID: 833023571}
   changeStateEnergyInit: 2
